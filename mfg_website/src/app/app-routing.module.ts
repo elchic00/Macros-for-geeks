@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
+import { ProgressComponent } from './progress/progress.component';
+import { MacrosComponent } from './macros/macros.component';
+import { DiaryComponent } from './diary/diary.component';
 
+const routes: Routes = [
+  { path: 'diary', component: DiaryComponent },
+  { path: 'progress', component: ProgressComponent },
+  { path: 'macros', component: MacrosComponent }
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
