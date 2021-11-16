@@ -52,7 +52,7 @@ namespace macro_for_geeks_api
 
             app.UseHttpsRedirection();
 
-            app.UseCors("ChinookAPIPolicy");
+            app.UseCors("FoodAPIPolicy");
 
             app.UseRouting();
 

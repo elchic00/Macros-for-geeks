@@ -1,4 +1,3 @@
-/*
 using macro_for_geeks_api.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +21,8 @@ namespace macro_for_geeks_api.Repositories
             {
                 var users = new List<UserViewModel>();
 
-                var result = from o in db.Users
-                    select o;
+                var result = from u in db.Users
+                    select u;
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel
@@ -43,7 +42,3 @@ namespace macro_for_geeks_api.Repositories
     }
     
 }
-*/
-
-
-

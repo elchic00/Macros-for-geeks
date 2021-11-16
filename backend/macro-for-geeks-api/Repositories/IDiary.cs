@@ -3,8 +3,8 @@ using macro_for_geeks_api.ViewModels;
 
 namespace macro_for_geeks_api.Repositories
 {
-    public interface IUserRepo
+    public interface IDiary
     {
-        List<UserViewModel> GetUsers();
+        
     }
 }

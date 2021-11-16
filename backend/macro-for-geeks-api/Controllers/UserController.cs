@@ -15,7 +15,7 @@ namespace macro_for_geeks_api.Controllers
             
         }
 
-        [HttpGet(Name = "GetUsers")]
+        [HttpGet]
         public IActionResult GetUsers()
         {
             try
