@@ -1,10 +1,13 @@
-h1 {
-    text-align: center;
+  .screen-list {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    word-spacing: 100px;
+    font-size: 32px;
+    vertical-align: center;
+    margin-left: 17%; 
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
-a:link {
+  a:link {
     text-decoration: none;
     color: black;
   }
@@ -16,7 +19,7 @@ a:link {
   
   a:hover {
     text-decoration: none;
-    color: #79CBC3;
+    color: gainsboro;
   }
   
   a:active {
@@ -24,12 +27,22 @@ a:link {
     color: black;
   }
 
-  .logo-image{
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-}
+ .logo {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 250px;
+    height: 80px;
+    margin-left: 15px;
+ }
 
- 
+ .navbar {
+  background: #79CBC3;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 25px;
+ }
+
+
+
+
+
