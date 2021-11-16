@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProgressComponent } from './progress/progress.component';
 import { MacrosComponent } from './macros/macros.component';
 import { DiaryComponent } from './diary/diary.component'
-import { screens } from 'src/screens';
+import { pathnames } from 'src/pathnames';
 
 
 const routes: Routes = [
-  { path: screens.Diary , component: DiaryComponent },
-  { path: screens.Progress, component: ProgressComponent },
-  { path: screens.Macros , component: MacrosComponent }
+  { path: pathnames.Diary , component: DiaryComponent },
+  { path: pathnames.Progress, component: ProgressComponent },
+  { path: pathnames.Macros , component: MacrosComponent }
 ];
 
 @NgModule({

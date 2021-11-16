@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { screens } from 'src/screens';
+import { pathnames } from 'src/pathnames';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,7 @@ import { screens } from 'src/screens';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  navbarScreens = screens
+  navbarScreens = pathnames;
 
   constructor() { 
 
