@@ -4,19 +4,18 @@ using macro_for_geeks_api.Repositories;
 
 namespace macro_for_geeks_api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private IUserRepo userRepo;
-
         public UserController(IUserRepo userRepo)
         {
             this.userRepo = userRepo;
+            
         }
 
-        [HttpGet]
-        [Route("users")]
+        [HttpGet(Name = "GetUsers")]
         public IActionResult GetUsers()
         {
             try

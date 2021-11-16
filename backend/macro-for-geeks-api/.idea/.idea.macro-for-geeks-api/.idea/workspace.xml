@@ -5,7 +5,19 @@
     <projectFile profileName="IIS Express">macro-for-geeks-api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6607d167-2bb2-419f-b887-9cd34c8cffaa" name="Changes" comment="" />
+    <list default="true" id="6607d167-2bb2-419f-b887-9cd34c8cffaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/macro-for-geeks-api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637072666959</updated>
-      <workItem from="1637072670945" duration="7427000" />
+      <workItem from="1637072670945" duration="8912000" />
     </task>
     <servers />
   </component>

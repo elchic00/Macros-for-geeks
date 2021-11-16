@@ -30,37 +30,29 @@ namespace macro_for_geeks_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFrameworkSqlite().AddDbContext<FoodContext>(item => item.UseSqlite(Configuration.GetConnectionString("FoodConnectionString")));
-            /*
-            services.Add*/
-            services.AddScoped<IUserRepo, UserRepo>();
-            
-            services.AddControllers();
-            
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "macro_api", Version = "v1" });
-            });
-            
             services.AddCors(option => option.AddPolicy("FoodAPIPolicy", builder => {
                 builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 
             }));
+
+            services.AddEntityFrameworkSqlite().AddDbContext<FoodContext>(item => item.UseSqlite(Configuration.GetConnectionString("FoodConnectionString")));
+
+            services.AddScoped<IUserRepo, UserRepo>();
+
+            services.AddControllers();
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("FoodAPIPolicy");
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "macros_for_geeks v1"));
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("ChinookAPIPolicy");
 
             app.UseRouting();
 
