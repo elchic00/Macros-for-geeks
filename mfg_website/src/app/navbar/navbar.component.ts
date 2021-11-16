@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarScreensService } from '../navbar-screens.service';
+import { screens } from 'src/screens';
 
 @Component({
   selector: 'app-navbar',
@@ -7,18 +7,15 @@ import { NavbarScreensService } from '../navbar-screens.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  navbarScreens: String[] = [];
+  navbarScreens = screens
 
-  constructor(private navbarScreensService: NavbarScreensService) { 
+  constructor() { 
 
   }
 
   ngOnInit(): void {
-    this.getScreens();
+    
   }
 
-  getScreens(): void{
-    this.navbarScreens = this.navbarScreensService.getScreens()
-  }
 
 }
