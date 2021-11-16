@@ -1,2 +1,9 @@
-<a *ngFor="let screen of navbarScreens | keyvalue" routerLink="/{{screen.value}}">{{screen.value}}</a>
+<h1>
+    <a class="navbar-brand" href="/">
+        <div class="logo-image">
+              <img src="mfg_website/src/Macros-For-Geeks-Logo-2.png" class="gif">
+        </div>
+  </a>
+        <a *ngFor="let screen of navbarScreens | keyvalue" routerLink="/{{screen.value}}">{{screen.value}} </a>
+</h1>
 
