@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ProgressComponent } from './progress/progress.component';
 import { MacrosComponent } from './macros/macros.component';
-import { DiaryComponent } from './diary/diary.component';
+import { DiaryComponent } from './diary/diary.component'
+import { pathnames } from 'src/pathnames';
+
 
 const routes: Routes = [
-  { path: 'diary', component: DiaryComponent },
-  { path: 'progress', component: ProgressComponent },
-  { path: 'macros', component: MacrosComponent }
+  { path: pathnames.Diary , component: DiaryComponent },
+  { path: pathnames.Progress, component: ProgressComponent },
+  { path: pathnames.Macros , component: MacrosComponent }
 ];
 
 @NgModule({
