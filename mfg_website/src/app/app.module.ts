@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; 
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
