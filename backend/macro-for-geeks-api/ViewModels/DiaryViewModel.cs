@@ -1,3 +1,6 @@
+using System;
+using macro_for_geeks_api.Models;
+
 namespace macro_for_geeks_api.ViewModels
 {
     public class DiaryViewModel

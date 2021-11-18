@@ -6,69 +6,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6607d167-2bb2-419f-b887-9cd34c8cffaa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/Food.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/API" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/API.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/API.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/API.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/bin/Debug/net6.0/ref/API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/API.csproj.EntityFrameworkCore.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/API.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/API.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/API.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/API.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/apphost" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/ref/API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/obj/staticwebassets.pack.sentinel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Food.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Food.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/dataSources/81b52f7e-e3c2-4bcd-983b-164b98ff49a9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/dataSources/81b52f7e-e3c2-4bcd-983b-164b98ff49a9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Food.db" beforeDir="false" afterPath="$PROJECT_DIR$/Food.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Diary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Diary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repositories/IUserRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/IUserRepo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repositories/UserRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/UserRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/DiaryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/DiaryViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/macro-for-geeks-api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/macro-for-geeks-api.dll" afterDir="false" />
@@ -144,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637072666959</updated>
       <workItem from="1637072670945" duration="11274000" />
+      <workItem from="1637187903732" duration="3193000" />
     </task>
     <servers />
   </component>
@@ -151,7 +104,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -163,8 +116,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/DiaryController.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/DiaryController.cs" initialLine="10" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="226" />
+            </startOffsets>
+            <endOffsets>
+              <option value="227" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

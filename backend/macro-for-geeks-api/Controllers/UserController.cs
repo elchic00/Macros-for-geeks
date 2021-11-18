@@ -34,5 +34,26 @@ namespace macro_for_geeks_api.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet]
+        [Route( "{id}")]
+        public IActionResult GetUserById(long id)
+        {
+            try
+            {
+                var messages = userRepo.GetUserById(id);
+                if (messages == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(messages);
+                
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        
     }
 }
