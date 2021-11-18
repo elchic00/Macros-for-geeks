@@ -10,6 +10,7 @@ import { MacrosComponent } from './macros/macros.component';
 import { DiaryComponent } from './diary/diary.component';
 import { ProgressComponent } from './progress/progress.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DonutChartComponent } from './donut-chart/donut-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     MacrosComponent,
     DiaryComponent,
-    ProgressComponent
+    ProgressComponent,
+    DonutChartComponent
   ],
   imports: [
     BrowserModule,
