@@ -1343,6 +1343,7 @@
     <column id="495" parent="171" name="UserId">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="496" parent="171" name="Food">
       <Position>2</Position>
@@ -1367,74 +1368,90 @@
     <column id="501" parent="171" name="Date">
       <Position>7</Position>
       <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="502" parent="171" name="MealTime">
       <Position>8</Position>
       <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <index id="503" parent="171" name="sqlite_autoindex_Diary_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UserId
-Date</ColNames>
+Date
+Food</ColNames>
       <ColumnCollations>
+
 </ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="504" parent="171">
+    <index id="504" parent="171" name="diary_index">
       <ColNames>UserId
 Date</ColNames>
+      <ColumnCollations>
+</ColumnCollations>
+    </index>
+    <key id="505" parent="171">
+      <ColNames>UserId
+Date
+Food</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Diary_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="505" parent="171">
+    <foreign-key id="506" parent="171">
       <ColNames>UserId</ColNames>
       <RefTableName>User</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="506" parent="172" name="Id">
+    <column id="507" parent="172" name="Id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="507" parent="172" name="Name">
+    <column id="508" parent="172" name="Name">
       <Position>2</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="508" parent="172" name="Email">
+    <column id="509" parent="172" name="Email">
       <Position>3</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="509" parent="172">
+    <index id="510" parent="172" name="UserID_index">
+      <ColNames>Id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="511" parent="172">
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
+      <UnderlyingIndexName>UserID_index</UnderlyingIndexName>
     </key>
-    <column id="510" parent="173" name="type">
+    <column id="512" parent="173" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="511" parent="173" name="name">
+    <column id="513" parent="173" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="512" parent="173" name="tbl_name">
+    <column id="514" parent="173" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="513" parent="173" name="rootpage">
+    <column id="515" parent="173" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="514" parent="173" name="sql">
+    <column id="516" parent="173" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="515" parent="174" name="name">
+    <column id="517" parent="174" name="name">
       <Position>1</Position>
     </column>
-    <column id="516" parent="174" name="seq">
+    <column id="518" parent="174" name="seq">
       <Position>2</Position>
     </column>
   </database-model>
