@@ -6,9 +6,13 @@ namespace macro_for_geeks_api.Repositories
 {
     public interface IDiaryRepo
     {
-        List<DiaryViewModel> GetEntriesByUser(string id);
+        List<DiaryViewModel> GetEntriesByUser(long id);
         
-        List<DiaryViewModel> GetEntriesByDate(string id);
+        List<DiaryViewModel> GetEntriesByDate(long id, string date);
+        
+        List<DiaryViewModel> GetEntriesByMeal(long id, string meal);
+        
+        
         
         /*List<DiaryViewModel> */
         

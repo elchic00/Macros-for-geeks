@@ -16,8 +16,8 @@ namespace macro_for_geeks_api.Models
         {
         }
 
-        public virtual DbSet<Diary> Diaries { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Diary>? Diaries { get; set; }
+        public virtual DbSet<User>? Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -38,6 +38,7 @@ namespace macro_for_geeks_api
             services.AddEntityFrameworkSqlite().AddDbContext<FoodContext>(item => item.UseSqlite(Configuration.GetConnectionString("FoodConnectionString")));
 
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IDiaryRepo, DiaryRepo>();
 
             services.AddControllers();
         }

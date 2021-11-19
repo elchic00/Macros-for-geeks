@@ -22,8 +22,7 @@ namespace macro_for_geeks_api.Repositories
             {
                 var users = new List<UserViewModel>();
 
-                var result = from u in db.Users
-                    select u;
+                var result = (db.Users ?? throw new InvalidOperationException()).Select(u => u);
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel
@@ -37,8 +36,6 @@ namespace macro_for_geeks_api.Repositories
 
                 return users;
             }
-
-            return null;
         }
 
         public List<UserViewModel> GetUserById(long id)
@@ -46,7 +43,7 @@ namespace macro_for_geeks_api.Repositories
             {
                 var users = new List<UserViewModel>();
 
-                var result = db.Users.Where(u => u.Id == id);
+                var result = (db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel
