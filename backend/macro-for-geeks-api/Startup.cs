@@ -1,20 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Web.Http;
 using macro_for_geeks_api.Models;
 using macro_for_geeks_api.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 
 namespace macro_for_geeks_api
 {
@@ -39,8 +31,8 @@ namespace macro_for_geeks_api
 
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
-
             services.AddControllers();
+            services.AddSwaggerGen();
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +55,14 @@ namespace macro_for_geeks_api
             {
                 endpoints.MapControllers();
             });
+            
+            //Swagger 
+            HttpConfiguration config = new HttpConfiguration();
+            SwaggerConfig.Register(config);
+            app.UseSwagger();  
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "macro-for-geeks API");  
+            });  
+            
         }
     }
 }

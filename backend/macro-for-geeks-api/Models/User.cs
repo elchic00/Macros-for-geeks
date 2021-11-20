@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace macro_for_geeks_api.Models
 {
-    public partial class User
+    public sealed partial class User
     {
         public User()
         {
@@ -14,6 +14,6 @@ namespace macro_for_geeks_api.Models
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public virtual ICollection<Diary> Diaries { get; set; }
+        public ICollection<Diary> Diaries { get; set; }
     }
 }

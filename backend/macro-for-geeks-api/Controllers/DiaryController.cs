@@ -8,10 +8,10 @@ namespace macro_for_geeks_api.Controllers
     [Route("[controller]")]
     public class DiaryController : ControllerBase
     {
-        private IDiaryRepo diaryRepo;
+        private IDiaryRepo _diaryRepo;
         public DiaryController(IDiaryRepo diaryRepo)
         {
-            this.diaryRepo = diaryRepo;
+            this._diaryRepo = diaryRepo;
             
         }
         [HttpGet]
@@ -20,7 +20,7 @@ namespace macro_for_geeks_api.Controllers
         {
             try
             {
-                var messages = diaryRepo.GetEntriesByDate(id,date);
+                var messages = _diaryRepo.GetEntriesByDate(id,date);
                 if (messages == null)
                 {
                     return NotFound();
@@ -36,12 +36,12 @@ namespace macro_for_geeks_api.Controllers
         }
         
         [HttpGet]
-        [Route( "{id:long}/bymeal/{meal}")]
-        public IActionResult GetEntriesByMeal(long id, string meal)
+        [Route( "{id:long}/{meal}/{date}")]
+        public IActionResult GetEntriesByMeal(long id, string meal, string date)
         {
             try
             {
-                var messages = diaryRepo.GetEntriesByMeal(id,meal);
+                var messages = _diaryRepo.GetEntriesByMeal(id,meal,date);
                 if (messages == null)
                 {
                     return NotFound();

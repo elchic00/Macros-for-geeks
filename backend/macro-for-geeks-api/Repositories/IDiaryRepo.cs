@@ -10,7 +10,7 @@ namespace macro_for_geeks_api.Repositories
         
         List<DiaryViewModel> GetEntriesByDate(long id, string date);
         
-        List<DiaryViewModel> GetEntriesByMeal(long id, string meal);
+        List<DiaryViewModel> GetEntriesByMeal(long id, string meal, string date);
         
         
         

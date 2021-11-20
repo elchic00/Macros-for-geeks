@@ -8,16 +8,16 @@ namespace macro_for_geeks_api.Repositories
 {
     public class DiaryRepo : IDiaryRepo
     {
-        private FoodContext db;
+        private FoodContext _db;
 
         public DiaryRepo(FoodContext db)
         {
-            this.db = db;
+            this._db = db;
         }
         public List<DiaryViewModel> GetEntriesByDate(long id, string date)
         {
             var entries = new List<DiaryViewModel>();
-            var res = (db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.Date == date);
+            var res = (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.Date == date);
             foreach (var r in res)
             {
                 DiaryViewModel diary = new DiaryViewModel
@@ -38,10 +38,10 @@ namespace macro_for_geeks_api.Repositories
 
         }
 
-        public List<DiaryViewModel> GetEntriesByMeal(long id, string meal)
+        public List<DiaryViewModel> GetEntriesByMeal(long id, string meal, string date)
         {
             var entries = new List<DiaryViewModel>();
-            var res = (db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.MealTime == meal);
+            var res = (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.MealTime == meal && d.Date == date);
             foreach (var r in res)
             {
                 DiaryViewModel diary = new DiaryViewModel

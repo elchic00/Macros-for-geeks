@@ -10,11 +10,11 @@ namespace macro_for_geeks_api.Repositories
     
     public class UserRepo : IUserRepo
     {
-        private FoodContext db;
+        private FoodContext _db;
 
         public UserRepo(FoodContext db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public List<UserViewModel> GetUsers()
@@ -22,7 +22,7 @@ namespace macro_for_geeks_api.Repositories
             {
                 var users = new List<UserViewModel>();
 
-                var result = (db.Users ?? throw new InvalidOperationException()).Select(u => u);
+                var result = (_db.Users ?? throw new InvalidOperationException()).Select(u => u);
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel
@@ -38,12 +38,12 @@ namespace macro_for_geeks_api.Repositories
             }
         }
 
-        public List<UserViewModel> GetUserById(long id)
+        public List<UserViewModel> GetUserById(short id)
         {
             {
                 var users = new List<UserViewModel>();
 
-                var result = (db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
+                var result = (_db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel

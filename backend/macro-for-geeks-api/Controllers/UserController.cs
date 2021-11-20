@@ -8,10 +8,10 @@ namespace macro_for_geeks_api.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private IUserRepo userRepo;
+        private IUserRepo _userRepo;
         public UserController(IUserRepo userRepo)
         {
-            this.userRepo = userRepo;
+            this._userRepo = userRepo;
             
         }
 
@@ -20,7 +20,7 @@ namespace macro_for_geeks_api.Controllers
         {
             try
             {
-                var messages = userRepo.GetUsers();
+                var messages = _userRepo.GetUsers();
                 if (messages == null)
                 {
                     return NotFound();
@@ -36,11 +36,11 @@ namespace macro_for_geeks_api.Controllers
         }
         [HttpGet]
         [Route( "{id}")]
-        public IActionResult GetUserById(long id)
+        public IActionResult GetUserById(short id)
         {
             try
             {
-                var messages = userRepo.GetUserById(id);
+                var messages = _userRepo.GetUserById(id);
                 if (messages == null)
                 {
                     return NotFound();
