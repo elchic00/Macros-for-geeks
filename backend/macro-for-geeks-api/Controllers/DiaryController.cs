@@ -1,5 +1,8 @@
 using System;
+using System.Threading.Tasks;
+using macro_for_geeks_api.Models;
 using macro_for_geeks_api.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace macro_for_geeks_api.Controllers
@@ -53,6 +56,26 @@ namespace macro_for_geeks_api.Controllers
             catch (Exception)
             {
                 return BadRequest();
+            }
+        }
+        [HttpPost]
+        [Route("")]
+        public async Task<ActionResult<Diary>> PostEntry(Diary entry)
+        {
+            try
+            {
+                if (entry == null)
+                    return BadRequest();
+                
+                var postEntry = await _diaryRepo.PostEntry(entry);
+                return CreatedAtAction(nameof(GetEntriesByDate),
+                new {date = postEntry.Date}, postEntry);
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error posting entry to Diary");
             }
         }
         

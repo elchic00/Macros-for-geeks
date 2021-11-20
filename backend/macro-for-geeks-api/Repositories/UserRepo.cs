@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using macro_for_geeks_api.Models;
 using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace macro_for_geeks_api.Repositories
 {
@@ -17,33 +19,18 @@ namespace macro_for_geeks_api.Repositories
             this._db = db;
         }
 
-        public List<UserViewModel> GetUsers()
+        public async Task<List<User>> GetUsers()
         {
             {
-                var users = new List<UserViewModel>();
-
-                var result = (_db.Users ?? throw new InvalidOperationException()).Select(u => u);
-                foreach (var r in result)
-                {
-                    UserViewModel user = new UserViewModel
-                    {
-                        Id = r.Id,
-                        Name = r.Name,
-                        Email = r.Email
-                    };
-                    users.Add(user);
-                }
-
-                return users;
+                return await _db.Users.ToListAsync();
             }
         }
 
-        public List<UserViewModel> GetUserById(short id)
+        public async Task<User?> GetUserById(short id)
         {
             {
-                var users = new List<UserViewModel>();
-
-                var result = (_db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
+                return await _db.Users.FirstOrDefaultAsync(u => u.Id == id);
+                /*var result = (_db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
                 foreach (var r in result)
                 {
                     UserViewModel user = new UserViewModel
@@ -55,7 +42,7 @@ namespace macro_for_geeks_api.Repositories
                     users.Add(user);
                 }
 
-                return users;
+                return users;*/
             }
         }
     }

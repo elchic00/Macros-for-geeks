@@ -1,6 +1,10 @@
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using macro_for_geeks_api.Models;
 using macro_for_geeks_api.ViewModels;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace macro_for_geeks_api.Repositories
 {
@@ -8,13 +12,16 @@ namespace macro_for_geeks_api.Repositories
     {
         List<DiaryViewModel> GetEntriesByUser(long id);
         
-        List<DiaryViewModel> GetEntriesByDate(long id, string date);
+        Task<IEnumerable<Diary>> GetEntriesByDate(long id, string date);
         
-        List<DiaryViewModel> GetEntriesByMeal(long id, string meal, string date);
-        
-        
-        
+        Task<IEnumerable<Diary>> GetEntriesByMeal(long id, string meal, string date);
+
+        Task<Diary> PostEntry(Diary entry);
+
+
+
+
         /*List<DiaryViewModel> */
-        
+
     }
 }
