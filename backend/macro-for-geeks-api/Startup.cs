@@ -26,13 +26,12 @@ namespace macro_for_geeks_api
                 builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 
             }));
-
             services.AddEntityFrameworkSqlite().AddDbContext<FoodContext>(item => item.UseSqlite(Configuration.GetConnectionString("FoodConnectionString")));
-
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
             services.AddControllers();
             services.AddSwaggerGen();
+            
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

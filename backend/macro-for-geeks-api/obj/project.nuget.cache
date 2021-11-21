@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "v3iyRFxV8jYocC/JislmNOZW6O+J0MpenKBqii9ojX+v9STdApCQZFzVhXmWjq7C0BxsYLAtBj6ejsA4tGmBDw==",
+  "dgSpecHash": "Tcc2oOydmnu03XTctFPedzdl5RBKb9QdqBvy/cGvBAk0O+mOdxHBdhgkDrk/3uPmPVzoyIPoi0tfaTBHR/wghg==",
   "success": true,
   "projectFilePath": "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
   "expectedPackageFiles": [
+    "/home/andrewa/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/andrewa/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "/home/andrewa/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/home/andrewa/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/home/andrewa/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/andrewa/.nuget/packages/microsoft.aspnet.webapi.client/4.0.20710/microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",
@@ -60,6 +63,7 @@
     "/home/andrewa/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/home/andrewa/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
     "/home/andrewa/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/home/andrewa/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/home/andrewa/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/andrewa/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
     "/home/andrewa/.nuget/packages/system.security.cryptography.protecteddata/4.7.0/system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",

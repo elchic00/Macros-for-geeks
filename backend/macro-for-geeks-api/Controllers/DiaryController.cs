@@ -58,26 +58,18 @@ namespace macro_for_geeks_api.Controllers
                 return BadRequest();
             }
         }
-        [HttpPost]
-        [Route("")]
-        public async Task<ActionResult<Diary>> PostEntry(Diary entry)
-        {
-            try
-            {
-                if (entry == null)
-                    return BadRequest();
-                
-                var postEntry = await _diaryRepo.PostEntry(entry);
-                return CreatedAtAction(nameof(GetEntriesByDate),
-                new {date = postEntry.Date}, postEntry);
 
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Error posting entry to Diary");
-            }
+        [HttpPost]
+        public async Task PostEntry([FromBody]Diary diary)
+        {
+
+           await _diaryRepo.PostEntry(diary);
+
+
+            /*_diaryRepo.PostEntry(entry);
+            if(entry != null)
+                return true;
+            return false;*/
         }
-        
     }
 }

@@ -39,10 +39,10 @@ namespace macro_for_geeks_api.Models
 
                 entity.Property(e => e.MealTime).IsRequired();
 
-                entity.HasOne(d => d.User)
+                /*entity.HasOne(d => d.User)
                     .WithMany(p => p.Diaries)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .OnDelete(DeleteBehavior.ClientSetNull);*/
             });
 
             modelBuilder.Entity<User>(entity =>

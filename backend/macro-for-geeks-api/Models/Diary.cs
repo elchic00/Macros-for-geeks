@@ -14,6 +14,6 @@ namespace macro_for_geeks_api.Models
         public string Date { get; set; }
         public string MealTime { get; set; }
 
-        public virtual User User { get; set; }
+        /*public virtual User User { get; set; }*/
     }
 }

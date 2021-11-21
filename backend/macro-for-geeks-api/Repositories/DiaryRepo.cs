@@ -9,6 +9,7 @@ using macro_for_geeks_api.Models;
 using macro_for_geeks_api.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace macro_for_geeks_api.Repositories
 {
@@ -71,12 +72,10 @@ namespace macro_for_geeks_api.Repositories
             return entries;*/
         }
 
-        public async Task<Diary> PostEntry(Diary diary)
+        public async Task PostEntry(Diary diary)
         {
-            
-            var res = await _db.Diaries.AddAsync(diary);
+            await _db.Diaries.AddAsync(diary);
             await _db.SaveChangesAsync();
-            return res.Entity;
             /*
             using (var ctx = new FoodContext() )
     {
@@ -95,18 +94,14 @@ namespace macro_for_geeks_api.Repositories
         await ctx.SaveChangesAsync();
     }
     */
-
-
-
         }
 
-        public List<DiaryViewModel> GetEntriesByUser(long id)
+        public List<Diary> GetEntriesByUser(long id)
         {
             throw new NotImplementedException();
         }
         
         
-     
     }
 
 }
