@@ -11,11 +11,11 @@ namespace macro_for_geeks_api.Repositories
 {
     public interface IDiaryRepo
     {
-        List<Diary> GetEntriesByUser(long id);
+        List<Diary> GetEntriesByUser(short id);
         
-        Task<IEnumerable<Diary>> GetEntriesByDate(long id, string date);
+        Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date);
         
-        Task<IEnumerable<Diary>> GetEntriesByMeal(long id, string meal, string date);
+        Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date);
 
         Task PostEntry(Diary diary);
 

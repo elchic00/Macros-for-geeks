@@ -18,16 +18,12 @@ namespace macro_for_geeks_api.Controllers
         }
         [HttpGet]
         [Route( "{id:long}/{date}")]
-        public IActionResult GetEntriesByDate(long id, string date)
+        public IActionResult GetEntriesByDate(short id, string date)
         {
             try
             {
                 //Get all entries by date for a specified user
                 var messages = _diaryRepo.GetEntriesByDate(id,date);
-                if (messages == null)
-                {
-                    return NotFound();
-                }
                 return Ok(messages);
             }
             catch (Exception)
@@ -38,15 +34,11 @@ namespace macro_for_geeks_api.Controllers
         
         [HttpGet]
         [Route( "{id:long}/{meal}/{date}")]
-        public IActionResult GetEntriesByMeal(long id, string meal, string date)
+        public IActionResult GetEntriesByMeal(short id, string meal, string date)
         {
             try
             {
                 var messages = _diaryRepo.GetEntriesByMeal(id,meal,date);
-                if (messages == null)
-                {
-                    return NotFound();
-                }
                 return Ok(messages);
             }
             catch (Exception)
@@ -56,7 +48,7 @@ namespace macro_for_geeks_api.Controllers
         }
         
         [HttpPost]
-        public async Task PostEntry([FromBody]Diary diary)
+        public async Task PostEntry(Diary diary)
         {
             await _diaryRepo.PostEntry(diary);
         }

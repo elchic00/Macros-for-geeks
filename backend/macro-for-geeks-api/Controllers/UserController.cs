@@ -21,13 +21,7 @@ namespace macro_for_geeks_api.Controllers
             try
             {
                 var messages = _userRepo.GetUsers();
-                if (messages == null)
-                {
-                    return NotFound();
-                }
-
                 return Ok(messages);
-                
             }
             catch (Exception)
             {
@@ -41,13 +35,7 @@ namespace macro_for_geeks_api.Controllers
             try
             {
                 var messages = _userRepo.GetUserById(id);
-                if (messages == null)
-                {
-                    return NotFound();
-                }
-
                 return Ok(messages);
-                
             }
             catch (Exception)
             {

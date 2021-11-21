@@ -7,7 +7,7 @@ namespace macro_for_geeks_api.Repositories
 {
     public interface IUserRepo
     {
-        Task<List<User>> GetUsers();
+        Task<IEnumerable<User>> GetUsers();
         Task<User?> GetUserById(short id);
       
     }

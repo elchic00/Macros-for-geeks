@@ -19,17 +19,17 @@ namespace macro_for_geeks_api.Repositories
             this._db = db;
         }
 
-        public async Task<List<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             {
-                return await _db.Users.ToListAsync();
+                return await _db.Users!.ToListAsync();
             }
         }
 
         public async Task<User?> GetUserById(short id)
         {
             {
-                return await _db.Users.FirstOrDefaultAsync(u => u.Id == id);
+                return await _db.Users!.FirstOrDefaultAsync(u => u.Id == id);
                 /*var result = (_db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
                 foreach (var r in result)
                 {

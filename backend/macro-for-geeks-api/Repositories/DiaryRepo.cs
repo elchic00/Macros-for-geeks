@@ -21,36 +21,16 @@ namespace macro_for_geeks_api.Repositories
         {
             this._db = db;
         }
-        public async Task<IEnumerable<Diary>> GetEntriesByDate(long id, string date)
+        public async Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date)
         {
-            return (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date);
-            
-            /*
-            var res = (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.Date == date);
-            */
-            /*foreach (var r in res)
-            {
-                DiaryViewModel diary = new DiaryViewModel
-                {
-                    UserId = r.UserId,
-                    Food = r.Food,
-                    Calories = r.Calories,
-                    Carbohydrates = r.Carbohydrates,
-                    Fats = r.Fats,
-                    Protein = r.Protein,
-                    Date = r.Date,
-                    MealTime = r.MealTime
-                };
-                entries.Add(diary);
-            }
-
-            return entries;*/
+            /*Return a list of*/
+            return await (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date).ToListAsync();
 
         }
 
-        public async Task<IEnumerable<Diary>> GetEntriesByMeal(long id, string meal, string date)
+        public async Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date)
         {
-            return (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal);
+            return await (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal).ToListAsync();
             /*var entries = new List<DiaryViewModel>();
             var res = (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.MealTime == meal && d.Date == date);
             foreach (var r in res)
@@ -74,29 +54,11 @@ namespace macro_for_geeks_api.Repositories
 
         public async Task PostEntry(Diary diary)
         {
-            await _db.Diaries.AddAsync(diary);
+            await _db.Diaries!.AddAsync(diary);
             await _db.SaveChangesAsync();
-            /*
-            using (var ctx = new FoodContext() )
-    {
-        ctx.Diaries.Add(new Diary()
-        {
-            UserId = entry.UserId,
-            Food = entry.Food,
-            Calories = entry.Calories,
-            Carbohydrates = entry.Carbohydrates,
-            Fats = entry.Fats,
-            Protein = entry.Protein,
-            Date = entry.Date,
-            MealTime = entry.MealTime
-        });
-
-        await ctx.SaveChangesAsync();
-    }
-    */
         }
 
-        public List<Diary> GetEntriesByUser(long id)
+        public List<Diary> GetEntriesByUser(short id)
         {
             throw new NotImplementedException();
         }
