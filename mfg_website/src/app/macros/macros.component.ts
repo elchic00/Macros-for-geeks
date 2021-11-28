@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Food } from '../food';
-import { FoodService } from 'src/food.service';
+import { Food } from '../food/food';
+// import { FoodService } from 'src/food.service';
 
 @Component({
   selector: 'app-macros',
@@ -10,19 +10,10 @@ import { FoodService } from 'src/food.service';
 export class MacrosComponent implements OnInit {
   foods: Food[] = [];
 
-  constructor(private foodService: FoodService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getFoods();
   }
 
-  getFoods(): void {
-    this.foodService.getFoods().subscribe(foods => {
-      this.foods = foods
-      
-      console.log(this.foods);
-    })
-    
-  }
 
 }
