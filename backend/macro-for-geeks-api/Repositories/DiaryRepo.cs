@@ -24,13 +24,13 @@ namespace macro_for_geeks_api.Repositories
         public async Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date)
         {
             /*Return a list of*/
-            return await (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date).ToListAsync();
+            return  (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date);
 
         }
 
         public async Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date)
         {
-            return await (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal).ToListAsync();
+            return (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal);
             /*var entries = new List<DiaryViewModel>();
             var res = (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId  == id && d.MealTime == meal && d.Date == date);
             foreach (var r in res)

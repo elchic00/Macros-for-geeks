@@ -7,10 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6607d167-2bb2-419f-b887-9cd34c8cffaa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.macro-for-geeks-api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/DiaryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/DiaryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food.db" beforeDir="false" afterPath="$PROJECT_DIR$/Food.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repositories/DiaryRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/DiaryRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/IDiaryRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/IDiaryRepo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/macro-for-geeks-api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/ref/macro-for-geeks-api.dll" afterDir="false" />
@@ -36,7 +35,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repositories/DiaryRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repositories/IUserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repositories/IDiaryRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repositories/UserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/DiaryController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/FoodContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/Diary.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="210KfOH3dPzIrKLM0FsTjYdf4CM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -105,7 +114,10 @@
       <workItem from="1637416349186" duration="9632000" />
       <workItem from="1637436775100" duration="15931000" />
       <workItem from="1637459637654" duration="1043000" />
-      <workItem from="1637526946792" duration="1525000" />
+      <workItem from="1637526946792" duration="2638000" />
+      <workItem from="1637530151252" duration="466000" />
+      <workItem from="1637681898567" duration="63000" />
+      <workItem from="1637681988887" duration="2600000" />
     </task>
     <servers />
   </component>
@@ -131,24 +143,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repositories/DiaryRepo.cs</url>
-          <line>55</line>
-          <properties documentPath="$PROJECT_DIR$/Repositories/DiaryRepo.cs" initialLine="55" containingFunctionPresentation="method 'PostEntry'">
-            <startOffsets>
-              <option value="1941" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1942" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
