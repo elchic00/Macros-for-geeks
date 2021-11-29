@@ -15,15 +15,16 @@ export class SharedService {
     return this.http.get< User[]> (this.APIurl + '/User')
   }
 
-  getUser(id: any): Observable<any>{
-    return this.http.get< any > (this.APIurl + '/User/'+ id)
+  getUser(id: number): Observable<User>{
+    const url = `${this.APIurl}/${id}`
+    return this.http.get< any > (url)
   }
 
-  getDiaryByDate(id: any, date: Date): Observable<any>{
+  getDiaryByDate(id: number, date: Date): Observable<Food>{
     return this.http.get< any > (this.APIurl + '/user/'+ id+'/'+ date)
   }
 
-  addEntry(food: any){
+  addEntry(food: Food){
     return this.http.post(this.APIurl + '/Diary', food)
   }
 }
