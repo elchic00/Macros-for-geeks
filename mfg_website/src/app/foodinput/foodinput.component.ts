@@ -9,16 +9,20 @@ import {SearchfoodsService} from '../services/searchfoods.service';
 })
 export class FoodinputComponent implements OnInit {
   InputFood:string = "";
-
+  data:any;
   constructor(private SearchfoodsService: SearchfoodsService) { }
 
   ngOnInit(): void {
   }
 
 
-  onClick(){
+  onClick():void{
     console.log(this.InputFood)
-    this.SearchfoodsService.getFood(this.InputFood)
+    this.SearchfoodsService.getFood(this.InputFood).subscribe(response => {
+      this.data = response;
+      console.log(response);
+    });
+    console.log(this.data);
   }
 
 }
