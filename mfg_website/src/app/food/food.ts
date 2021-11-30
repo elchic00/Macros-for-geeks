@@ -1,4 +1,5 @@
 export interface Food {
+    readonly UserId?:number
     readonly Food:string,
     readonly Calories:number,
     readonly Carbohydrates:number,
@@ -6,5 +7,4 @@ export interface Food {
     readonly Protein:number,
     readonly Date:Date,
     readonly Mealtime:string,
-    readonly UserId?:number
 }
