@@ -1,7 +1,9 @@
+.search input {
+  margin: 1rem 0;
+}
 
-/*
 input[type="text"] {
   box-sizing: border-box;
   width: 100%;
   padding: .5rem;
-} */
+}

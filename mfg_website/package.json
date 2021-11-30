@@ -18,8 +18,11 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "angular": "^1.8.2",
+    "angular-bootstrap-md": "^12.1.0",
     "angular-in-memory-web-api": "^0.11.0",
     "chart.js": "^3.6.0",
+    "i": "^0.3.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
