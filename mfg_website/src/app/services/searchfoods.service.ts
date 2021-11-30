@@ -7,12 +7,12 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SearchfoodsService {
-  FDAfoodURL = 'https://api.nal.usda.gov/fdc/v1/foods/search?query='
-  API_KEY= '&api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX'
-  Page_Limit = '&pageSize=1'
+  FDAfoodURL = "https://api.nal.usda.gov/fdc/v1/foods/search?query="
+  API_KEY= "&api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX"
+  limit = "&limit=1"
   // FDAfoodURL = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX&query='
   //FDAfoodURL = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX'
-  FoodSearchCriteria: FoodSearchCriteria[] = [];
+
   constructor(private http: HttpClient) { }
 
 
@@ -20,20 +20,9 @@ export class SearchfoodsService {
   //   return this.http.get<FoodSearchCriteria[]>(this.FDAfoodURL)
   // }
 
-  getFood(Query:String): void{
-
-    if(Query){
-      this.http.get(this.FDAfoodURL + Query + this.Page_Limit + this.API_KEY).subscribe((response)=>{
-
-        console.log(response);
-      })
-
-    }
-    else{
-      alert("Enter a food please")
-    }
-
-
+  getFood(Query:String):Observable<any>{
+      
+      return  this.http.get(this.FDAfoodURL + Query + this.limit + this.API_KEY);
 
   }
 

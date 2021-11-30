@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FoodService {
+export class FoodService { //rename this
   private foodUrl = 'api/foods'
 
   constructor(private http: HttpClient) { }
