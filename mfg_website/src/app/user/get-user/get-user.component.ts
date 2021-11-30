@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-get-user',
   templateUrl: './get-user.component.html',

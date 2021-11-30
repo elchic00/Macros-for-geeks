@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Food } from 'src/app/food/food';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/services/shared.service';
 import { User } from 'src/app//user/user';
 
 @Component({

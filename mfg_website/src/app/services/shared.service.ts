@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Food } from './food/food';
-import { User } from './user/user';
+import { Food } from '../food/food';
+import { User } from '../user/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,12 +12,12 @@ export class SharedService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]>{
-    return this.http.get< User[]> (this.APIurl + '/User')
+    return this.http.get< User[]>(this.APIurl + '/User')
   }
 
   getUser(id: number): Observable<User>{
     const url = `${this.APIurl}/${id}`
-    return this.http.get< any > (url)
+    return this.http.get<any>(url)
   }
 
   getDiaryByDate(id: number, date: Date): Observable<Food>{
