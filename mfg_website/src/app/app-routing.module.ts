@@ -4,15 +4,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProgressComponent } from './progress/progress.component';
 import { MacrosComponent } from './macros/macros.component';
 import { DiaryComponent } from './diary/diary.component'
-import { pathnames } from 'src/pathnames';
+import { navbarpathnames, rootpathnames } from 'src/pathnames';
 import { FoodComponent } from './food/food.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Routes = [
-  { path: pathnames.Diary , component: DiaryComponent },
-  { path: pathnames.Progress, component: ProgressComponent },
-  { path: pathnames.Macros , component: MacrosComponent },
-  {path: "Food", component: FoodComponent}
+  {path: "", redirectTo: `/${rootpathnames.Login}`, pathMatch: 'full'},
+  {path: rootpathnames.Login, component: LoginComponent},
+  {
+    path: rootpathnames.Home,
+    component: NavbarComponent,
+    children: [
+      {path: '', redirectTo: navbarpathnames.Macros, pathMatch: 'full'},
+      { path: navbarpathnames.Diary , component: DiaryComponent, },
+      { path: navbarpathnames.Progress, component: ProgressComponent },
+      { path: navbarpathnames.Macros , component: MacrosComponent },
+      {path: "Food", component: FoodComponent}
+    ]
+  }
 ];
 
 @NgModule({

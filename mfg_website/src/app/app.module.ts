@@ -19,6 +19,7 @@ import { AddFoodComponent } from './food/add-food/add-food.component';
 import { FoodComponent } from './food/food.component';
 import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { GetUserComponent } from './user/get-user/get-user.component';
     FoodComponent,
     GetUserComponent,
     DonutChartComponent,
-    FoodinputComponent
+    FoodinputComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
