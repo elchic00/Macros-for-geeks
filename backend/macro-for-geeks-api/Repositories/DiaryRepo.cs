@@ -21,14 +21,14 @@ namespace macro_for_geeks_api.Repositories
         {
             this._db = db;
         }
-        public async Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date)
+        public IEnumerable<Diary> GetEntriesByDate(short id, string date)
         {
             /*Return a list of*/
             return  (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date);
 
         }
 
-        public async Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date)
+        public  IEnumerable<Diary>  GetEntriesByMeal(short id, string meal, string date)
         {
             return (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal);
             /*var entries = new List<DiaryViewModel>();

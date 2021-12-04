@@ -13,9 +13,9 @@ namespace macro_for_geeks_api.Repositories
     {
         List<Diary> GetEntriesByUser(short id);
         
-        Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date);
+        IEnumerable<Diary> GetEntriesByDate(short id, string date);
         
-        Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date);
+        IEnumerable<Diary> GetEntriesByMeal(short id, string meal, string date);
 
         Task PostEntry(Diary diary);
 
