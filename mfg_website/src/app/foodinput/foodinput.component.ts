@@ -14,9 +14,9 @@ import {SearchfoodsService} from '../services/searchfoods.service';
 export class FoodinputComponent implements OnInit {
   InputFood:string = "";
   //Fooddisplay: any;
-  private data: any = []
-  DisplayFoods: Fooddisplay[] = [];
-  nutrients: Fooddisplay[] = [];
+  data: any = []
+  DisplayFoods: any[] = [];
+  nutrients: any[] = [];
 
   constructor(private SearchfoodsService: SearchfoodsService) { }
 
@@ -26,34 +26,20 @@ export class FoodinputComponent implements OnInit {
 
   onClick() {
     console.log(this.InputFood)
-    // this.SearchfoodsService.getFood(this.InputFood).subscribe(response => {
-    //   //this.data = response;
-
-    //   console.log(response);
-
-
-    // });
     this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
       this.data = response;
       // this.Fooddisplay = data;
-      // console.log(this.Fooddisplay['food']);
-      console.log(this.data['foods'][0]['description']);
-      console.log(this.data['foods'][0]['foodNutrients'])
       this.DisplayFoods= this.data['foods'][0]['foodNutrients'];
-      // console.log(this.DisplayFoods)
-      // for (let i =0; i<this.DisplayFoods.length; i++){
-
-      //   console.log(this.DisplayFoods[i])
-      // }
-
-      return this.DisplayFoods;
-
-
+      console.log(this.DisplayFoods)
+      this.DisplayFoods = this.DisplayFoods.filter(x => x.nutrientName == 'Protein' ||
+      x.nutrientName == 'Total lipid (fat)' ||
+      x.nutrientName == 'Carbohydrate, by difference')
+      return this.data;
     });
 
-
-
-
+    // filterNuts(){
+    //   return this.DisplayFoods.filter(x => x.nutrientName )
+    // }
 
   }
 
