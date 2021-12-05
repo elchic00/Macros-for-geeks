@@ -18,7 +18,7 @@ import { SharedService } from './shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 
 import {SearchfoodsService} from './services/searchfoods.service';
-import { FoodinputComponent } from './foodinput/foodinput.component'
+import {FoodinputComponent } from './foodinput/foodinput.component'
 import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import {FormsModule} from '@angular/forms';
     GetFoodComponent,
     AddFoodComponent,
     FoodComponent,
-    GetUserComponent
-    FoodinputComponent
+    GetUserComponent,
+    FoodinputComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,8 +45,8 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
 
   ],
-  providers: [SharedService],
-  providers: [SearchfoodsService],
+  providers: [SharedService,SearchfoodsService],
+  //providers: [SearchfoodsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

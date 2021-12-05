@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {}
+    "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {}
   },
   "projects": {
-    "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {
+    "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
+        "projectUniqueName": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
         "projectName": "macro-for-geeks-api",
-        "projectPath": "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
-        "packagesPath": "/home/andrewa/.nuget/packages/",
-        "outputPath": "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/obj/",
+        "projectPath": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
+        "packagesPath": "/Users/Nancy/.nuget/packages/",
+        "outputPath": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andrewa/.nuget/NuGet/NuGet.Config"
+          "/Users/Nancy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
