@@ -14,9 +14,9 @@ import {SearchfoodsService} from '../services/searchfoods.service';
 export class FoodinputComponent implements OnInit {
   InputFood:string = "";
   //Fooddisplay: any;
-  private data: any = []
-  DisplayFoods: Fooddisplay[] = [];
-  nutrients: Fooddisplay[] = [];
+  data: any = []
+  DisplayFoods: any[] = [];
+  nutrients: any[] = [];
 
   constructor(private SearchfoodsService: SearchfoodsService) { }
 
@@ -26,13 +26,6 @@ export class FoodinputComponent implements OnInit {
 
   onClick() {
     console.log(this.InputFood)
-    // this.SearchfoodsService.getFood(this.InputFood).subscribe(response => {
-    //   //this.data = response;
-
-    //   console.log(response);
-
-
-    // });
     this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
       this.data = response;
       // this.Fooddisplay = data;
@@ -52,9 +45,9 @@ export class FoodinputComponent implements OnInit {
 
     });
 
-
-
-
+    // filterNuts(){
+    //   return this.DisplayFoods.filter(x => x.nutrientName )
+    // }
 
   }
 
