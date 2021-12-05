@@ -1,9 +1,10 @@
+import { NutrientDisplay } from './../interfaces/nutrientDisplay';
 import { Food } from './../food/food';
 import { Fooddisplay } from './../interfaces/fooddisplay';
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DiaryComponent } from '../diary/diary.component';
-//import {Fooddisplay} from '../interfaces/fooddisplay';
+
 import {SearchfoodsService} from '../services/searchfoods.service';
 @Component({
   selector: 'app-foodinput',
@@ -15,8 +16,9 @@ export class FoodinputComponent implements OnInit {
   InputFood:string = "";
   //Fooddisplay: any;
   data: any = []
-  DisplayFoods: any[] = [];
-  nutrients: any[] = [];
+  DisplayFoods: NutrientDisplay[] = [];
+  description: string = ""
+  FoodCategory: string = ""
 
   constructor(private SearchfoodsService: SearchfoodsService) { }
 
@@ -26,28 +28,25 @@ export class FoodinputComponent implements OnInit {
 
   onClick() {
     console.log(this.InputFood)
-    this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
-      this.data = response;
-      // this.Fooddisplay = data;
-      // console.log(this.Fooddisplay['food']);
-      console.log(this.data['foods'][0]);
-      console.log(this.data['foods'][0]['foodNutrients'])
-      this.DisplayFoods = this.data['foods'][0]['foodNutrients'];
-      this.DisplayFoods = this.DisplayFoods.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
-      // console.log(this.DisplayFoods)
-      // for (let i =0; i<this.DisplayFoods.length; i++){
 
-      //   console.log(this.DisplayFoods[i])
-      // }
+    if(this.InputFood){
+      this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
+        this.data = response;
+        this.description = response['foods'][0].description
+        this.FoodCategory = response['foods'][0].foodCategory
 
-      return this.DisplayFoods;
+        this.DisplayFoods = this.data['foods'][0]['foodNutrients'];
+        this.DisplayFoods = this.DisplayFoods.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
+
+        return this.DisplayFoods;
 
 
-    });
+      });
+    }
+    else{
+      alert("enter Food")
+    }
 
-    // filterNuts(){
-    //   return this.DisplayFoods.filter(x => x.nutrientName )
-    // }
 
   }
 

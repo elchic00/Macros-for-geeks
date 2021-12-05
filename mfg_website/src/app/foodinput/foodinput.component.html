@@ -1,8 +1,12 @@
 <input type="text" [(ngModel)]="InputFood">
 <button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect>Search</button>
+<h3>Results: {{this.description}}</h3>
+<br>
+<h3>Category:  {{this.FoodCategory}} </h3>
+<br>
 
 <div *ngFor= "let list of DisplayFoods">
-  <h1>{{list.nutrientName}}</h1>
+  <h3>{{list.nutrientName}}</h3>
   {{list.value}}
 
 
