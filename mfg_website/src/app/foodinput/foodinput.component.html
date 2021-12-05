@@ -8,6 +8,11 @@
 <div *ngFor= "let list of DisplayFoods">
   <h3>{{list.nutrientName}}</h3>
   {{list.value}}
+</div>
+
+
+<div *ngIf = description>
+  <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
 
 
 

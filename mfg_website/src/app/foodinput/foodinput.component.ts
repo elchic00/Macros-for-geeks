@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { DiaryComponent } from '../diary/diary.component';
 
 import {SearchfoodsService} from '../services/searchfoods.service';
+import {SharedService} from '../shared.service';
 @Component({
   selector: 'app-foodinput',
   templateUrl: './foodinput.component.html',
@@ -20,7 +21,7 @@ export class FoodinputComponent implements OnInit {
   description: string = ""
   FoodCategory: string = ""
 
-  constructor(private SearchfoodsService: SearchfoodsService) { }
+  constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
   }
@@ -47,7 +48,13 @@ export class FoodinputComponent implements OnInit {
       alert("enter Food")
     }
 
+  }
 
+
+  //TODO
+  PostFoods(){
+
+    console.log("post button works")
   }
 
 
