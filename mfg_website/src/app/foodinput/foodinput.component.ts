@@ -37,9 +37,10 @@ export class FoodinputComponent implements OnInit {
       this.data = response;
       // this.Fooddisplay = data;
       // console.log(this.Fooddisplay['food']);
-      console.log(this.data['foods'][0]['description']);
+      console.log(this.data['foods'][0]);
       console.log(this.data['foods'][0]['foodNutrients'])
-      this.DisplayFoods= this.data['foods'][0]['foodNutrients'];
+      this.DisplayFoods = this.data['foods'][0]['foodNutrients'];
+      this.DisplayFoods = this.DisplayFoods.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
       // console.log(this.DisplayFoods)
       // for (let i =0; i<this.DisplayFoods.length; i++){
 

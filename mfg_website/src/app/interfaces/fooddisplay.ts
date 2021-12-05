@@ -1,4 +1,5 @@
 export interface Fooddisplay {
-  foodName: string;
+  nutrientName: string;
+  value: string;
   description: string;
 }
