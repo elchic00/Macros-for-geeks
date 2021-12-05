@@ -17,11 +17,11 @@ const routes: Routes = [
     path: rootpathnames.Home,
     component: NavbarComponent,
     children: [
-      {path: '', redirectTo: navbarpathnames.Macros, pathMatch: 'full'},
+      { path: '', redirectTo: navbarpathnames.Macros, pathMatch: 'full'},
       { path: navbarpathnames.Diary , component: DiaryComponent, },
       { path: navbarpathnames.Progress, component: ProgressComponent },
       { path: navbarpathnames.Macros , component: MacrosComponent },
-      {path: "Food", component: FoodComponent}
+      { path: "Food", component: FoodComponent}
     ]
   }
 ];
