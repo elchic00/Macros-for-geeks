@@ -39,8 +39,7 @@ export class FoodinputComponent implements OnInit {
         this.FoodCategory = response['foods'][0].foodCategory
         this.NutrientDis = this.data['foods'][0]['foodNutrients'];
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
-        console.log(this.NutrientDis[3].value)
-        // return this.DisplayFoods;
+        console.log(this.NutrientDis)
       });
     }
     else{
@@ -51,12 +50,11 @@ export class FoodinputComponent implements OnInit {
 
   //TODO
   PostFoods(){
-    this.food.UserId = 4;
     this.food.Food = this.description;
-    this.food.Calories = this.NutrientDis[2].value //this.DisplayFoods.filter(x => nutri)
-    this.food.Carbohydrates = this.NutrientDis[1].value
-    this.food.Fats = this.NutrientDis[3].value;
-    this.food.Protein = this.NutrientDis[0].value;
+    this.food.Calories = Math.round(this.NutrientDis[3].value) //this.DisplayFoods.filter(x => nutri)
+    this.food.Carbohydrates = Math.round(this.NutrientDis[2].value)
+    this.food.Fats = Math.round(this.NutrientDis[1].value);
+    this.food.Protein = Math.round(this.NutrientDis[0].value);
     // let currentDateTime =this.datepipe.transform((new Date), 'MM-dd-yyyy');
     this.food.Date = new Date().toDateString();
     this.food.Mealtime = 'Breakfast';
