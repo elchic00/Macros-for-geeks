@@ -5,7 +5,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DiaryComponent } from '../diary/diary.component';
 import {SearchfoodsService} from '../services/searchfoods.service';
-import {SharedService} from '../shared.service';
+import { SharedService } from '../services/shared.service';
 import { VirtualTimeScheduler } from 'rxjs';
 import { DatePipe } from '@angular/common';
 
@@ -17,12 +17,10 @@ import { DatePipe } from '@angular/common';
 
 export class FoodinputComponent implements OnInit {
   InputFood:string = "";
-  //Fooddisplay: any;
   data: any = []
   NutrientDis: NutrientDisplay[] = [];
   description: string = "";
   FoodCategory: string = "";
-  // foods: Food[] = [];
   food = new Food();
 
 
@@ -39,7 +37,7 @@ export class FoodinputComponent implements OnInit {
         this.FoodCategory = response['foods'][0].foodCategory
         this.NutrientDis = this.data['foods'][0]['foodNutrients'];
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
-        console.log(this.NutrientDis)
+        // console.log(this.NutrientDis)
       });
     }
     else{
@@ -59,7 +57,7 @@ export class FoodinputComponent implements OnInit {
     this.food.Date = new Date().toDateString();
     this.food.Mealtime = 'Breakfast';
     this.sharedService.addEntry(this.food).subscribe(food => console.log(food))
-    console.log("post button works")
+    // console.log("post button works")
   }
 
 

@@ -10,7 +10,6 @@ import { MacrosComponent } from './macros/macros.component';
 import { DiaryComponent } from './diary/diary.component';
 import { ProgressComponent } from './progress/progress.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WavesModule,InputsModule,ButtonsModule,MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import {SearchfoodsService} from './services/searchfoods.service';
 import { FoodinputComponent } from './foodinput/foodinput.component'
@@ -21,10 +20,6 @@ import { FoodComponent } from './food/food.component';
 import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { LoginComponent } from './login/login.component';
-
-import {SearchfoodsService} from './services/searchfoods.service';
-import {FoodinputComponent } from './foodinput/foodinput.component'
-import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
