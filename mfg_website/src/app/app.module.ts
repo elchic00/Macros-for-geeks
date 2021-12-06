@@ -1,7 +1,8 @@
 import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; //delete this when actual api is added
+import { WavesModule, InputsModule, ButtonsModule, MDBBootstrapModule  } from 'angular-bootstrap-md'
+import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -21,7 +22,9 @@ import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { LoginComponent } from './login/login.component';
 
-
+import {SearchfoodsService} from './services/searchfoods.service';
+import {FoodinputComponent } from './foodinput/foodinput.component'
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,8 @@ import { LoginComponent } from './login/login.component';
     MDBBootstrapModule,
     FormsModule,
   ],
-  providers: [SharedService,SearchfoodsService],
+  providers: [SharedService,SearchfoodsService, DatePipe],
+  //providers: [SearchfoodsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

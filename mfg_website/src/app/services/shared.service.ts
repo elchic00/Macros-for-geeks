@@ -26,6 +26,7 @@ export class SharedService {
   }
 
   addEntry(food: Food){
+    // const body = JSON.stringify(food)
     return this.http.post(this.APIurl + '/Diary', food)
   }
 }

@@ -5,12 +5,12 @@ namespace macro_for_geeks_api.Models
 {
     public partial class Diary
     {
-        public long UserId { get; set; }
+        public int UserId { get; set; }
         public string Food { get; set; }
-        public long? Calories { get; set; }
-        public long? Carbohydrates { get; set; }
-        public long? Fats { get; set; }
-        public long? Protein { get; set; }
+        public float Calories { get; set; }
+        public float Carbohydrates { get; set; }
+        public float Fats { get; set; }
+        public float Protein { get; set; }
         public string Date { get; set; }
         public string MealTime { get; set; }
 

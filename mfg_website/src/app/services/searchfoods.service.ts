@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FoodSearchCriteria } from '../interfaces/food-search-criteria';
+import {Fooddisplay} from '../interfaces/fooddisplay';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
@@ -10,6 +10,7 @@ export class SearchfoodsService {
   FDAfoodURL = "https://api.nal.usda.gov/fdc/v1/foods/search?query="
   API_KEY= "&api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX"
   limit = "&limit=1"
+  //description?: String;
   // FDAfoodURL = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX&query='
   //FDAfoodURL = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=yFrR7YwKtH57j8KPW2DZLLEndwlooe1Tv327UWAX'
 
@@ -21,8 +22,11 @@ export class SearchfoodsService {
   // }
 
   getFood(Query:String):Observable<any>{
-      
-      return  this.http.get(this.FDAfoodURL + Query + this.limit + this.API_KEY);
+    //this.description = Query;
+    return  this.http.get(this.FDAfoodURL + Query + this.limit + this.API_KEY)
+
+
+
 
   }
 

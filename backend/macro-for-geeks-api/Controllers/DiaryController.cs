@@ -11,7 +11,7 @@ namespace macro_for_geeks_api.Controllers
     [Route("[controller]")]
     public class DiaryController : ControllerBase
     {
-        private IDiaryRepo _diaryRepo;
+        private readonly IDiaryRepo _diaryRepo;
         public DiaryController(IDiaryRepo diaryRepo)
         {
             this._diaryRepo = diaryRepo;
@@ -48,9 +48,9 @@ namespace macro_for_geeks_api.Controllers
         }
         
         [HttpPost]
-        public async Task PostEntry(Diary diary)
+        public void PostEntry(Diary diary)
         {
-            await _diaryRepo.PostEntry(diary);
+            _diaryRepo.PostEntry(diary);
         }
         
     }
