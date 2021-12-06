@@ -5,13 +5,15 @@
 <h3>Category:  {{this.FoodCategory}} </h3>
 <br>
 
-<div *ngFor= "let list of DisplayFoods">
+<div *ngFor= "let list of NutrientDis">
   <h3>{{list.nutrientName}}</h3>
   {{list.value}}
 </div>
 
 
 <div *ngIf = description>
+  <!-- <food class="name"></food>
+  {{this.food.name == }} -->
   <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
 
 

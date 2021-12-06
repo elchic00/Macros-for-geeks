@@ -1,10 +1,10 @@
-export interface Food {
-    readonly UserId?:number
-    readonly Food:string,
-    readonly Calories:number,
-    readonly Carbohydrates:number,
-    readonly Fats:number,
-    readonly Protein:number,
-    readonly Date:Date,
-    readonly Mealtime:string,
+export class Food {
+     UserId!:number
+     Food!:string
+     Calories?:number
+     Carbohydrates!: number
+     Fats!:number
+     Protein!:number
+     Date!:string
+     Mealtime!:string | null
 }

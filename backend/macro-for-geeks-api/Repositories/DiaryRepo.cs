@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,14 +22,14 @@ namespace macro_for_geeks_api.Repositories
         {
             this._db = db;
         }
-        public async Task<IEnumerable<Diary>> GetEntriesByDate(short id, string date)
+        public IEnumerable<Diary> GetEntriesByDate(short id, string date)
         {
             /*Return a list of*/
             return  (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date);
 
         }
 
-        public async Task<IEnumerable<Diary>> GetEntriesByMeal(short id, string meal, string date)
+        public IEnumerable<Diary> GetEntriesByMeal(short id, string meal, string date)
         {
             return (_db.Diaries ?? throw new InvalidOperationException()).Where(d => d.UserId == id && d.Date == date && d.MealTime == meal);
             /*var entries = new List<DiaryViewModel>();
@@ -52,10 +53,11 @@ namespace macro_for_geeks_api.Repositories
             return entries;*/
         }
 
-        public async Task PostEntry(Diary diary)
+        public void PostEntry(Diary diary)
         {
-            await _db.Diaries!.AddAsync(diary);
-            await _db.SaveChangesAsync();
+            Debug.Assert(_db != null, nameof(_db) + " != null");
+            _db.Diaries!.Add(diary);
+             _db.SaveChanges();
         }
 
         public List<Diary> GetEntriesByUser(short id)
