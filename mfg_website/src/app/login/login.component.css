@@ -1,0 +1,44 @@
+.row {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100%;
+  text-align:center;
+  }
+  
+  .row img {
+    max-width: 75%;
+    max-height: auto;
+    padding: 20px;
+    border-radius: 500px; /* crops img to circle */
+  }
+
+  figure {
+    width: 25%;
+    float: left;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+
+.user-andrew:hover, .user-chris:hover, .user-lucas:hover, .user-nancy:hover {
+    opacity: 0.3;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border-radius: 25px;
+}
+
+.welcome {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-style: oblique;
+    font-size: large;
+}
+
+    
