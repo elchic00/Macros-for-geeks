@@ -1,3 +1,33 @@
-<p>macros works!</p>
+<!-- <p>macros works!</p> -->
 <!-- <app-get-user></app-get-user> -->
 <!-- <doughnut></doughnut> -->
+<!-- <input type="text" [(ngModel)]="userID"> -->
+
+<div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <!-- <th>UserId</th> -->
+            <th>Food(g)</th>
+            <th>Calories(g)</th>
+            <th>Carbohydrates(g)</th>
+            <th>Fats(g)</th>
+            <th>Protein(g)</th>
+            <th>Date</th>
+            <th>Mealtime</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let food of foods">
+          <!-- <td>{{ food.UserId }}</td> -->
+          <td>{{ food.Food }}</td>
+          <td>{{ food.Calories }}</td>
+          <td>{{ food.Carbohydrates }}</td>
+          <td>{{ food.Fats }}</td>
+          <td>{{ food.Protein }}</td>
+          <td>{{ food.Date }}</td>
+          <td>{{ food.Mealtime }}</td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>

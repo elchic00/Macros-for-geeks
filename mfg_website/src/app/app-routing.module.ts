@@ -5,7 +5,6 @@ import { ProgressComponent } from './progress/progress.component';
 import { MacrosComponent } from './macros/macros.component';
 import { DiaryComponent } from './diary/diary.component'
 import { navbarpathnames, rootpathnames } from 'src/pathnames';
-import { FoodComponent } from './food/food.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -21,7 +20,6 @@ const routes: Routes = [
       { path: navbarpathnames.Diary , component: DiaryComponent, },
       { path: navbarpathnames.Progress, component: ProgressComponent },
       { path: navbarpathnames.Macros , component: MacrosComponent },
-      { path: "Food", component: FoodComponent}
     ]
   }
 ];

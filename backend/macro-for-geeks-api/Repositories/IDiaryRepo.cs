@@ -16,6 +16,8 @@ namespace macro_for_geeks_api.Repositories
         IEnumerable<Diary> GetEntriesByDate(short id, string date);
         
         IEnumerable<Diary> GetEntriesByMeal(short id, string meal, string date);
+        
+        
 
         void PostEntry(Diary diary);
 

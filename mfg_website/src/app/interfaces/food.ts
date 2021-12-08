@@ -1,29 +1,19 @@
-import { FoodNutrient } from '../interfaces/food-nutrient';
+export class Food 
+{
+     UserId!: number
+     Food!:string
+     Calories!:number
+     Carbohydrates!: number
+     Fats!:number
+     Protein!:number
+     Date!:string
+     Mealtime!:string 
 
-export interface Food {
-  fdcId: number;
-  description: string;
-  lowercaseDescription: string;
-  dataType: string;
-  gtinUpc: string;
-  publishedDate: string;
-  brandOwner: string;
-  ingredients: string;
-  marketCountry: string;
-  foodCategory: string;
-  modifiedDate: string;
-  dataSource: string;
-  servingSizeUnit: string;
-  servingSize: number;
-  householdServingFullText: string;
-  allHighlightFields: string;
-  score: number;
-  foodNutrients: FoodNutrient[];
-  finalFoodInputFoods: any[];
-  foodMeasures: any[];
-  foodAttributes: any[];
-  foodAttributeTypes: any[];
-  foodVersionIds: any[];
-  brandName: string;
-  packageWeight: string;
+     // constructor(Userid, Food,Calories, Carbohydrates )
+     // {
+     //      this.UserId = Userid;
+     //      this.Food = Food;
+     //      this.Calories = Calories;
+          
+     // } 
 }

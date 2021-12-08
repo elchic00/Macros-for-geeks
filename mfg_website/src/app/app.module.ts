@@ -1,6 +1,5 @@
 import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; //delete this when actual api is added
 import { WavesModule, InputsModule, ButtonsModule, MDBBootstrapModule  } from 'angular-bootstrap-md'
 import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
@@ -14,12 +13,11 @@ import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import {SearchfoodsService} from './services/searchfoods.service';
 import { FoodinputComponent } from './foodinput/foodinput.component'
 import {FormsModule} from '@angular/forms';
-import { GetFoodComponent } from './food/get-food/get-food.component';
-import { AddFoodComponent } from './food/add-food/add-food.component';
-import { FoodComponent } from './food/food.component';
 import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { LoginComponent } from './login/login.component';
+import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +25,6 @@ import { LoginComponent } from './login/login.component';
     MacrosComponent,
     DiaryComponent,
     ProgressComponent,
-    GetFoodComponent,
-    AddFoodComponent,
-    FoodComponent,
     GetUserComponent,
     DonutChartComponent,
     FoodinputComponent,
@@ -44,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     ButtonsModule,
     MDBBootstrapModule,
     FormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [SharedService,SearchfoodsService, DatePipe],
   //providers: [SearchfoodsService],

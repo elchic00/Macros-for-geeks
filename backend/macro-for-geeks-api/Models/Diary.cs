@@ -11,7 +11,7 @@ namespace macro_for_geeks_api.Models
         public float Carbohydrates { get; set; }
         public float Fats { get; set; }
         public float Protein { get; set; }
-        public string Date { get; set; }
+        public string? Date { get; set; }
         public string MealTime { get; set; }
 
         /*public virtual User User { get; set; }*/

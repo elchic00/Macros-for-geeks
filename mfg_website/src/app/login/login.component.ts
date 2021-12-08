@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodinputComponent } from '../foodinput/foodinput.component';
 
 @Component({
   selector: 'app-login',
@@ -11,5 +12,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

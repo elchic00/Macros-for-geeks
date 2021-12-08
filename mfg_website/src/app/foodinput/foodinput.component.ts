@@ -1,13 +1,11 @@
 import { NutrientDisplay } from './../interfaces/nutrientDisplay';
-import { Food } from './../food/food';
-import { Fooddisplay } from './../interfaces/fooddisplay';
+import { Food } from '../interfaces/food';
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { DiaryComponent } from '../diary/diary.component';
-import {SearchfoodsService} from '../services/searchfoods.service';
+import { SearchfoodsService } from '../services/searchfoods.service';
 import { SharedService } from '../services/shared.service';
-import { VirtualTimeScheduler } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import Swal from 'sweetalert2/dist/sweetalert2.js';  
+
 
 @Component({
   selector: 'app-foodinput',
@@ -16,38 +14,39 @@ import { DatePipe } from '@angular/common';
 })
 
 export class FoodinputComponent implements OnInit {
-  InputFood:string = "";
+  InputFood: string = "";
   data: any = []
   NutrientDis: NutrientDisplay[] = [];
   description: string = "";
   FoodCategory: string = "";
   food = new Food();
 
-
   constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
+
   }
 
   onClick() {
-    if(this.InputFood){
+    if (this.InputFood) {
       this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
         this.data = response;
         this.description = response['foods'][0].description
         this.FoodCategory = response['foods'][0].foodCategory
         this.NutrientDis = this.data['foods'][0]['foodNutrients'];
-        this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)'|| x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein'|| x.nutrientName == 'Energy')
+        this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
         // console.log(this.NutrientDis)
       });
     }
-    else{
+    else {
       alert("enter Food")
     }
 
   }
 
   //TODO
-  PostFoods(){
+  PostFoods() {
+    if(this.InputFood)
     this.food.Food = this.description;
     this.food.Calories = Math.round(this.NutrientDis[3].value) //this.DisplayFoods.filter(x => nutri)
     this.food.Carbohydrates = Math.round(this.NutrientDis[2].value)
@@ -55,13 +54,12 @@ export class FoodinputComponent implements OnInit {
     this.food.Protein = Math.round(this.NutrientDis[0].value);
     // let currentDateTime =this.datepipe.transform((new Date), 'MM-dd-yyyy');
     this.food.Date = new Date().toDateString();
-    this.food.Mealtime = 'Breakfast';
-    this.sharedService.addEntry(this.food).subscribe(food => console.log(food))
+    this.sharedService.addEntry(this.food).subscribe(food => Swal.fire("Good job!", "You posted your food info!", "success"))
     // console.log("post button works")
   }
 
-
+  simpleAlert(){  
+    Swal.fire('Hello Angular');  
+  }  
 
 }
-
-
