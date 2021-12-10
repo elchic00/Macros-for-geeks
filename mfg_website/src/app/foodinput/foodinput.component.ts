@@ -30,13 +30,11 @@ export class FoodinputComponent implements OnInit {
   onClick() {
     if (this.InputFood) {
       this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
-        this.data = response;
-        this.description = response['foods'][0].description
-        this.FoodCategory = response['foods'][0].foodCategory
+        this.data = response;   });
+        this.description = this.data['foods'][0].description
+        this.FoodCategory = this.data['foods'][0].foodCategory
         this.NutrientDis = this.data['foods'][0]['foodNutrients'];
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
-        // console.log(this.NutrientDis)
-      });
     }
     else {
       alert("enter Food")
@@ -57,9 +55,5 @@ export class FoodinputComponent implements OnInit {
     this.sharedService.addEntry(this.food).subscribe(food => Swal.fire("Good job!", "You posted your food info!", "success"))
     // console.log("post button works")
   }
-
-  simpleAlert(){  
-    Swal.fire('Hello Angular');  
-  }  
 
 }
