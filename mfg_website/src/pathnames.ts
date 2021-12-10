@@ -1,5 +1,5 @@
 class NavbarPathnames {
-    readonly Diary:string = "Diary";
+    readonly Diary:string = "Search";
     readonly Macros:string = "Macros";
     readonly Progress:string = "Progress";
     // readonly Food:string = "Food"
