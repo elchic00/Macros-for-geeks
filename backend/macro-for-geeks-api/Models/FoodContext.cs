@@ -54,6 +54,8 @@ namespace macro_for_geeks_api.Models
                 entity.Property(e => e.Email).IsRequired();
 
                 entity.Property(e => e.Name).IsRequired();
+                
+                entity.Property(e => e.picture).IsRequired();
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -14,6 +14,7 @@ namespace macro_for_geeks_api.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public string picture { get; set; }
 
         /*public ICollection<Diary> Diaries { get; set; }*/
     }

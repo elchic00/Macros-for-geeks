@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tcc2oOydmnu03XTctFPedzdl5RBKb9QdqBvy/cGvBAk0O+mOdxHBdhgkDrk/3uPmPVzoyIPoi0tfaTBHR/wghg==",
+  "dgSpecHash": "pPHBVH7y0QR+ZLY7hUU7WGLdbnJTPDPUlN4vf+voN/7dXR1HdvXgx5ELWDwliP6L9TE5k5d6Qms3s3GVLAWvuw==",
   "success": true,
-  "projectFilePath": "/home/andrewa/React_Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
+  "projectFilePath": "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
   "expectedPackageFiles": [
     "/home/andrewa/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/home/andrewa/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

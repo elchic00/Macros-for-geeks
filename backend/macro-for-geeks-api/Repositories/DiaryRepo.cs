@@ -37,7 +37,7 @@ namespace macro_for_geeks_api.Repositories
             foreach (var r in res)
             {
                 DiaryViewModel diary = new DiaryViewModel
-                {
+                {date
                     UserId = r.UserId,
                     Food = r.Food,
                     Calories = r.Calories,
