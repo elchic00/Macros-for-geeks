@@ -4,31 +4,17 @@
     <label>Welcome! Click on a user to go home.</label>
 </div> <br>
 
-<div class="row">
-<a>
-    <figure>
-    <img src="/assets/Andrew_Icon.png" class="user-andrew" title="Andrew" routerLink="/Home">  
-    <!-- <app-foodinput [food.userId] = "food.UserId"/>
-    ></app-foodinput> -->
-        <figcaption>Andrew</figcaption>
-    </figure>
-
-    <figure>
-    <img src="/assets/Christina_Icon.png" class="user-chris" title="Christina" routerLink="/Home">
-    <figcaption>Christina</figcaption>
-    </figure>
-
-    <figure>
-    <img src="/assets/Lucas_Icon.png" class="user-lucas" title="Lucas" routerLink="/Home">
-    <figcaption>Lucas</figcaption>
-    </figure>
-
-    <figure>
-    <img src="/assets/Nancy_Icon.png" class="user-nancy" title="Nancy" routerLink="/Home">
-    <figcaption>Nancy</figcaption>
-   </figure>
-</a>
+<div fxLayout="row">
+<div *ngFor='let user of users'>
+    <a>
+        <figure>
+        <img src={{user.picture}} class="user-andrew" title={{user.name}} routerLink="/Home">
+            <figcaption>{{user.name}}</figcaption>
+        </figure>
+    </a>
+    </div>
 </div>
+
 
 
 

@@ -6,7 +6,6 @@ import { SharedService } from '../services/shared.service';
 import { DatePipe } from '@angular/common';
 import Swal from 'sweetalert2/dist/sweetalert2.js';  
 
-
 @Component({
   selector: 'app-foodinput',
   templateUrl: './foodinput.component.html',
@@ -24,7 +23,6 @@ export class FoodinputComponent implements OnInit {
   constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
-
   }
 
   onClick() {
@@ -39,10 +37,8 @@ export class FoodinputComponent implements OnInit {
     else {
       alert("enter Food")
     }
-
   }
 
-  //TODO
   PostFoods() {
     if(this.InputFood)
     this.food.Food = this.description;

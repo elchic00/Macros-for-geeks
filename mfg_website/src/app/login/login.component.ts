@@ -1,8 +1,8 @@
 import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
-import { FoodinputComponent } from '../foodinput/foodinput.component';
 import { SharedService } from '../services/shared.service';
 import { User } from '../user/user';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,6 +10,7 @@ import { User } from '../user/user';
 })
 export class LoginComponent implements OnInit {
 users : User[] = []
+
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,9 @@ users : User[] = []
 
   getUsers(){
     this.sharedService.getUsers().subscribe(user => this.users = user)
+    console.log(this.users)
   }
-  
+
+
+
 }
