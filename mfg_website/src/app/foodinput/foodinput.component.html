@@ -12,7 +12,7 @@
 
 <div *ngIf = description>
   <br/>
-  <select #cricket (change)="update($event)" >
+  <select (change)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal'>
         {{meal}}
     </option>

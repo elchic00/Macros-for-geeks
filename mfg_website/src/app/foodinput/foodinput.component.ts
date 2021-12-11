@@ -21,7 +21,7 @@ export class FoodinputComponent implements OnInit {
   food = new Food();
   mealTime : string[] = ['Breakfast','Lunch','Dinner']
 
-  selected = "----"
+  selected = this.mealTime[0]
   
   update(e : any){
     this.selected = e.target.value

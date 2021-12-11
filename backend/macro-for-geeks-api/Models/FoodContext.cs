@@ -16,14 +16,15 @@ namespace macro_for_geeks_api.Models
         {
         }
 
-        public virtual DbSet<Diary>? Diaries { get; set; }
-        public virtual DbSet<User>? Users { get; set; }
+        public virtual DbSet<Diary> Diaries { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite("Data source = FoodConnectionString");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlite("Data source=./Food.db");
             }
         }
 
@@ -31,11 +32,11 @@ namespace macro_for_geeks_api.Models
         {
             modelBuilder.Entity<Diary>(entity =>
             {
-                entity.HasKey(e => new { e.UserId, e.Date, e.Food });
+                entity.HasKey(e => e.Entryid);
 
                 entity.ToTable("Diary");
 
-                entity.HasIndex(e => new { e.UserId, e.Date }, "diary_index");
+                entity.Property(e => e.Entryid).HasColumnName("entryid");
 
                 entity.Property(e => e.MealTime).IsRequired();
 
@@ -49,13 +50,13 @@ namespace macro_for_geeks_api.Models
             {
                 entity.ToTable("User");
 
-                entity.HasIndex(e => e.Id, "UserID_index");
+                entity.HasIndex(e => e.Id, "UID_index");
 
                 entity.Property(e => e.Email).IsRequired();
 
                 entity.Property(e => e.Name).IsRequired();
-                
-                entity.Property(e => e.picture).IsRequired();
+
+                entity.Property(e => e.Picture).HasColumnName("picture");
             });
 
             OnModelCreatingPartial(modelBuilder);
