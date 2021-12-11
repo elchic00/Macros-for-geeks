@@ -4,14 +4,19 @@
     <label>Welcome! Click on a user to go home.</label>
 </div> <br>
 
+<!-- <div *ngFor='let user of users '>
+    <h3>{{user.id}}</h3>
+</div> -->
+
 <div fxLayout="row">
-<div *ngFor='let user of users'>
-    <a>
-        <figure>
-        <img src={{user.picture}} class="user-andrew" title={{user.name}} routerLink="/Home">
-            <figcaption>{{user.name}}</figcaption>
-        </figure>
-    </a>
+    <div *ngFor='let user of users; '>
+        <a>
+            <figure>
+            <img src={{user.picture}} class="user-andrew" title={{user.name}} 
+            routerLink="/Home" (click)="this.userID(user.id)">
+                <figcaption>{{user.name}}</figcaption>
+            </figure>
+        </a>
     </div>
 </div>
 

@@ -10,7 +10,7 @@ import { SharedService } from '../services/shared.service';
 })
 export class MacrosComponent implements OnInit {
   foods: any = [];
-  userID: number = 1;
+  userID: number = this.userId;
   date : string = new Date().toDateString();
 
   constructor(private sharedService: SharedService, public datepipe: DatePipe) { }
@@ -27,5 +27,9 @@ export class MacrosComponent implements OnInit {
     }
   }
 
+  get userId():number {
+    console.log("userID is:" + this.sharedService.userId)
+    return this.sharedService.userId
+  }
 
 }

@@ -1,6 +1,6 @@
 export interface User {
-    readonly userId?:number
+    id: number
     readonly name:string,
-    readonly email:number,
+    readonly email:string,
     readonly picture: string
 }

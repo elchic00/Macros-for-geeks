@@ -11,7 +11,7 @@ namespace macro_for_geeks_api.Models
             Diaries = new HashSet<Diary>();
         }*/
         [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string picture { get; set; }

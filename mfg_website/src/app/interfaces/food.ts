@@ -6,7 +6,7 @@ export class Food
      Carbohydrates!: number
      Fats!:number
      Protein!:number
-     Date!:string
+     Date!:string | null
      Mealtime!:string 
 
      // constructor(Userid, Food,Calories, Carbohydrates )

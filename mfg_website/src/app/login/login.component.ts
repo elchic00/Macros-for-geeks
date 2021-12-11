@@ -9,7 +9,7 @@ import { User } from '../user/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-users : User[] = []
+  users : User[] = []
 
   constructor(private sharedService: SharedService) { }
 
@@ -19,9 +19,14 @@ users : User[] = []
 
   getUsers(){
     this.sharedService.getUsers().subscribe(user => this.users = user)
-    console.log(this.users)
+    console.log((this.users))
   }
 
+  get userId():number {
+    return this.sharedService.userId
+  }
 
-
+  userID(val:number) {
+    this.sharedService.userId = val;
+  }
 }

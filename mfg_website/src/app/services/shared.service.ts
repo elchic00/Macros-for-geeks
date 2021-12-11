@@ -9,10 +9,11 @@ import { User } from '../user/user';
 })
 export class SharedService {
   readonly APIurl = "https://localhost:7062";
+  userId!: number;
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<any>{
+  getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.APIurl + '/User')
   }
 
@@ -32,6 +33,7 @@ export class SharedService {
     // const body = JSON.stringify(food)
     return this.http.post(this.APIurl + '/Diary', food)
   }
+
 }
 
 
