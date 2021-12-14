@@ -3,6 +3,7 @@ using macro_for_geeks_api.Models;
 using macro_for_geeks_api.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,7 +31,11 @@ namespace macro_for_geeks_api
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
             services.AddControllers();
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "../../mfg_website/dist";
+            });
             
         }
         
@@ -43,6 +48,9 @@ namespace macro_for_geeks_api
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            
             
             app.UseCors("FoodAPIPolicy");
 
@@ -54,13 +62,26 @@ namespace macro_for_geeks_api
             {
                 endpoints.MapControllers();
             });
+             app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "../../mfg_website";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
             
-            //Swagger configuration
+            
+            /*//Swagger configuration
             HttpConfiguration config = new HttpConfiguration();
             SwaggerConfig.Register(config);
             app.UseSwagger();  
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "macro-for-geeks API");  
-            });  
+            });  */
             
         }
     }

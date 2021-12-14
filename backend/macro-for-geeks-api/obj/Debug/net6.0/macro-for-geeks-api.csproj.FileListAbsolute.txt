@@ -256,3 +256,6 @@
 /home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/obj/Debug/net6.0/ref/macro-for-geeks-api.dll
 /home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/obj/Debug/net6.0/macro-for-geeks-api.pdb
 /home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/obj/Debug/net6.0/macro-for-geeks-api.genruntimeconfig.cache
+/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.NodeServices.dll
+/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.SpaServices.dll
+/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll

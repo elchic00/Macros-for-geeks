@@ -22,7 +22,6 @@ export class FoodinputComponent implements OnInit {
   mealTime : string[] = ['Breakfast','Lunch','Dinner']
 
   selected = this.mealTime[0]
-  
   update(e : any){
     this.selected = e.target.value
   }
@@ -48,7 +47,7 @@ export class FoodinputComponent implements OnInit {
 
   PostFoods() {
     if(this.InputFood)
-    this.food.Food = this.description;
+    this.food.Food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
     this.food.Calories = Math.round(this.NutrientDis[3].value) //this.DisplayFoods.filter(x => nutri)
     this.food.Carbohydrates = Math.round(this.NutrientDis[2].value)
     this.food.Fats = Math.round(this.NutrientDis[1].value);
