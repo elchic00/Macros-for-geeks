@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-
+using System.Net;
+using System.Net.Http;
 using macro_for_geeks_api.Models;
 
 namespace macro_for_geeks_api.Repositories
@@ -46,11 +47,12 @@ namespace macro_for_geeks_api.Repositories
             return entries;*/
         }
 
-        public void PostEntry(Diary diary)
+        public  void PostEntry(Diary diary)
         {
-            Debug.Assert(_db != null, nameof(_db) + " != null");
-            _db.Diaries!.Add(diary);
-             _db.SaveChanges();
+                _db.Diaries!.Add(diary);
+                _db.SaveChanges();
+                /*HttpRequestMessage request = new HttpRequestMessage();
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.Accepted, "Successful post to database");*/
         }
 
         public List<Diary> GetEntriesByUser(short id)

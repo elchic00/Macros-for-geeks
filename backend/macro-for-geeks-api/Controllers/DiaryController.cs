@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using macro_for_geeks_api.Models;
 using macro_for_geeks_api.Repositories;
@@ -48,9 +49,9 @@ namespace macro_for_geeks_api.Controllers
         }
         
         [HttpPost]
-        public void PostEntry(Diary diary)
+        public /*HttpResponseMessage*/ void PostEntry(Diary diary)
         {
-            _diaryRepo.PostEntry(diary);
+           /*return*/ _diaryRepo.PostEntry(diary)/*.EnsureSuccessStatusCode()*/;
         }
         
     }

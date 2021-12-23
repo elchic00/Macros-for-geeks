@@ -59,8 +59,10 @@ export class FoodinputComponent implements OnInit {
     this.food.UserId = this.userId
     console.log(this.selected)
     this.food.Mealtime = this.selected
-    this.sharedService.addEntry(this.food).subscribe(food => Swal.fire("Good job!", "You posted your food info!", "success"))
-  }
+    this.sharedService.addEntry(this.food).subscribe(
+      response => {Swal.fire("Good job!", "You posted your food info!", "success")},
+      error => {Swal.fire('Oops....','Your food did not post!', 'error')}
+    )}
 
   get userId():number {
     return this.sharedService.userId
