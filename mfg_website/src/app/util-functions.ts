@@ -1,4 +1,4 @@
-import { Food } from "./food/food";
+import { Food } from "./interfaces/food";
 
 // export interface Food {
 //     readonly Food:string,

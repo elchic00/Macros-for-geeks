@@ -29,6 +29,7 @@ namespace macro_for_geeks_api
             }));
             services.AddEntityFrameworkSqlite().AddDbContext<FoodContext>(item => item.UseSqlite(Configuration.GetConnectionString("FoodConnectionString")));
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IMealRepo, MealRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
             services.AddControllers();
             //services.AddSwaggerGen();
@@ -76,8 +77,8 @@ namespace macro_for_geeks_api
             });
             
             
-            /*//Swagger configuration
-            HttpConfiguration config = new HttpConfiguration();
+            //Swagger configuration
+            /*HttpConfiguration config = new HttpConfiguration();
             SwaggerConfig.Register(config);
             app.UseSwagger();  
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "macro-for-geeks API");  

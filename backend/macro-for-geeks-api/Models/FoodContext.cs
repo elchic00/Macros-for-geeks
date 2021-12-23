@@ -17,13 +17,14 @@ namespace macro_for_geeks_api.Models
         }
 
         public virtual DbSet<Diary> Diaries { get; set; }
+        public virtual DbSet<Mealtime> Mealtimes { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlite("Data source=./Food.db");
             }
         }
@@ -36,14 +37,28 @@ namespace macro_for_geeks_api.Models
 
                 entity.ToTable("Diary");
 
+                entity.HasIndex(e => e.Entryid, "IX_Diary_entryid")
+                    .IsUnique();
+
                 entity.Property(e => e.Entryid).HasColumnName("entryid");
 
-                entity.Property(e => e.MealTime).IsRequired();
+                /*entity.HasOne(d => d.MealTimeNavigation)
+                    .WithMany(p => p.Diaries)
+                    .HasForeignKey(d => d.MealTime);
 
-                /*entity.HasOne(d => d.User)
+                entity.HasOne(d => d.User)
                     .WithMany(p => p.Diaries)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull);*/
+            });
+
+            modelBuilder.Entity<Mealtime>(entity =>
+            {
+                entity.HasKey(e => e.Meal);
+
+                entity.ToTable("Mealtime");
+
+                entity.Property(e => e.Meal).HasColumnName("meal");
             });
 
             modelBuilder.Entity<User>(entity =>

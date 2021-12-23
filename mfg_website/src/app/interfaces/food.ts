@@ -1,4 +1,6 @@
-export class Food 
+//import {Meals} from "./meals";
+
+export class Food
 {
      UserId!: number
      Food!:string
@@ -7,13 +9,13 @@ export class Food
      Fats!:number
      Protein!:number
      Date!:string | null
-     Mealtime!:string 
+     Mealtime!:any
 
      // constructor(Userid, Food,Calories, Carbohydrates )
      // {
      //      this.UserId = Userid;
      //      this.Food = Food;
      //      this.Calories = Calories;
-          
-     // } 
+
+     // }
 }

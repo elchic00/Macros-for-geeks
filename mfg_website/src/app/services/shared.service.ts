@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Food } from '../interfaces/food';
+//import { Meals } from '../interfaces/meals';
 import { User } from '../user/user';
 
 @Injectable({
@@ -17,6 +18,10 @@ export class SharedService {
     return this.http.get<User[]>(this.APIurl + '/User')
   }
 
+  getMeal(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIurl + '/Meal')
+  }
+
   getUser(id: number): Observable<User>{
     const url = `${this.APIurl}/${id}`
     return this.http.get<any>(url)
@@ -25,9 +30,7 @@ export class SharedService {
   getDiaryByDate(id: number, date: string): Observable<Food>{
     return this.http.get< any > (this.APIurl + '/Diary/'+ id+'/'+ date)
   }
-
   // getDiaryById(id: number,):
-
 
   addEntry(food: Food){
     // const body = JSON.stringify(food)

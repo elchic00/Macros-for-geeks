@@ -2,7 +2,7 @@
 <button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect>Search</button>
 <h3>Results: {{this.description | titlecase}}</h3>
 <br>
-<h3>Category:  {{this.FoodCategory}} </h3>
+  <h3>Category:  {{this.FoodCategory}} </h3>
 <br>
 
 <div *ngFor= "let list of NutrientDis">
@@ -13,18 +13,11 @@
 <div *ngIf = description>
   <br/>
   <select (change)="update($event)" >
-    <option *ngFor="let meal of mealTime" [value]='meal'>
-        {{meal}}
+    <option *ngFor="let meal of mealTime" [value]='meal.meal'>
+        {{meal.meal}}
     </option>
-  <!-- <p>You selected {{selected}}</p> -->
-
 </select>
   <br/>
-  <!-- <label>User ID: </label> -->
-  <!-- <input [(ngModel)] = "food.UserId"/> -->
+
   <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
 </div>
-
-<!-- <button [swal]="['Notification!', ' This is basic notification/', 'info']">
-  Click Me
-</button> -->

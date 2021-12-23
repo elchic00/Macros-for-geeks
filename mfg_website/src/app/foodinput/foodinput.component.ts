@@ -1,10 +1,11 @@
 import { NutrientDisplay } from './../interfaces/nutrientDisplay';
 import { Food } from '../interfaces/food';
+//import { Meals } from '../interfaces/meals';
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { SearchfoodsService } from '../services/searchfoods.service';
 import { SharedService } from '../services/shared.service';
 import { DatePipe } from '@angular/common';
-import Swal from 'sweetalert2/dist/sweetalert2.js';  
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-foodinput',
@@ -19,9 +20,9 @@ export class FoodinputComponent implements OnInit {
   description: string = "";
   FoodCategory: string = "";
   food = new Food();
-  mealTime : string[] = ['Breakfast','Lunch','Dinner']
+  mealTime : any[] = []
+  selected : any
 
-  selected = this.mealTime[0]
   update(e : any){
     this.selected = e.target.value
   }
@@ -29,6 +30,8 @@ export class FoodinputComponent implements OnInit {
   constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
+    this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals; console.log(this.mealTime);})
+    this.selected = this.mealTime[0].meal
   }
 
   onClick() {
@@ -54,6 +57,7 @@ export class FoodinputComponent implements OnInit {
     this.food.Protein = Math.round(this.NutrientDis[0].value);
     this.food.Date = new Date().toDateString(); //currentDateTime
     this.food.UserId = this.userId
+    console.log(this.selected)
     this.food.Mealtime = this.selected
     this.sharedService.addEntry(this.food).subscribe(food => Swal.fire("Good job!", "You posted your food info!", "success"))
   }
