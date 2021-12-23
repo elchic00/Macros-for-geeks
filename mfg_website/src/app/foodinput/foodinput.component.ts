@@ -21,7 +21,8 @@ export class FoodinputComponent implements OnInit {
   FoodCategory: string = "";
   food = new Food();
   mealTime : any[] = []
-  selected : any
+
+  selected = "Breakfast"
 
   update(e : any){
     this.selected = e.target.value
@@ -31,7 +32,6 @@ export class FoodinputComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals; console.log(this.mealTime);})
-    this.selected = this.mealTime[0].meal
   }
 
   onClick() {
