@@ -2,10 +2,7 @@
     max-width: 100px;
     margin: 0 auto;
     height: 100%;
-<<<<<<< HEAD
-=======
     /* border-radius: 50% */
->>>>>>> styling_changes2
     /* text-align:center; */
 }
 
@@ -13,20 +10,11 @@
     max-width: 75%;
     max-height: auto;
     padding: 20px;
-<<<<<<< HEAD
     border-radius: 500px; /* crops img to circle */
 
 }
 
 
-=======
-    /* border-radius: 500px; */
-    /* crops img to circle */
-
-}
-
-
->>>>>>> styling_changes2
 figure {
     width: 25%;
     float: left;
@@ -60,35 +48,20 @@ figure {
 
 
 .pics{
-<<<<<<< HEAD
   width: 301px;
   height: 296px;
   margin-bottom: 40px;
   margin-left: 30px;
   border-radius: 500px; /* crops img to circle */
 }
-=======
-
-  position: relative;
-  overflow: hidden;
-
-  padding: 20px
-  /* margin-bottom: 20px; */
-
-
-}
 
 .profile-pic {
-  height : 296px;
   width: 301px;
-  border-radius: 50%;
+  height: 296px;
+  border-radius: 50%; /* crops img to circle */
 
 }
-
 .profile-pic:hover{
   opacity: 0.3;
 }
 
-
-
->>>>>>> styling_changes2
