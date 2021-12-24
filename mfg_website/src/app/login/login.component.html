@@ -10,19 +10,18 @@
 
             <figure>
             <div class = "pics">
-            <img
-            src={{user.picture}}
-            height = 296px
-            width = 301px
-            border-radius = 500px
-            class="user-andrew"
-            title={{user.name}}
-            routerLink="/Home"
-            (click)="this.userID(user.id)"
+              <img class = "profile-pic"
+              src={{user.picture}}
 
-            >
-            <figcaption text-align="auto">{{user.name}}</figcaption>
+              title={{user.name}}
+              routerLink="/Home"
+              (click)="this.userID(user.id)"
+
+
+              />
+              <figcaption>{{user.name}}</figcaption>
             </div>
+
 
 
             </figure>
