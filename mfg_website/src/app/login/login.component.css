@@ -1,7 +1,8 @@
 .row {
-    max-width: 1500px;
+    max-width: 100px;
     margin: 0 auto;
     height: 100%;
+    /* border-radius: 50% */
     /* text-align:center; */
 }
 
@@ -9,7 +10,8 @@
     max-width: 75%;
     max-height: auto;
     padding: 20px;
-    border-radius: 500px; /* crops img to circle */
+    /* border-radius: 500px; */
+    /* crops img to circle */
 
 }
 
@@ -20,6 +22,8 @@ figure {
     margin: 0;
     text-align: center;
     padding: 0;
+    /* border-radius: 50%; */
+
 }
 
 .user-andrew:hover, .user-chris:hover, .user-lucas:hover, .user-nancy:hover {
@@ -45,9 +49,26 @@ figure {
 
 
 .pics{
-  width: 301px;
-  height: 296px;
-  margin-bottom: 40px;
-  margin-left: 30px;
-  border-radius: 500px; /* crops img to circle */
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px
+  /* margin-bottom: 20px; */
+
+
 }
+
+.profile-pic {
+  height : 296px;
+  width: 301px;
+  border-radius: 50%;
+
+}
+
+.profile-pic:hover{
+  opacity: 0.3;
+}
+
+
+
