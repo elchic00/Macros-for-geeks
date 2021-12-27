@@ -7,17 +7,20 @@
 
 <div *ngFor= "let list of NutrientDis">
   <h3>{{list.nutrientName | titlecase}}</h3>
-  {{list.value}}
+  {{list.value * this.serving | number : '1.2-2' }}
 </div>
+<br/>
 
 <div *ngIf = description>
-  <br/>
-  <select (change)="update($event)" >
+  <div class = 'serv'>
+    <input class = 'serv' type="text" [(ngModel)]="serving">
+  </div>
+  <select class="dropbox" (change)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal'>
         {{meal.meal}}
     </option>
 </select>
   <br/>
 
-  <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
+    <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
 </div>

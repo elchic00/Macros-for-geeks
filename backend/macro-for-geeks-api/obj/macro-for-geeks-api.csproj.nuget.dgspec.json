@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {}
+    "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {}
   },
   "projects": {
-    "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {
+    "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
+        "projectUniqueName": "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
         "projectName": "macro-for-geeks-api",
-        "projectPath": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
-        "packagesPath": "/Users/Nancy/.nuget/packages/",
-        "outputPath": "/Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/obj/",
+        "projectPath": "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/macro-for-geeks-api.csproj",
+        "packagesPath": "/home/andrewa/.nuget/packages/",
+        "outputPath": "/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Nancy/.nuget/NuGet/NuGet.Config"
+          "/home/andrewa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -99,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

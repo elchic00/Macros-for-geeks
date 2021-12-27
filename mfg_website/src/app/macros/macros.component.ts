@@ -1,7 +1,5 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
-// import { FoodService } from 'src/food.service';
 
 @Component({
   selector: 'app-macros',
@@ -13,7 +11,7 @@ export class MacrosComponent implements OnInit {
   userID: number = this.userId;
   date : string = new Date().toDateString();
 
-  constructor(private sharedService: SharedService, public datepipe: DatePipe) { }
+  constructor(private sharedService: SharedService) { }
   ngOnInit(): void {
     this.loadMacs()
   }
@@ -21,8 +19,7 @@ export class MacrosComponent implements OnInit {
   loadMacs() {
     if(this.foods && this.userID){
       this.sharedService.getDiaryByDate(this.userID, this.date).subscribe(data => {
-        this.foods = data; 
-        console.log(this.foods)
+        this.foods = data;
       })
     }
   }
@@ -31,5 +28,6 @@ export class MacrosComponent implements OnInit {
     console.log("userID is:" + this.sharedService.userId)
     return this.sharedService.userId
   }
+
 
 }

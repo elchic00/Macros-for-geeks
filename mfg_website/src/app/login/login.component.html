@@ -7,25 +7,17 @@
 <div fxLayout="row">
     <div *ngFor='let user of users; '>
         <a>
-
             <figure>
             <div class = "pics">
               <img class = "profile-pic"
               src={{user.picture}}
-
               title={{user.name}}
               routerLink="/Home"
               (click)="this.userID(user.id)"
-
-
               />
               <figcaption>{{user.name}}</figcaption>
             </div>
-
-
-
             </figure>
-
         </a>
     </div>
 </div>
