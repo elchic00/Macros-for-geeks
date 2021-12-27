@@ -9,7 +9,7 @@ import { SharedService } from '../services/shared.service';
 export class MacrosComponent implements OnInit {
   foods: any = [];
   userID: number = this.userId;
-  date : string = new Date().toDateString();
+  date : Date = new Date();
 
   constructor(private sharedService: SharedService) { }
   ngOnInit(): void {
