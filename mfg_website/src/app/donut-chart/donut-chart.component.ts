@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Chart} from 'chart.js';
+import { ChartType } from 'chart.js';
+import { MultiDataSet, Label } from 'ng2-charts';
+import {SharedService} from "../services/shared.service";
 
 @Component({
   selector: 'doughnut',
@@ -7,55 +9,29 @@ import { Chart} from 'chart.js';
   styleUrls: ['./donut-chart.component.css']
 })
 export class DonutChartComponent implements OnInit {
-  ctx: any;
-  canvas: any;
+  date : Date = new Date();
+  data : any
+  // Doughnut
+  public doughnutChartLabels: Label[] = ['Protein', 'Fat', 'Carbohydrate'];
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100]/*,
+    [50, 150, 120],
+    [250, 130, 70],*/
+  ];
+  public doughnutChartType: ChartType = 'doughnut';
 
-  constructor() {
+  constructor(private sharedService: SharedService) {
   }
 
-  @ViewChild('myChart') mychart:any;
-
-  ngOnInit():void {}
-
-  ngAfterViewInit(): void {
-    // this.canvas = this.mychart.nativeElement;
-    // this.ctx = this.canvas.getContext('2d');
-
-    // new Chart( this.ctx, {
-    //   type: 'bar',
-    //   data: {
-    //     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    //     datasets: [{
-    //       label: '# of Votes',
-    //       data: [12, 19, 3, 5, 2, 3],
-    //       backgroundColor: [
-    //         'rgba(255, 99, 132, 0.2)',
-    //         'rgba(54, 162, 235, 0.2)',
-    //         'rgba(255, 206, 86, 0.2)',
-    //         'rgba(75, 192, 192, 0.2)',
-    //         'rgba(153, 102, 255, 0.2)',
-    //         'rgba(255, 159, 64, 0.2)'
-    //       ],
-    //       borderColor: [
-    //         'rgba(255, 99, 132, 1)',
-    //         'rgba(54, 162, 235, 1)',
-    //         'rgba(255, 206, 86, 1)',
-    //         'rgba(75, 192, 192, 1)',
-    //         'rgba(153, 102, 255, 1)',
-    //         'rgba(255, 159, 64, 1)'
-    //       ],
-    //       borderWidth: 1
-    //     }]
-    //   },
-    //   options: {
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true
-    //       }
-    //     }
-    //   }
-    // } );
+  ngOnInit():void {
+    this.data = this.sharedService.getDiaryByDate(this.sharedService.userId,this.date)
+    console.log(this.data)
   }
-  
+
+  get userId():number {
+    console.log("userID is:" + this.sharedService.userId)
+    return this.sharedService.userId
+  }
+
 
 }
