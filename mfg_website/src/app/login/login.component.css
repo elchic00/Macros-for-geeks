@@ -1,67 +1,33 @@
-.row {
-    max-width: 100px;
-    margin: 0 auto;
-    height: 100%;
-    /* border-radius: 50% */
-    /* text-align:center; */
+.logo { /* macrosforgeeks gif */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  border-radius: 25px;
 }
 
-.row img {
-    max-width: 75%;
-    max-height: auto;
-    padding: 20px;
-    border-radius: 500px; /* crops img to circle */
-
+.welcome { /* welcome msg */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: oblique;
+  font-size: large;
 }
 
-
-figure {
-    width: 25%;
-    float: left;
-    margin: 0;
-    text-align: center;
-    padding: 0;
-    /* border-radius: 50%; */
-
+.profile-pic, figure { /* user pictures - figure is main 4, profile-pic is dog/Tom */
+width: 200px;
+text-align: center; /* for name labels */
+border-radius: 50%; /* crops img to circle for Tom */
+margin-right: 50px;
+margin-left: 7px;
 }
 
-.user-andrew:hover, .user-chris:hover, .user-lucas:hover, .user-nancy:hover {
-    opacity: 0.3;
+.all-users ul { /* positioning for user pictures */
+display: flex; 
+justify-content: center;
 }
 
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    border-radius: 25px;
-}
-
-.welcome {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-style: oblique;
-    font-size: large;
-}
-
-
-.pics{
-  width: 301px;
-  height: 296px;
-  margin-bottom: 40px;
-  margin-left: 30px;
-  border-radius: 500px; /* crops img to circle */
-}
-
-.profile-pic {
-  width: 301px;
-  height: 296px;
-  border-radius: 50%; /* crops img to circle */
-
-}
 .profile-pic:hover{
-  opacity: 0.3;
+opacity: 0.3;
 }
-
