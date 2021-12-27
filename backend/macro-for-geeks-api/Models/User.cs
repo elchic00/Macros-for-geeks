@@ -15,6 +15,8 @@ namespace macro_for_geeks_api.Models
         public string Email { get; set; }
         public string Picture { get; set; }
 
-        /*public virtual ICollection<Diary> Diaries { get; set; }*/
+        /*
+        public virtual ICollection<Diary> Diaries { get; set; }
+    */
     }
 }

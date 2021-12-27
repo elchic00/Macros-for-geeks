@@ -1,6 +1,5 @@
 import { NutrientDisplay } from './../interfaces/nutrientDisplay';
 import { Food } from '../interfaces/food';
-//import { Meals } from '../interfaces/meals';
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { SearchfoodsService } from '../services/searchfoods.service';
 import { SharedService } from '../services/shared.service';
@@ -21,7 +20,7 @@ export class FoodinputComponent implements OnInit {
   FoodCategory: string = "";
   food = new Food();
   mealTime : any[] = []
-
+  serving: number = 1
   selected = "Breakfast"
 
   update(e : any){
@@ -31,7 +30,7 @@ export class FoodinputComponent implements OnInit {
   constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
-    this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals; console.log(this.mealTime);})
+    this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals;})
   }
 
   onClick() {
@@ -40,9 +39,12 @@ export class FoodinputComponent implements OnInit {
         this.data = response;
         this.description = this.data['foods'][0].description
         this.FoodCategory = this.data['foods'][0].foodCategory
-        this.NutrientDis = this.data['foods'][0]['foodNutrients'];
+        for (var i = 0; i < this.data['foods'].length ;i++){
+          console.log(this.data['foods'][i].description)
+        }
+        this.NutrientDis = this.data['foods'][0]['foodNutrients'] ;
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
-     })}
+      })}
     else {
       alert("enter Food")
     }
@@ -50,18 +52,18 @@ export class FoodinputComponent implements OnInit {
 
   PostFoods() {
     if(this.InputFood)
-    this.food.Food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
-    this.food.Calories = Math.round(this.NutrientDis[3].value) //this.DisplayFoods.filter(x => nutri)
-    this.food.Carbohydrates = Math.round(this.NutrientDis[2].value)
-    this.food.Fats = Math.round(this.NutrientDis[1].value);
-    this.food.Protein = Math.round(this.NutrientDis[0].value);
+      this.food.Food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
+    this.food.Servings = this.serving
+    this.food.Calories = this.NutrientDis[3].value * this.serving //this.DisplayFoods.filter(x => nutri)
+    this.food.Carbohydrates = this.NutrientDis[2].value * this.serving
+    this.food.Fats = this.NutrientDis[1].value * this.serving;
+    this.food.Protein = this.NutrientDis[0].value * this.serving;
     this.food.Date = new Date().toDateString(); //currentDateTime
     this.food.UserId = this.userId
-    console.log(this.selected)
     this.food.Mealtime = this.selected
     this.sharedService.addEntry(this.food).subscribe(
-      response => {Swal.fire("Good job!", "You posted your food info!", "success")},
-      error => {Swal.fire('Oops....','Your food did not post!', 'error')}
+      response => Swal.fire("Good job!", "You posted your food info!", "success"),
+      error => Swal.fire('Oops....','Your food did not post!', 'error')
     )}
 
   get userId():number {

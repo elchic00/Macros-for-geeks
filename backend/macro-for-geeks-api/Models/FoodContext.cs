@@ -42,6 +42,8 @@ namespace macro_for_geeks_api.Models
 
                 entity.Property(e => e.Entryid).HasColumnName("entryid");
 
+                entity.Property(e => e.Servings).HasColumnName("servings");
+
                 /*entity.HasOne(d => d.MealTimeNavigation)
                     .WithMany(p => p.Diaries)
                     .HasForeignKey(d => d.MealTime);

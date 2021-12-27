@@ -3,13 +3,14 @@
 <!-- <doughnut></doughnut> -->
 <!-- <input type="text" [(ngModel)]="userID"> -->
 
-
+<div class ="table">
 <div class="container mt-5">
     <table class="table table-striped">
       <thead>
           <tr>
             <!-- <th>UserId</th> -->
             <th>Food</th>
+            <th>Servings</th>
             <th>Calories</th>
             <th>Carbohydrates(g)</th>
             <th>Fats(g)</th>
@@ -21,13 +22,15 @@
       <tbody>
         <tr *ngFor="let food of foods">
           <td>{{ food.food }}</td>
+          <td>{{food.servings}}</td>
           <td>{{ food.calories }}</td>
           <td>{{ food.carbohydrates }}</td>
           <td>{{ food.fats }}</td>
           <td>{{ food.protein }}</td>
           <td>{{ food.date }}</td>
-          <td>{{ food.mealTime }}</td> 
+          <td>{{ food.mealTime }}</td>
         </tr>
       </tbody>
     </table>
   </div>
+</div>

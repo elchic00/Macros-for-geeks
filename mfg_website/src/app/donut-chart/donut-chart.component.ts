@@ -10,7 +10,7 @@ export class DonutChartComponent implements OnInit {
   ctx: any;
   canvas: any;
 
-  constructor() { 
+  constructor() {
   }
 
   @ViewChild('myChart') mychart:any;

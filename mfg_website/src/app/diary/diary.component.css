@@ -1,4 +1,7 @@
-
+.container{
+  width: 55%;
+  left: 100px
+}
 /*
 input[type="text"] {
   box-sizing: border-box;

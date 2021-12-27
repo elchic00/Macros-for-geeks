@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using macro_for_geeks_api.Models;
 
@@ -13,7 +11,7 @@ namespace macro_for_geeks_api.Repositories
 
         public MealRepo(FoodContext db)
         {
-            this._db = db;
+            _db = db;
         }
 
         public IEnumerable<Mealtime> GetMeals()

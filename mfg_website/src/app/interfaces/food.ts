@@ -4,6 +4,7 @@ export class Food
 {
      UserId!: number
      Food!:string
+    Servings!:number
      Calories!:number
      Carbohydrates!: number
      Fats!:number
