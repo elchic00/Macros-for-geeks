@@ -1,10 +1,11 @@
-<img src="assets/Macros-For-Geeks-Logo.gif" class="logo"> <br>
+<br><img src="assets/Macros-For-Geeks-Logo.gif" class="logo"> <br><br>
 
 <div class="welcome">
     <label>Welcome! Click on your picture to go to your macros.</label>
-</div> <br>
+</div> <br><br>
 
-<div fxLayout="row">
+<div class='all-users'>
+    <ul>
     <div *ngFor='let user of users; '>
         <a>
             <figure>
@@ -20,8 +21,5 @@
             </figure>
         </a>
     </div>
+    </ul>
 </div>
-
-
-
-
