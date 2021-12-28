@@ -2,18 +2,18 @@
 <button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
 
 <div *ngIf = description>
-<h3 style="font-weight: bold">Results For {{this.description | titlecase}}:</h3>
+<h3 style="font-weight: bold">Results for {{this.description | titlecase}}:</h3>
 
 <h3><span style="text-decoration: underline;">Category:</span>  {{this.FoodCategory}} </h3>
-
+<br/>
 <div *ngFor= "let list of NutrientDis">
   <h3><span style="text-decoration: underline;">{{list.nutrientName | titlecase}}:</span> {{list.value * this.serving | number : '1.2-2' }}</h3>
 </div>
 <br/>
 
   <!-- Enter serving size -->
-  <div class = 'serv'>
     <h3><label>Enter serving:  </label></h3>
+  <div class = 'serv'>
     <input class = 'serv' type="text" [(ngModel)]="serving">
   </div>
   <br>

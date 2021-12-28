@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'chart.js';
-import { MultiDataSet, Label } from 'ng2-charts';
+import {MultiDataSet, Label, SingleDataSet} from 'ng2-charts';
 import {SharedService} from "../services/shared.service";
 import { Food } from '../interfaces/food';
 @Component({
@@ -19,9 +19,7 @@ export class DonutChartComponent implements OnInit {
   // Doughnut
   public doughnutChartLabels: Label[] = ['Protein', 'Fat', 'Carbohydrate'];
   public doughnutChartData: MultiDataSet = [
-    this.data/*,
-    [50, 150, 120],
-    [250, 130, 70],*/
+    this.data
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
