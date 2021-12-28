@@ -17,6 +17,7 @@ import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { LoginComponent } from './login/login.component';
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
+import {ChartsModule} from 'ng2-charts'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
     ButtonsModule,
     MDBBootstrapModule,
     FormsModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    ChartsModule
   ],
   providers: [SharedService,SearchfoodsService, DatePipe],
   //providers: [SearchfoodsService],

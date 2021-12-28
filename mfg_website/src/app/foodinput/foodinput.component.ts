@@ -18,7 +18,7 @@ export class FoodinputComponent implements OnInit {
   NutrientDis: NutrientDisplay[] = [];
   description: string = "";
   FoodCategory: string = "";
-  food = new Food();
+  food =  new Food();
   mealTime : any[] = []
   serving: number = 1
   selected = "Breakfast"
@@ -52,15 +52,16 @@ export class FoodinputComponent implements OnInit {
 
   PostFoods() {
     if(this.InputFood)
-      this.food.Food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
-    this.food.Servings = this.serving
-    this.food.Calories = this.NutrientDis[3].value * this.serving //this.DisplayFoods.filter(x => nutri)
-    this.food.Carbohydrates = this.NutrientDis[2].value * this.serving
-    this.food.Fats = this.NutrientDis[1].value * this.serving;
-    this.food.Protein = this.NutrientDis[0].value * this.serving;
-    this.food.Date = new Date().toDateString(); //currentDateTime
-    this.food.UserId = this.userId
-    this.food.Mealtime = this.selected
+      this.food.food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
+    this.food.servings = this.serving
+    this.food.calories = this.NutrientDis[3].value * this.serving //this.DisplayFoods.filter(x => nutri)
+    this.food.carbohydrates = this.NutrientDis[2].value * this.serving
+    this.food.fats = this.NutrientDis[1].value * this.serving;
+    this.food.protein = this.NutrientDis[0].value * this.serving;
+    this.food.date = new Date().toDateString(); //currentDateTime
+    this.food.userId = this.userId
+    console.log(this.selected)
+    this.food.mealTime = this.selected
     this.sharedService.addEntry(this.food).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
       error => Swal.fire('Oops....','Your food did not post!', 'error')
