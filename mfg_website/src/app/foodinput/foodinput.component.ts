@@ -33,7 +33,7 @@ export class FoodinputComponent implements OnInit {
     this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals;})
   }
 
-  onClick() {
+  searchFood() {
     if (this.InputFood) {
       this.SearchfoodsService.getFood(this.InputFood).subscribe((response) => {
         this.data = response;
@@ -46,11 +46,16 @@ export class FoodinputComponent implements OnInit {
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
       })}
     else {
-      alert("enter Food")
+      Swal.fire('Oops...','Please enter a food item to search!', 'error')
     }
   }
 
-  PostFoods() {
+  /**
+   * @remarks
+   * This method will post all food info to the database
+   * Must have food info from USDA food api before making the api request to our database.
+   */
+   PostFoods() {
     if(this.InputFood)
       this.food.food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
     this.food.servings = this.serving
@@ -64,7 +69,7 @@ export class FoodinputComponent implements OnInit {
     this.food.mealTime = this.selected
     this.sharedService.addEntry(this.food).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
-      error => Swal.fire('Oops....','Your food did not post!', 'error')
+      error => Swal.fire('Oops...','Your food did not post!', 'error')
     )}
 
   get userId():number {

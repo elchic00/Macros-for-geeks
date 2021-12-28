@@ -1,5 +1,5 @@
-<input type="text" [(ngModel)]="InputFood" style="width: 97%; margin-left: 7px;"> <br><br>
-<button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
+<input type="text" (keydown.enter)="searchFood()" [(ngModel)]="InputFood" style="width: 97%; margin-left: 7px;"> <br><br>
+<button type="button" (click)="searchFood()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
 
 <div *ngIf = description>
 <h3 style="font-weight: bold">Results for {{this.description | titlecase}}:</h3>
@@ -21,7 +21,7 @@
   <!-- Enter meal type-->
   <div class="dropbox-container">
   <label for="dropbox"><h3>Choose meal type: </h3>
-  <select id = "dropbox" class="dropbox" (change)="update($event)" >
+  <select (keydown.enter)="PostFoods()"  id = "dropbox" class="dropbox" (change)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal'>
         {{meal.meal}}
     </option>

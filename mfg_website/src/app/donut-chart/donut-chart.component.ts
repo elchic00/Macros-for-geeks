@@ -32,7 +32,6 @@ export class DonutChartComponent implements OnInit {
         this.macros[2] += entries[i].carbohydrates
       }
     })
-    console.log(this.macros)
   }
 
   public chartOptions: any = {
@@ -46,7 +45,6 @@ export class DonutChartComponent implements OnInit {
   }
 
   get userId():number {
-    console.log("userID is:" + this.sharedService.userId)
     return this.sharedService.userId
   }
 

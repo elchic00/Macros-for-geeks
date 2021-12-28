@@ -1,6 +1,11 @@
 .search input {
   margin: 1rem 0;
 }
+/*
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+*/
 
 input[type="text"] {
   box-sizing: border-box;
