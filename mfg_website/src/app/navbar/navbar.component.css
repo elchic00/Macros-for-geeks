@@ -1,18 +1,10 @@
-  .screen-list {
+  .screen-list { /* link names */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 32px;
-    vertical-align: center;
-    margin-left: 17%; 
-    margin-bottom: 20px;
-    display: inline-block;
+    font-size: 31px;
+    margin-right: 110px;
 }
 
-  a:link {
-    text-decoration: none;
-    color: black;
-  }
-  
-  a:visited {
+  a:link, a:visited, a:active {
     text-decoration: none;
     color: black;
   }
@@ -21,15 +13,8 @@
     text-decoration: none;
     color: gainsboro;
   }
-  
-  a:active {
-    text-decoration: none;
-    color: black;
-  }
 
- .logo {
-    display: inline-block;
-    vertical-align: bottom;
+ .logo { /* macrosforgeeks gif */
     width: 250px;
     height: 80px;
     margin-left: 15px;
@@ -37,9 +22,10 @@
 
  .navbar {
   background: #79CBC3;
-  white-space: nowrap;
-  overflow: hidden;
-  border-radius: 25px;
+  border-radius: 25px; /* rounded corners */
+  width: 95%;
+  margin-left: 36px;
+  margin-top: 15px;
  }
 
 
