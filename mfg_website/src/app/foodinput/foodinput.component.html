@@ -1,27 +1,35 @@
-<input type="text" [(ngModel)]="InputFood">
-<button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect>Search</button>
+<input type="text" [(ngModel)]="InputFood" style="width: 97%; margin-left: 7px;"> <br><br>
+<button type="button"(click)="onClick()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
 
 <div *ngIf = description>
-<h3>Results: {{this.description | titlecase}}</h3>
-<br>
-<h3>Category:  {{this.FoodCategory}} </h3>
-<br>
+<h3 style="font-weight: bold">Results For {{this.description | titlecase}}:</h3>
+
+<h3><span style="text-decoration: underline;">Category:</span>  {{this.FoodCategory}} </h3>
 
 <div *ngFor= "let list of NutrientDis">
-  <h3>{{list.nutrientName | titlecase}}:</h3>
-  {{list.value * this.serving | number : '1.2-2' }}
+  <h3><span style="text-decoration: underline;">{{list.nutrientName | titlecase}}:</span> {{list.value * this.serving | number : '1.2-2' }}</h3>
 </div>
 <br/>
 
+  <!-- Enter serving size -->
   <div class = 'serv'>
+    <h3><label>Enter serving:  </label></h3>
     <input class = 'serv' type="text" [(ngModel)]="serving">
   </div>
-  <select class="dropbox" (change)="update($event)" >
+  <br>
+
+  <!-- Enter meal type-->
+  <div class="dropbox-container">
+  <label for="dropbox"><h3>Choose meal type: </h3>
+  <select id = "dropbox" class="dropbox" (change)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal'>
         {{meal.meal}}
     </option>
 </select>
+</label>
+</div>
   <br/>
 
-    <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect>Post</button>
+  <!-- Post button -->
+    <button type="button"(click)="PostFoods()" mdbBtn color="primary" mdbWavesEffect class="post-button">Post</button>
 </div>

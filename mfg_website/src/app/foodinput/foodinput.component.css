@@ -9,9 +9,32 @@ input[type="text"] {
 }
 
 .serv {
-  width: 12%;
+  width: 41%;
+  display: flex;
+  white-space:nowrap;
+  text-align: center;
+}
+
+.serv label {
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 .dropbox {
-  height: 100%
+  width: 110px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.dropbox label {
+  font-family:sans-serif;
+}
+
+.search-button, .post-button {
+  font-family:sans-serif; 
+  font-size: 100%;
+}
+
+h3 {
+  margin-left: 10px;
 }
