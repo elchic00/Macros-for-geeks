@@ -27,10 +27,9 @@ export class SharedService {
     return this.http.get<any>(url)
   }
 
-  getDiaryByDate(id: number, date: Date): Observable<Food>{
+  getDiaryByDate(id: number, date: Date): Observable<Food[]>{
     return this.http.get< any > (this.APIurl + '/Diary/'+ id+'/'+ date.toDateString())
   }
-  // getDiaryById(id: number,):
 
   addEntry(food: Food){
     // const body = JSON.stringify(food)

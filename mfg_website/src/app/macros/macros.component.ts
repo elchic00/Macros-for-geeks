@@ -25,7 +25,6 @@ export class MacrosComponent implements OnInit {
   }
 
   get userId():number {
-    console.log("userID is:" + this.sharedService.userId)
     return this.sharedService.userId
   }
 

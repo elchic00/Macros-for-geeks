@@ -2,16 +2,16 @@
 
 export class Food
 {
-     UserId!: number
-     Food!:string
-    Servings!:number
-     Calories!:number
-     Carbohydrates!: number
-     Fats!:number
-     Protein!:number
-     Date!:string | null
-     Mealtime!:any
-
+     userId!: number
+     food!:string
+    servings!:number
+     calories!:number
+     carbohydrates!: number
+     fats!:number
+     protein!:number
+     date!:string | null
+     mealTime!:any
+  /*entryid?:number*/
      // constructor(Userid, Food,Calories, Carbohydrates )
      // {
      //      this.UserId = Userid;
