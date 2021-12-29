@@ -1,10 +1,13 @@
 <!--<canvas *ngIf="!data">-->
+< *ngIf
 <div style="display: block;">
   <canvas baseChart  height="110px"
           [data]="doughnutChartData"
           [labels]="doughnutChartLabels"
           [chartType]="doughnutChartType"
-          [options]="chartOptions">
+          [options]="chartOptions"
+          [colors]="chartColors"
+  >
   </canvas>
 </div>
 <!--</canvas>-->

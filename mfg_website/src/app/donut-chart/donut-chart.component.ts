@@ -43,6 +43,9 @@ export class DonutChartComponent implements OnInit {
       }
     }
   }
+  chartColors: any[] = [{
+    backgroundColor:["#19316f", "#114f1a", "#891818"]
+  }];
 
   get userId():number {
     return this.sharedService.userId
