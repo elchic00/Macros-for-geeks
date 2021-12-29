@@ -16,18 +16,21 @@
 }
 
 .profile-pic, figure { /* user pictures - figure is main 4, profile-pic is dog/Tom */
-width: 200px;
-text-align: center; /* for name labels */
-border-radius: 50%; /* crops img to circle for Tom */
-margin-right: 50px;
-margin-left: 7px;
+  width: 200px;
+  height: 200px;
+  text-align: center; /* for name labels */
+  border-radius: 50%; /* crops img to circle for Tom */
+  margin-right: 50px; /* spacing between pictures */
+  list-style-type: none; /* removes bullets from list type */
 }
 
 .all-users ul { /* positioning for user pictures */
-display: flex; 
-justify-content: center;
+  justify-content: center; /* centers pictures on screen */
+  display: grid; 
+  grid-template-areas: "a a a a"; /* set how many users per row */
+  grid-auto-rows: 250px; /* margin between rows */
 }
 
 .profile-pic:hover{
-opacity: 0.3;
+  opacity: 0.3;
 }
