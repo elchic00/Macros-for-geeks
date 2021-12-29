@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartDataSets } from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
+import { BLACK_ON_WHITE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 
 @Component({
   selector: 'app-progress',
@@ -27,10 +28,21 @@ export class ProgressComponent implements OnInit {
   public barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: this.protiens, label: 'Proteins' },
-    { data: this.fats, label: 'Fats' },
-    { data: this.carbs, label: 'Carbohydrates' }
-
+    { data: 
+        this.protiens, 
+        label: 'Proteins',
+        backgroundColor: 'rgba(117,219,205, 0.8)',
+        hoverBackgroundColor:'rgba(117,219,205, 1)'},
+    { data: 
+        this.fats, 
+        label: 'Fats',
+        backgroundColor: 'rgba(201,219,186, 0.8)',
+        hoverBackgroundColor:'rgba(201,219,186, 1)'},
+    { data: 
+        this.carbs, 
+        label: 'Carbohydrates',
+        backgroundColor: 'rgba(220,219,168, 0.8)',
+        hoverBackgroundColor:'rgba(220,219,168, 1)'}
   ];
 
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
