@@ -1,11 +1,14 @@
 <div style="display: block;">
-    <canvas baseChart height="109px"
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [plugins]="barChartPlugins"
-      [legend]="barChartLegend"
-      [chartType]="barChartType">
-    </canvas>
-  </div>
+  <canvas baseChart height="105px" *ngIf="loaded"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="chartColors"
+          [options]="barChartOptions"
+  >
+  </canvas>
+</div>
 
 <!--[options]="barChartOptions"-->

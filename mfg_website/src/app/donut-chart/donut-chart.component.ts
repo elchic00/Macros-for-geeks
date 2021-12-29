@@ -44,7 +44,7 @@ export class DonutChartComponent implements OnInit {
     }
   }
   chartColors: any[] = [{
-    backgroundColor:["#19316f", "#114f1a", "#891818"]
+    backgroundColor:["#75DBCD", "#C9DBBA", "#DCDBA8"]
   }];
 
   get userId():number {

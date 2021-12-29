@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ChartType, ChartDataSets } from 'chart.js';
+import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {ChartType, ChartDataSets, ChartOptions} from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
+import {Colors, MultiDataSet} from "ng2-charts";
 
 @Component({
   selector: 'app-progress',
@@ -12,33 +13,37 @@ import {SharedService} from "../services/shared.service";
 export class ProgressComponent implements OnInit {
   private pastWeek : string[] = [];
   date : Date = new Date();
-  private protiens : number[] = [0,0,0,0,0,0,0]
+  private proteins : number[] = [0,0,0,0,0,0,0]
   private fats : number[] = [0,0,0,0,0,0,0]
   private carbs: number[] = [0,0,0,0,0,0,0]
+  loaded = false;
 
-/*
+
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
-*/
   public barChartLabels: any = this.pastWeek;
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
-  public barChartData: ChartDataSets[] = [
-    { data: this.protiens, label: 'Proteins' },
+  public barChartData: any = [
+    { data: this.proteins, label: 'Proteins' },
     { data: this.fats, label: 'Fats' },
     { data: this.carbs, label: 'Carbohydrates' }
+  ];
 
+  chartColors: Colors[] = [
+    {backgroundColor:["#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD"]},
+    {backgroundColor:["#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA"]},
+    {backgroundColor:["#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8"]}
   ];
 
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
 
   ngOnInit(){
-    this.getMacros()
     this.getDates()
-
+    this.getMacros()
   }
 
   getDates(){
@@ -68,25 +73,25 @@ export class ProgressComponent implements OnInit {
     //Put Macros for each date over the last 7 days into their own array.
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[0] += entries[i].protein}})
+        this.proteins[0] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,sixdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[1] += entries[i].protein}})
+        this.proteins[1] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,fivedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[2] += entries[i].protein}})
+        this.proteins[2] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,fourdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[3] += entries[i].protein}})
+        this.proteins[3] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,threedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[4] += entries[i].protein}})
+        this.proteins[4] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,twodays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[5] += entries[i].protein}})
+        this.proteins[5] += entries[i].protein}})
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.protiens[6] += entries[i].protein}})
+        this.proteins[6] += entries[i].protein}})
 
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
@@ -131,6 +136,8 @@ export class ProgressComponent implements OnInit {
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
         this.carbs[6] += entries[i].carbohydrates}})
+    this.loaded = true
+    console.log(this.loaded)
   }
 
   get userId():number {
