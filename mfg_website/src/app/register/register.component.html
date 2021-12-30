@@ -1,1 +1,24 @@
-<p>register works!</p>
+<div class="container" >
+  <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
+  <label>Enter name: </label>
+  <input type="text" [(ngModel)]="user.name" style="width: 240px;"><br><br>
+  <label>Enter email:</label>
+  <input type="text" [(ngModel)]="user.email" style="width: 240px;"><br><br>
+  <label>Enter picture path: </label>
+  <input type="text" [(ngModel)]="user.picture" style="width: 240px;"><br><br>
+  <label>Enter height:</label>
+  <input type="text" [(ngModel)]="user.height" style="width: 100px;"><br><br>
+  <label>Enter weight:</label>
+  <input type="text" [(ngModel)]="user.weight" style="width: 100px;"><br><br>
+  <label>Enter age:</label>
+  <input type="text" [(ngModel)]="user.age" style="width: 100px;"><br><br>
+  <label>Enter protein goal: </label>
+  <input type="text" [(ngModel)]="user['protein goal']" style="width: 100px;"><br><br>
+  <label>Enter fat goal: </label>
+  <input type="text" [(ngModel)]="user['fat goal']" style="width: 100px;"><br><br>
+  <label>Enter carb goal: </label>
+  <input  (keydown.enter)="postUser()" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
+  <br><div style="text-decoration: underline; text-align:right">
+  <button  type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
+  </div>
+</div>

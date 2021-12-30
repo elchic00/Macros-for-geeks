@@ -70,7 +70,8 @@ export class FoodinputComponent implements OnInit {
     this.sharedService.addEntry(this.food).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
       error => Swal.fire('Oops...','Your food did not post!', 'error')
-    )}
+    )
+  }
 
   get userId():number {
     return this.sharedService.userId

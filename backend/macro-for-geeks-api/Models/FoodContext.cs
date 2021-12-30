@@ -83,7 +83,7 @@ namespace macro_for_geeks_api.Models
 
                 entity.Property(e => e.Picture).HasColumnName("picture");
 
-                entity.Property(e => e.ProtienGoal).HasColumnName("protien goal");
+                entity.Property(e => e.ProteinGoal).HasColumnName("protein goal");
 
                 entity.Property(e => e.Weight).HasColumnName("weight");
             });

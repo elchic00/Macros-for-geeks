@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {ChartType, ChartDataSets, ChartOptions} from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
@@ -18,6 +18,10 @@ export class ProgressComponent implements OnInit {
   private fats : number[] = [0,0,0,0,0,0,0]
   private carbs: number[] = [0,0,0,0,0,0,0]
   loaded = false;
+  barchart:any;
+
+  //@ViewChild(BaseChartDirective) chart: BaseChartDirective;
+
   public barChartOptions: ChartOptions = {
     responsive: true
   };
@@ -28,10 +32,10 @@ public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
-  public barChartData: any = [
-    { data: this.proteins, label: 'Proteins' },
-    { data: this.fats, label: 'Fats' },
-    { data: this.carbs, label: 'Carbohydrates' }
+  public barChartData: any[] = [
+    { data: this.proteins, label: 'Proteins',backgroundColor:"#75DBCD" },
+    { data: this.fats, label: 'Fats', backgroundColor:"#C9DBBA" },
+    { data: this.carbs, label: 'Carbohydrates',backgroundColor:"#DCDBA8" }
   ];
 
   chartColors: Colors[] = [
@@ -43,6 +47,8 @@ public barChartType: ChartType = 'bar';
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
 
   ngOnInit(){
+    //this.chart.chart.data.datasets[0].= [55, 355, 35, 50, 50, 60, 10]
+
     this.getDates()
     this.getMacros()
     this.forceChartRefresh()
@@ -50,7 +56,7 @@ public barChartType: ChartType = 'bar';
 
   forceChartRefresh() {
     setTimeout(() => {
-      //this._chart.refresh();
+      //this.chart.chart.update();
     }, 2);
   }
 

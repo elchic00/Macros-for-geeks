@@ -36,6 +36,10 @@ export class SharedService {
     return this.http.post(this.APIurl + '/Diary', food)
   }
 
+  addUser(user: User){
+    return this.http.post(this.APIurl + '/User',user)
+  }
+
 }
 
 

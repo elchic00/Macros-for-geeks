@@ -17,7 +17,7 @@ namespace macro_for_geeks_api.Models
         public string Height { get; set; }
         public long? Weight { get; set; }
         public long? Age { get; set; }
-        public long? ProtienGoal { get; set; }
+        public long? ProteinGoal { get; set; }
         public long? FatGoal { get; set; }
         public long? CarbohydrateGoal { get; set; }
 

@@ -1,6 +1,12 @@
-export interface User {
-    id: number
-    readonly name:string,
-    readonly email:string,
-    readonly picture: string
+export class User {
+    id!: number
+    name!:string
+    email?:string
+    picture?: string
+    height!: number
+    weight!:number
+    age! : number
+    "protein goal"? : number
+    "fat goal"?: number
+    "carb goal"? : number
 }
