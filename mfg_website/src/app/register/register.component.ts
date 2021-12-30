@@ -13,17 +13,23 @@ export class RegisterComponent implements OnInit {
   user = new User();
   name: string = ""
 
-  constructor(private SharedService: SharedService) {
+  constructor(private sharedService: SharedService) {
   }
 
   ngOnInit(): void {
   }
 
   postUser() {
-    this.SharedService.addUser(this.user).subscribe(
+    this.sharedService.addUser(this.user).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
       error => Swal.fire('Oops...','Your food did not post!', 'error')
     )
+    this.userID(this.user.id)
   }
+
+  userID(val:number) {
+    this.sharedService.userId = val;
+  }
+
 
 }

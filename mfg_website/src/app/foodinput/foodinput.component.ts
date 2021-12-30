@@ -59,7 +59,7 @@ export class FoodinputComponent implements OnInit {
     if(this.InputFood)
       this.food.food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
     this.food.servings = this.serving
-    this.food.calories = Number((this.NutrientDis[3].value * this.serving).toFixed(2)); //this.DisplayFoods.filter(x => nutri)
+    this.food.calories = (this.NutrientDis[3].value * this.serving); //this.DisplayFoods.filter(x => nutri)
     this.food.carbohydrates = Number((this.NutrientDis[2].value * this.serving).toFixed(2));
     this.food.fats = Number((this.NutrientDis[1].value * this.serving).toFixed(2));
     this.food.protein = Number((this.NutrientDis[0].value * this.serving).toFixed(2));

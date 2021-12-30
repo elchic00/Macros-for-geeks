@@ -18,7 +18,8 @@
   <input type="text" [(ngModel)]="user['fat goal']" style="width: 100px;"><br><br>
   <label>Enter carb goal: </label>
   <input  (keydown.enter)="postUser()" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
-  <br><div style="text-decoration: underline; text-align:right">
+
+  <div style="text-decoration: underline; text-align:right"> Go back to the homescreen to login to your new account.
   <button  type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
   </div>
 </div>

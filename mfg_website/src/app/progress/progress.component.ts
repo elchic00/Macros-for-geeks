@@ -33,9 +33,9 @@ public barChartType: ChartType = 'bar';
   public barChartPlugins = [];
 
   public barChartData: any[] = [
-    { data: this.proteins, label: 'Proteins',backgroundColor:"#75DBCD" },
-    { data: this.fats, label: 'Fats', backgroundColor:"#C9DBBA" },
-    { data: this.carbs, label: 'Carbohydrates',backgroundColor:"#DCDBA8" }
+    { data: this.proteins, label: 'Proteins' },
+    { data: this.fats, label: 'Fats'},
+    { data: this.carbs, label: 'Carbohydrates'}
   ];
 
   chartColors: Colors[] = [
@@ -47,8 +47,6 @@ public barChartType: ChartType = 'bar';
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
 
   ngOnInit(){
-    //this.chart.chart.data.datasets[0].= [55, 355, 35, 50, 50, 60, 10]
-
     this.getDates()
     this.getMacros()
     this.forceChartRefresh()
@@ -61,13 +59,13 @@ public barChartType: ChartType = 'bar';
   }
 
 
-/*  fixPrecision(){
-    for(let i = 0; i < this.proteins.length; i++){
-      this.proteins[i] = Number(this.proteins[i].toFixed(1))
+  fixPrecision(){
+    for(let i = 0; i < 7; i++){
+      this.proteins[i] = Number(this.proteins[i].toFixed(2))
       this.fats[i] = Number(this.fats[i].toFixed(2))
       this.carbs[i] = Number(this.carbs[i].toFixed(2))
     }
-}*/
+}
 
   getDates(){
     for(let i = 0; i < 7; i++){
@@ -160,7 +158,7 @@ public barChartType: ChartType = 'bar';
       for (var i = 0; i < entries.length ;i++){
         this.carbs[6] += Number(entries[i].carbohydrates.toFixed(2))}})
     this.loaded = true
-    console.log()
+    this.fixPrecision()
   }
 
   get userId():number {
