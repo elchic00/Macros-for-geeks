@@ -55,14 +55,14 @@ export class FoodinputComponent implements OnInit {
    * This method will post all food info to the database
    * Must have food info from USDA food api before making the api request to our database.
    */
-   PostFoods() {
+  PostFoods() {
     if(this.InputFood)
       this.food.food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
     this.food.servings = this.serving
-    this.food.calories = this.NutrientDis[3].value * this.serving //this.DisplayFoods.filter(x => nutri)
-    this.food.carbohydrates = this.NutrientDis[2].value * this.serving
-    this.food.fats = this.NutrientDis[1].value * this.serving;
-    this.food.protein = this.NutrientDis[0].value * this.serving;
+    this.food.calories = Number((this.NutrientDis[3].value * this.serving).toFixed(2)); //this.DisplayFoods.filter(x => nutri)
+    this.food.carbohydrates = Number((this.NutrientDis[2].value * this.serving).toFixed(2));
+    this.food.fats = Number((this.NutrientDis[1].value * this.serving).toFixed(2));
+    this.food.protein = Number((this.NutrientDis[0].value * this.serving).toFixed(2));
     this.food.date = new Date().toDateString(); //currentDateTime
     this.food.userId = this.userId
     console.log(this.selected)

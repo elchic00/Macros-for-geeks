@@ -45,6 +45,13 @@ namespace macro_for_geeks_api.Repositories
                 return users;*/
             }
         }
+
+        public void postUser(User user)
+        {
+            _db.Users!.Add(user);
+            _db.SaveChanges();
+        }
+        
     }
     
 }

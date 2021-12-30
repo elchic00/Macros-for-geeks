@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartType } from 'chart.js';
+import {ChartOptions, ChartType} from 'chart.js';
 import {MultiDataSet, Label, SingleOrMultiDataSet} from 'ng2-charts';
 import {SharedService} from "../services/shared.service";
 
@@ -27,22 +27,17 @@ export class DonutChartComponent implements OnInit {
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       /*console.log(entries)*/
       for (var i = 0; i < entries.length ;i++){
-        this.macros[0] += entries[i].protein
-        this.macros[1] += entries[i].fats
-        this.macros[2] += entries[i].carbohydrates
+        this.macros[0] += Number(entries[i].protein.toFixed(2))
+        this.macros[1] += Number(entries[i].fats.toFixed(2))
+        this.macros[2] += Number(entries[i].carbohydrates.toFixed(2))
       }
     })
   }
 
-  public chartOptions: any = {
-    pieceLabel: {
-      render: function (args: any) {
-        const label = args.label,
-          value = args.value;
-        return label + ': ' + value;
-      }
-    }
-  }
+  ChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
   chartColors: any[] = [{
     backgroundColor:["#75DBCD", "#C9DBBA", "#DCDBA8"]
   }];

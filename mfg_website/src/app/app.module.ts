@@ -17,7 +17,8 @@ import { SharedService } from './services/shared.service';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { LoginComponent } from './login/login.component';
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
-import {ChartsModule} from 'ng2-charts'
+import {ChartsModule} from 'ng2-charts';
+import { RegisterComponent } from './register/register.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ChartsModule} from 'ng2-charts'
     GetUserComponent,
     DonutChartComponent,
     FoodinputComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ class NavbarPathnames {
     readonly Diary:string = "Search";
     readonly Macros:string = "Macros";
     readonly Progress:string = "Progress";
+    readonly Register:string = "Register"
     // readonly Food:string = "Food"
 }
 

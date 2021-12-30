@@ -19,11 +19,11 @@
       <tbody>
         <tr *ngFor="let food of foods">
           <td>{{ food.food }}</td>
-          <td>{{food.servings}}</td>
-          <td>{{ food.calories }}</td>
-          <td>{{ food.carbohydrates }}</td>
-          <td>{{ food.fats }}</td>
-          <td>{{ food.protein }}</td>
+          <td>{{food.servings | number : '1.2-2'}}</td>
+          <td>{{ food.calories | number : '1.2-2'}}</td>
+          <td>{{ food.carbohydrates | number : '1.2-2'}}</td>
+          <td>{{ food.fats | number : '1.2-2'}}</td>
+          <td>{{ food.protein | number : '1.2-2'}}</td>
           <td>{{ food.date }}</td>
           <td>{{ food.mealTime }}</td>
         </tr>

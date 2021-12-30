@@ -7,6 +7,8 @@ namespace macro_for_geeks_api.Repositories
     {
         IEnumerable<User> GetUsers();
         User? GetUserById(short id);
-      
+
+        void postUser(User user);
+
     }
 }

@@ -46,12 +46,12 @@ namespace macro_for_geeks_api.Models
 
                 /*entity.HasOne(d => d.MealTimeNavigation)
                     .WithMany(p => p.Diaries)
-                    .HasForeignKey(d => d.MealTime);
+                    .HasForeignKey(d => d.MealTime)
+                    .OnDelete(DeleteBehavior.SetNull);
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Diaries)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);*/
+                    .HasForeignKey(d => d.UserId);*/
             });
 
             modelBuilder.Entity<Mealtime>(entity =>
@@ -69,11 +69,23 @@ namespace macro_for_geeks_api.Models
 
                 entity.HasIndex(e => e.Id, "UID_index");
 
+                entity.Property(e => e.Age).HasColumnName("age");
+
+                entity.Property(e => e.CarbohydrateGoal).HasColumnName("carbohydrate goal");
+
                 entity.Property(e => e.Email).IsRequired();
+
+                entity.Property(e => e.FatGoal).HasColumnName("fat goal");
+
+                entity.Property(e => e.Height).HasColumnName("height");
 
                 entity.Property(e => e.Name).IsRequired();
 
                 entity.Property(e => e.Picture).HasColumnName("picture");
+
+                entity.Property(e => e.ProtienGoal).HasColumnName("protien goal");
+
+                entity.Property(e => e.Weight).HasColumnName("weight");
             });
 
             OnModelCreatingPartial(modelBuilder);

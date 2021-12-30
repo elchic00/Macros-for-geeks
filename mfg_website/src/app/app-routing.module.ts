@@ -6,6 +6,7 @@ import { DiaryComponent } from './diary/diary.component'
 import { navbarpathnames, rootpathnames } from 'src/pathnames';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {RegisterComponent} from "./register/register.component";
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
       { path: '', redirectTo: navbarpathnames.Macros, pathMatch: 'full'},
       { path: navbarpathnames.Diary , component: DiaryComponent, },
       { path: navbarpathnames.Progress, component: ProgressComponent },
-      { path: navbarpathnames.Macros , component: MacrosComponent },
+      { path: navbarpathnames.Macros , component: MacrosComponent},
+      {path: navbarpathnames.Register, component: RegisterComponent},
     ]
   }
 ];

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using macro_for_geeks_api.Models;
 using macro_for_geeks_api.Repositories;
 
 namespace macro_for_geeks_api.Controllers
@@ -43,5 +44,10 @@ namespace macro_for_geeks_api.Controllers
             }
         }
         
+        [HttpPost]
+        public void PostUser(User user)
+        {
+            _userRepo.postUser(user);
+        }
     }
 }

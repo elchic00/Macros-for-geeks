@@ -9,10 +9,10 @@ namespace macro_for_geeks_api.Models
         public long Entryid { get; set; }
         public string Food { get; set; }
         public long? Servings { get; set; }
-        public float? Calories { get; set; }
-        public float? Carbohydrates { get; set; }
-        public float? Fats { get; set; }
-        public float? Protein { get; set; }
+        public double? Calories { get; set; }
+        public double? Carbohydrates { get; set; }
+        public double? Fats { get; set; }
+        public double? Protein { get; set; }
         public string Date { get; set; }
         public string MealTime { get; set; }
 
