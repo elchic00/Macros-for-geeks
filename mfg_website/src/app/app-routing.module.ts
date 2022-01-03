@@ -15,9 +15,7 @@ const routes: Routes = [
   {path: rootpathnames.Login, component: LoginComponent,
   children:[
     {path:navbarpathnames.Register, component:RegisterComponent}
-  ]}, {path:navbarpathnames.Register, component:RegisterComponent},
-
-
+  ]},
   {
     path: rootpathnames.Home,
     component: NavbarComponent,

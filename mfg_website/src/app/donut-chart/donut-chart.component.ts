@@ -12,8 +12,10 @@ export class DonutChartComponent implements OnInit {
   date : Date = new Date();
   food : any = []
   macros : number[] = [0,0,0]
+  loaded:boolean = false
 
   // Doughnut
+
   public doughnutChartLabels: Label[] = ['Protein', 'Fat', 'Carbohydrate'];
   public doughnutChartData: SingleOrMultiDataSet /*Array<number[]>*/ = [
     this.macros
@@ -24,16 +26,19 @@ export class DonutChartComponent implements OnInit {
   }
 
   ngOnInit():void {
-    this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
-      for (var i = 0; i < entries.length ;i++){
-        this.macros[0] += Number(entries[i].protein.toFixed(2))
-        this.macros[1] += Number(entries[i].fats.toFixed(2))
-        this.macros[2] += Number(entries[i].carbohydrates.toFixed(2))
-        this.macros[0] = Number(this.macros[0].toFixed(2))
-        this.macros[1] = Number(this.macros[1].toFixed(2))
-        this.macros[2] = Number(this.macros[2].toFixed(2))
-      }
-    })
+      this.sharedService.getDiaryByDate(this.userId, this.date).subscribe(entries => {
+        for (var i = 0; i < entries.length; i++) {
+          this.macros[0] += Number(entries[i].protein.toFixed(2))
+          this.macros[1] += Number(entries[i].fats.toFixed(2))
+          this.macros[2] += Number(entries[i].carbohydrates.toFixed(2))
+          this.macros[0] = Number(this.macros[0].toFixed(2))
+          this.macros[1] = Number(this.macros[1].toFixed(2))
+          this.macros[2] = Number(this.macros[2].toFixed(2))
+        }
+        this.loaded = true
+      })
+
+    console.log((this.userId))
   }
 
   ChartOptions: ChartOptions = {

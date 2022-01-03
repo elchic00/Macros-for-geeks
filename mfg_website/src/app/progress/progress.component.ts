@@ -49,15 +49,7 @@ public barChartType: ChartType = 'bar';
   ngOnInit(){
     this.getDates()
     this.getMacros()
-    this.forceChartRefresh()
   }
-
-  forceChartRefresh() {
-    setTimeout(() => {
-      //this.chart.chart.update();
-    }, 2);
-  }
-
 
   fixPrecision(){
     for(let i = 0; i < 7; i++){
@@ -157,8 +149,8 @@ public barChartType: ChartType = 'bar';
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
         this.carbs[6] += Number(entries[i].carbohydrates.toFixed(2))}})
-    this.loaded = true
     this.fixPrecision()
+    this.loaded = true
   }
 
   get userId():number {

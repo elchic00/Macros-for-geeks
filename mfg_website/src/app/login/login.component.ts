@@ -10,6 +10,7 @@ import { User } from '../user/user';
 })
 export class LoginComponent implements OnInit {
   users : User[] = []
+  loaded : boolean = false
 
   constructor(private sharedService: SharedService) { }
 
@@ -18,7 +19,10 @@ export class LoginComponent implements OnInit {
   }
 
   getUsers(){
-    this.sharedService.getUsers().subscribe(user => this.users = user)
+    this.sharedService.getUsers().subscribe(user =>{
+      this.users = user
+      this.loaded = true;
+      })
     console.log((this.users))
   }
 

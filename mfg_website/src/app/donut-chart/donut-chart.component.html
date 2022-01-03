@@ -1,6 +1,5 @@
-<!--<canvas *ngIf="!data">-->
 <div style="display: block;">
-  <canvas baseChart  height="110px"
+  <canvas baseChart  height="110px" *ngIf="loaded"
           [data]="doughnutChartData"
           [labels]="doughnutChartLabels"
           [chartType]="doughnutChartType"
@@ -9,5 +8,3 @@
   >
   </canvas>
 </div>
-<!--</canvas>-->
-
