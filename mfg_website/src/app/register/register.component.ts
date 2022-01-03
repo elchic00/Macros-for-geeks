@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   user = new User();
   name: string = ""
-
+  heightFiller : string = "5\'5"
   constructor(private sharedService: SharedService) {
   }
 
