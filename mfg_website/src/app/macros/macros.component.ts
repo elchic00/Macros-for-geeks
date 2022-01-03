@@ -10,6 +10,7 @@ export class MacrosComponent implements OnInit {
   foods: any = [];
   userID: number = this.userId;
   date : Date = new Date();
+  loaded : boolean = false;
 
   constructor(private sharedService: SharedService) { }
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class MacrosComponent implements OnInit {
       this.sharedService.getDiaryByDate(this.userID, this.date).subscribe(data => {
         this.foods = data;
       })
+      this.loaded = true;
     }
   }
 

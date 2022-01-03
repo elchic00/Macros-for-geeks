@@ -36,9 +36,9 @@ public barChartType: ChartType = 'bar';
     { data: this.proteins, label: 'Proteins' },
     { data: this.fats, label: 'Fats'},
     { data: this.carbs, label: 'Carbohydrates'},
-    { "data": [220,220,220,220,220,220,220], "label": "Protein goal", "type": "line", 'fill':'false',backgroundColor:["#75DBCD"], borderColor: ['#75DBCD'] },
-    { "data": [50,50,50,50,50,50,50], "label": "Fat goal", "type": "line", 'fill':'false',backgroundColor:['#C9DBBA'],borderColor: ['#C9DBBA'] },
-    { "data": [320,320,320,320,320,320,320], "label": "Carb goal", "type": "line", 'fill':'false', backgroundColor:['#DCDBA8'],borderColor: ['#DCDBA8'] },
+    { "data": [220,220,220,220,220,220,220], "label": "Protein goal", "type": "line", 'fill':'false',backgroundColor:["#25615a"], borderColor: ['#25615a'] },
+    { "data": [50,50,50,50,50,50,50], "label": "Fat goal", "type": "line", 'fill':'false',backgroundColor:['#3c5d16'],borderColor: ['#3c5d16'] },
+    { "data": [320,320,320,320,320,320,320], "label": "Carb goal", "type": "line", 'fill':'false', backgroundColor:['#98962d'],borderColor: ['#98962d'] },
   ];
 
   chartColors: Colors[] = [
