@@ -1,4 +1,4 @@
-<br><img src="assets/Macros-For-Geeks-Logo.gif" class="logo" routerLink="/Login">
+<br><button TYPE='SUBMIT' class="homeButton" routerLink="/Login">Home</button>
 <div class="container" >
   <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
   <label>Enter name: </label>
@@ -6,7 +6,7 @@
   <label>Enter email:</label>
   <input type="text" [placeholder]="'example@email.com'" [(ngModel)]="user.email" style="width: 240px;"><br><br>
   <label>Enter picture path: </label>
-  <input type="text" [placeholder]="'example.com%jpg'" [(ngModel)]="user.picture" style="width: 240px;"><br><br>
+  <input type="text" [placeholder]="'https://imgur.com/pic.png'" [(ngModel)]="user.picture" style="width: 240px;"><br><br>
   <label>Enter height:</label>
   <input type="text" [placeholder]="heightFiller" [(ngModel)]="user.height" style="width: 100px;"><br><br>
   <label>Enter weight:</label>
@@ -20,7 +20,7 @@
   <label>Enter carb goal: </label>
   <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
 
-  <div style="text-decoration: underline; text-align:right"> Go back to the homescreen to login to your new account.
-  <button  routerLink="/Login" type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
+  <div style="text-decoration: underline; text-align:right"> Refresh the homescreen to login to your new account.
+  <button  routerLink="/Login" type="submit" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
   </div>
 </div>
