@@ -1,3 +1,4 @@
+<br><img src="assets/Macros-For-Geeks-Logo.gif" class="logo" routerLink="/Login">
 <div class="container" >
   <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
   <label>Enter name: </label>
@@ -20,6 +21,6 @@
   <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
 
   <div style="text-decoration: underline; text-align:right"> Go back to the homescreen to login to your new account.
-  <button  type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
+  <button  routerLink="/Login" type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
   </div>
 </div>

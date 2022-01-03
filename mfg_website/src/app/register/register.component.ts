@@ -21,8 +21,8 @@ export class RegisterComponent implements OnInit {
 
   postUser() {
     this.sharedService.addUser(this.user).subscribe(
-      response => Swal.fire("Good job!", "You posted your food info!", "success"),
-      error => Swal.fire('Oops...','Your food did not post!', 'error')
+      response => Swal.fire("Good job!", "You registered a new user!", "success"),
+      error => Swal.fire('Oops...','Your did not register a new user!', 'error')
     )
     this.userID(this.user.id)
   }
