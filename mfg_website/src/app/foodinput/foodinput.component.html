@@ -1,6 +1,13 @@
 <input type="text" [placeholder]="'Enter food item to search'"  (keydown.enter)="searchFood()" [(ngModel)]="InputFood" style="width: 97%; margin-left: 7px;"> <br><br>
 <button type="button" (click)="searchFood()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
 
+
+<div *ngIf="!description" class="d-flex justify-content-center">
+  <div  *ngIf="this.loaded" class="spinner-border" role="status">
+    <span class="sr-only" id="loading"></span>
+  </div>
+</div>
+
 <div *ngIf = description>
 <h3 style="font-weight: bold">Results for {{this.description | titlecase}}:</h3>
 

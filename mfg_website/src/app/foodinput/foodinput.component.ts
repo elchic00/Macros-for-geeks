@@ -22,6 +22,7 @@ export class FoodinputComponent implements OnInit {
   mealTime : any[] = []
   serving: number = 1
   selected = "Breakfast"
+  loaded : boolean = false
 
   update(e : any){
     this.selected = e.target.value
@@ -48,6 +49,7 @@ export class FoodinputComponent implements OnInit {
     else {
       Swal.fire('Oops...','Please enter a food item to search!', 'error')
     }
+    this.loaded = true
   }
 
   /**

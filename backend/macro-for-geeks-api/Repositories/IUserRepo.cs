@@ -10,5 +10,8 @@ namespace macro_for_geeks_api.Repositories
 
         void postUser(User user);
 
+        bool Put(User user);
+
+
     }
 }

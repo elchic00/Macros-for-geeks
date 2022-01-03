@@ -44,10 +44,10 @@ namespace macro_for_geeks_api.Controllers
             }
         }
         
-        [HttpPost]
-        public void PostUser(User user)
+        [HttpPut]
+        public bool Put(User user)
         {
-            _userRepo.postUser(user);
+            return _userRepo.Put(user);
         }
     }
 }

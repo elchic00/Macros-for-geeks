@@ -3,7 +3,7 @@ class NavbarPathnames {
     readonly Macros:string = "Macros";
     readonly Progress:string = "Progress";
     readonly Profile:string = "Profile";
-    // readonly Food:string = "Food"
+
 }
 
 class RootPathnames {
