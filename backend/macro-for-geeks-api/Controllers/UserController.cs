@@ -45,9 +45,16 @@ namespace macro_for_geeks_api.Controllers
         }
         
         [HttpPut]
-        public bool Put(User user)
+        public bool UpdateUser(User user)
         {
             return _userRepo.Put(user);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public bool deleteUser(int id)
+        {
+            return _userRepo.deleteUser(id);
         }
     }
 }

@@ -44,6 +44,12 @@ export class SharedService {
     return this.http.put(this.APIurl + '/User', user )
   }
 
+  deleteUser(id:number){
+    return this.http.delete(this.APIurl + '/User/' + id.toString())
+  }
+
 }
+
+
 
 

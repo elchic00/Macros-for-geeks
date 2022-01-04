@@ -1,5 +1,5 @@
 <div class="container" *ngIf="userData">
-  <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
+  <h3 style="text-decoration: underline; text-align:center">Update Profile</h3><br>
   <label>Enter name: </label>
   <input type="text" [(ngModel)]="userData.name" style="width: 240px;"><br><br>
   <label>Enter email:</label>
@@ -18,8 +18,10 @@
   <input type="text" [(ngModel)]="userData.fatGoal" style="width: 100px;"><br><br>
   <label>Enter carb goal: </label>
   <input  (keydown.enter)="updateUser()" type="text" [(ngModel)]="userData.carbohydrateGoal" style="width:100px;"><br>
-
-  <div style="text-decoration: underline; text-align:right">
-    <button  routerLink="/Home" type="submit" (click)="updateUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Update Profile</button> <br><br>
+<br/>
+  <div class="buttons">
+    <button  routerLink="/Home" type="submit" (click)="deleteUser()" mdbBtn color="secondary" id='button1'>Delete Profile</button>
+    <button  routerLink="/Home" type="submit" (click)="updateUser()" mdbBtn color="secondary" id='button2'>Update Profile</button>
   </div>
+
 </div>

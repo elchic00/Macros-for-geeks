@@ -1,4 +1,13 @@
 .container{
-  width: 52%;
+  width: 40%;
   text-align:left
+}
+/*#button1,#button1{
+  width: 200px;
+  height: 40px;
+}*/
+.buttons{
+  margin: 0 auto;
+  display: block;
+  text-align:center;
 }

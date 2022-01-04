@@ -1,12 +1,6 @@
-using macro_for_geeks_api.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using macro_for_geeks_api.Models;
-using System;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.EntityFrameworkCore;
 
 namespace macro_for_geeks_api.Repositories
 {
@@ -17,7 +11,7 @@ namespace macro_for_geeks_api.Repositories
 
         public UserRepo(FoodContext db)
         {
-            this._db = db;
+            _db = db;
         }
 
         public IEnumerable<User> GetUsers()
@@ -70,8 +64,21 @@ namespace macro_for_geeks_api.Repositories
                 _db.SaveChanges();
                 return true;
             }
-            else return false;
 
+            return false;
+
+        }
+
+        public bool deleteUser(int id)
+        {
+            var userDelete = _db.Users.FirstOrDefault(u => u.Id == id);
+            if (userDelete != null)
+            {
+                _db.Users.Remove(userDelete);
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 

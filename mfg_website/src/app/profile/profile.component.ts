@@ -25,8 +25,13 @@ export class ProfileComponent implements OnInit {
   this.sharedService.updateUser(this.userData).subscribe(
       response => Swal.fire("Good job!", "You updated your profile!", "success"),
       error => Swal.fire('Oops..','Your did not update your profile!', 'error')
-    )
-  }
+    )}
+
+  deleteUser(){
+    this.sharedService.deleteUser(this.userId).subscribe(
+      response => Swal.fire("Good job!", "You updated your profile!", "success"),
+      error => Swal.fire('Oops..','Your did not update your profile!', 'error')
+    )}
 
   get userId(){
     return this.sharedService.userId

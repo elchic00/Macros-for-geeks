@@ -12,6 +12,8 @@ namespace macro_for_geeks_api.Repositories
 
         bool Put(User user);
 
+        bool deleteUser(int id);
+
 
     }
 }

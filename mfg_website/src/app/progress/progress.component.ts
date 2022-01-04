@@ -37,20 +37,20 @@ public barChartType: ChartType = 'bar';
   public barChartPlugins = [];
 
   public barChartData: any[] = [
-    { data: this.proteins, label: 'Proteins' },
-    { data: this.fats, label: 'Fats'},
-    { data: this.carbs, label: 'Carbohydrates'},
-    { "data": this.protienGoal , "label": "Protein goal", "type": "line", 'fill':'false',backgroundColor:["#75DBCD"], borderColor: ['#75DBCD'] },
-    { "data": this.carbGoal, "label": "Fat goal", "type": "line", 'fill':'false',backgroundColor:['#b4dd92'],borderColor: ['#b4dd92'] },
-    { "data": this.fatGoal, "label": "Carb goal", "type": "line", 'fill':'false', backgroundColor:['#e1e05d'],borderColor: ['#e1e05d'] },
+    { data: this.proteins, label: 'Proteins(g)' , backgroundColor:"#80af5e"},
+    { data: this.fats, label: 'Fats(g)',backgroundColor:"#a6a559"},
+    { data: this.carbs, label: 'Carbohydrates(g)',backgroundColor:"#75DBCD"},
+    { "data": this.protienGoal , "label": "Protein goal(g)", "type": "line", 'fill':'false',backgroundColor:["#80af5e"], borderColor: ['#80af5e'] },
+    { "data": this.carbGoal, "label": "Fat goal(g)", "type": "line", 'fill':'false',backgroundColor:['#a6a559'],borderColor: ['#a6a559'] },
+    { "data": this.fatGoal, "label": "Carb goal(g)", "type": "line", 'fill':'false', backgroundColor:['#75DBCD'],borderColor: ['#75DBCD'] },
   ];
 
 
-  chartColors: Colors[] = [
-    {backgroundColor:["#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD"]},
-    {backgroundColor:["#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA","#C9DBBA"]},
-    {backgroundColor:["#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8","#DCDBA8"]}
-  ];
+/*  chartColors: Colors[] = [
+   /!* {backgroundColor:["#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e"]},*!/
+/!*    {backgroundColor:["#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD"]},
+    {backgroundColor:["#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559"]}*!/
+  ];*/
 
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
 
