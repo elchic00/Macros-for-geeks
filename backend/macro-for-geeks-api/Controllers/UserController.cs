@@ -52,9 +52,15 @@ namespace macro_for_geeks_api.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public bool deleteUser(int id)
+        public bool DeleteUser(int id)
         {
             return _userRepo.deleteUser(id);
+        }
+
+        [HttpPost]
+        public bool AddUser(User user)
+        {
+            return _userRepo.PostUser(user);
         }
     }
 }

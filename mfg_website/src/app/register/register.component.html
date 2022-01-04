@@ -8,7 +8,7 @@
   <label>Enter picture path: </label>
   <input type="text" [placeholder]="'https://imgur.com/pic.png'" [(ngModel)]="user.picture" style="width: 240px;"><br>
   <label>Enter height:</label>
-  <input type="number" [placeholder]="heightFiller" [(ngModel)]="user.height" style="width: 100px;"><br>
+  <input type="text" [placeholder]="heightFiller" [(ngModel)]="user.height" style="width: 100px;"><br>
   <label>Enter weight:</label>
   <input type="number" [placeholder]="'145'" [(ngModel)]="user.weight" style="width: 100px;"><br>
   <label>Enter age:</label>
@@ -21,6 +21,6 @@
   <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="number" [(ngModel)]="user.carbohydrateGoal" style="width:100px;"><br>
 
   <div style="text-decoration: underline; text-align:right"> Refresh the homescreen and login to your new account.
-  <button  routerLink="/Login" type="submit" (click)="postUser()" mdbBtn color="secondary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
+  <button type="submit" (click)="postUser()" mdbBtn color="secondary" >Add User</button> <br><br>
   </div>
 </div>

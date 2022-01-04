@@ -41,10 +41,16 @@ namespace macro_for_geeks_api.Repositories
             }
         }
 
-        public void postUser(User user)
+        public bool PostUser(User user)
         {
-            _db.Users!.Add(user);
-            _db.SaveChanges();
+            if (user != null)
+            {
+                _db.Users!.Add(user);
+                _db.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
 
         public bool Put(User user)
