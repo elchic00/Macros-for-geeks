@@ -24,13 +24,17 @@ h1 {
 }
 
 label {
-  text-decoration: underline;
   display: inline-block;
-  width: 140px;
-  text-align: right;
-  margin-bottom: 20px;
+  text-align: left;
 }
 
 input {
   display: table-cell;
+  margin-bottom: 15px;
+}
+
+.height{
+  overflow: hidden;
+  display: block;
+
 }

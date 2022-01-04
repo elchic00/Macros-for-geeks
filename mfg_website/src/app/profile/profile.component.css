@@ -11,20 +11,16 @@
   display: block;
   text-align:center;
 }
+label {
+  display: inline-block;
+}
+
 input {
   display: table-cell;
+  margin-bottom: 15px;
 }
-/*label{
-  text-decoration: underline;
-  text-align:right;
-  display: table-cell;
 
-}*/
-
-label {
-  text-decoration: underline;
-  display: inline-block;
-  width: 140px;
-  text-align: right;
-  margin-bottom: 20px;
+.height{
+  overflow: hidden;
+  display: block;
 }

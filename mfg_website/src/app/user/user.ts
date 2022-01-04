@@ -3,10 +3,12 @@ export class User {
     name!:string
     email?:string
     picture?: string
-    height!: number
-    weight!:number
+    feet!: number
+    inches!: number
+  weight!:number
     age! : number
   proteinGoal! : number
   fatGoal!: number
   carbohydrateGoal! : number
+
 }

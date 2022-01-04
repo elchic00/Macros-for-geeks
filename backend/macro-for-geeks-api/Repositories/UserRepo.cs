@@ -60,13 +60,15 @@ namespace macro_for_geeks_api.Repositories
             {
                 userUpdate.Age = user.Age;
                 userUpdate.Email = user.Email;
-                userUpdate.Height = user.Height;
                 userUpdate.Name = user.Name;
                 userUpdate.Picture = user.Picture;
                 userUpdate.Weight = user.Weight;
                 userUpdate.CarbohydrateGoal = user.CarbohydrateGoal;
                 userUpdate.FatGoal = user.FatGoal;
                 userUpdate.ProteinGoal = user.ProteinGoal;
+                userUpdate.Feet = user.Feet;
+                userUpdate.Inches = user.Inches;
+
                 _db.SaveChanges();
                 return true;
             }

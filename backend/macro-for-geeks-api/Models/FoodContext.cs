@@ -16,9 +16,9 @@ namespace macro_for_geeks_api.Models
         {
         }
 
-        public virtual DbSet<Diary> Diaries { get; set; }
-        public virtual DbSet<Mealtime> Mealtimes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Diary>? Diaries { get; set; }
+        public virtual DbSet<Mealtime>? Mealtimes { get; set; }
+        public virtual DbSet<User>? Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -77,8 +77,10 @@ namespace macro_for_geeks_api.Models
 
                 entity.Property(e => e.FatGoal).HasColumnName("fat goal");
 
-                entity.Property(e => e.Height).HasColumnName("height");
-
+                entity.Property(e => e.Feet).HasColumnName("feet");
+                
+                entity.Property(e => e.Inches).HasColumnName("inches");
+                
                 entity.Property(e => e.Name).IsRequired();
 
                 entity.Property(e => e.Picture).HasColumnName("picture");
