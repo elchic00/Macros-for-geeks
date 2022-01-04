@@ -11,3 +11,20 @@
   display: block;
   text-align:center;
 }
+input {
+  display: table-cell;
+}
+/*label{
+  text-decoration: underline;
+  text-align:right;
+  display: table-cell;
+
+}*/
+
+label {
+  text-decoration: underline;
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  margin-bottom: 20px;
+}

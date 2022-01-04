@@ -14,9 +14,9 @@
   background-image: url('https://github.com/elchic00/Macros-for-geeks/blob/main/mfg_website/src/assets/Macros-For-Geeks-Logo-2.png');
 }
 
-.logo:hover{
+/*.logo:hover{
   opacity: 0.3;
-}
+}*/
 h1 {
   font-family:'Arial Narrow Bold', sans-serif;
   text-align: center;
@@ -24,7 +24,13 @@ h1 {
 }
 
 label {
+  text-decoration: underline;
   display: inline-block;
   width: 140px;
   text-align: right;
+  margin-bottom: 20px;
+}
+
+input {
+  display: table-cell;
 }
