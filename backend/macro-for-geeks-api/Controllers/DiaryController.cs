@@ -51,7 +51,7 @@ namespace macro_for_geeks_api.Controllers
         [HttpPost]
         public /*HttpResponseMessage*/ void PostEntry(Diary diary)
         {
-           /*return*/ _diaryRepo.PostEntry(diary)/*.EnsureSuccessStatusCode()*/;
+            _diaryRepo.PostEntry(diary);
         }
         
     }

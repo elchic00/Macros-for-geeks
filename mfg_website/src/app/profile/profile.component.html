@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<div class="container" *ngIf="userData">
+  <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
+  <label>Enter name: </label>
+  <input type="text" [(ngModel)]="userData.name" style="width: 240px;"><br><br>
+  <label>Enter email:</label>
+  <input type="text" [(ngModel)]="userData.email" style="width: 240px;"><br><br>
+  <label>Enter picture path: </label>
+  <input type="text"  [(ngModel)]="userData.picture" style="width: 240px;"><br><br>
+  <label>Enter height:</label>
+  <input type="text"  [(ngModel)]="userData.height" style="width: 100px;"><br><br>
+  <label>Enter weight:</label>
+  <input type="text" [(ngModel)]="userData.weight" style="width: 100px;"><br><br>
+  <label>Enter age:</label>
+  <input type="text" [(ngModel)]="userData.age" style="width: 100px;"><br><br>
+  <label>Enter protein goal: </label>
+  <input type="text"  [(ngModel)]="userData.proteinGoal" style="width: 100px;"><br><br>
+  <label>Enter fat goal: </label>
+  <input type="text" [(ngModel)]="userData.fatGoal" style="width: 100px;"><br><br>
+  <label>Enter carb goal: </label>
+  <input  (keydown.enter)="updateUser()" type="text" [(ngModel)]="userData.carbohydrateGoal" style="width:100px;"><br>
+
+  <div style="text-decoration: underline; text-align:right">
+    <button  routerLink="/Home" type="submit" (click)="updateUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Update Profile</button> <br><br>
+  </div>
+</div>

@@ -23,8 +23,8 @@ export class SharedService {
   }
 
   getUser(id: number): Observable<User>{
-    const url = `${this.APIurl}/${id}`
-    return this.http.get<any>(url)
+    const url = `${this.APIurl}/` + "User/" + `${id}`
+    return this.http.get<User>(url)
   }
 
   getDiaryByDate(id: number, date: Date): Observable<Food[]>{
@@ -38,6 +38,10 @@ export class SharedService {
 
   addUser(user: User){
     return this.http.post(this.APIurl + '/User',user)
+  }
+
+  updateUser(user: User) {
+    return this.http.put(this.APIurl + '/User', user )
   }
 
 }

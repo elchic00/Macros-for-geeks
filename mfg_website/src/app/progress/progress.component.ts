@@ -19,11 +19,15 @@ export class ProgressComponent implements OnInit {
   private carbs: number[] = [0,0,0,0,0,0,0]
   loaded = false;
   barchart:any;
+  carbGoal = [0,0,0,0,0,0,0]
+  protienGoal = [0,0,0,0,0,0,0]
+  fatGoal = [0,0,0,0,0,0,0]
 
   //@ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
   public barChartOptions: ChartOptions = {
-    responsive: true
+    responsive: true,
+    spanGaps:true
   };
 
 public barChartLabels: any = this.pastWeek;
@@ -36,10 +40,11 @@ public barChartType: ChartType = 'bar';
     { data: this.proteins, label: 'Proteins' },
     { data: this.fats, label: 'Fats'},
     { data: this.carbs, label: 'Carbohydrates'},
-    { "data": [220,220,220,220,220,220,220], "label": "Protein goal", "type": "line", 'fill':'false',backgroundColor:["#25615a"], borderColor: ['#25615a'] },
-    { "data": [50,50,50,50,50,50,50], "label": "Fat goal", "type": "line", 'fill':'false',backgroundColor:['#3c5d16'],borderColor: ['#3c5d16'] },
-    { "data": [320,320,320,320,320,320,320], "label": "Carb goal", "type": "line", 'fill':'false', backgroundColor:['#98962d'],borderColor: ['#98962d'] },
+    { "data": this.protienGoal , "label": "Protein goal", "type": "line", 'fill':'false',backgroundColor:["#75DBCD"], borderColor: ['#75DBCD'] },
+    { "data": this.carbGoal, "label": "Fat goal", "type": "line", 'fill':'false',backgroundColor:['#b4dd92'],borderColor: ['#b4dd92'] },
+    { "data": this.fatGoal, "label": "Carb goal", "type": "line", 'fill':'false', backgroundColor:['#e1e05d'],borderColor: ['#e1e05d'] },
   ];
+
 
   chartColors: Colors[] = [
     {backgroundColor:["#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD"]},
@@ -52,6 +57,21 @@ public barChartType: ChartType = 'bar';
   ngOnInit(){
     this.getDates()
     this.getMacros()
+    this.getGoals()
+  }
+
+  getGoals(){
+    this.sharedService.getUser(this.userId).subscribe(user => {
+      for(let i = 0; i < 7; i++) {
+        this.protienGoal[i] = user.proteinGoal
+      }
+      for(let i = 0; i < 7; i++) {
+        this.carbGoal[i] = user.carbohydrateGoal
+      }
+      for(let i = 0; i < 7; i++) {
+        this.fatGoal[i] = user.fatGoal
+      }
+    })
   }
 
   fixPrecision(){

@@ -1,10 +1,8 @@
-<div *ngIf="!this.loaded" class="d-flex justify-content-center">
+<!--<div *ngIf="!this.loaded" class="d-flex justify-content-center">
   <div class="spinner-border" role="status">
     <span class="sr-only" id="loading"></span>
   </div>
-</div>
-
-
+</div>-->
 <div class ="table">
 <div class="container mt-5">
     <table class="table table-striped">
@@ -21,6 +19,7 @@
             <th>Meal-time</th>
           </tr>
       </thead>
+
       <tbody>
         <tr *ngFor="let food of foods">
           <td>{{ food.food }}</td>

@@ -14,13 +14,13 @@
   <label>Enter age:</label>
   <input type="text" [placeholder]="'25'" [(ngModel)]="user.age" style="width: 100px;"><br><br>
   <label>Enter protein goal: </label>
-  <input type="text" [placeholder]="'220g'"  [(ngModel)]="user['protein goal']" style="width: 100px;"><br><br>
+  <input type="text" [placeholder]="'220g'"  [(ngModel)]="user.proteinGoal" style="width: 100px;"><br><br>
   <label>Enter fat goal: </label>
-  <input type="text" [placeholder]="'320g'" [(ngModel)]="user['fat goal']" style="width: 100px;"><br><br>
+  <input type="text" [placeholder]="'320g'" [(ngModel)]="user.fatGoal" style="width: 100px;"><br><br>
   <label>Enter carb goal: </label>
-  <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
+  <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="text" [(ngModel)]="user.carbohydrateGoal" style="width:100px;"><br>
 
-  <div style="text-decoration: underline; text-align:right"> Refresh the homescreen to login to your new account.
+  <div style="text-decoration: underline; text-align:right"> Refresh the homescreen and login to your new account.
   <button  routerLink="/Login" type="submit" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
   </div>
 </div>
