@@ -16,7 +16,7 @@ export class DonutChartComponent implements OnInit {
 
   // Doughnut
 
-  public doughnutChartLabels: Label[] = ['Protein', 'Fat', 'Carbohydrate'];
+  public doughnutChartLabels: Label[] = ['Protein(g)', 'Fat(g)', 'Carbohydrate(g)'];
   public doughnutChartData: SingleOrMultiDataSet /*Array<number[]>*/ = [
     this.macros
   ];
@@ -46,7 +46,7 @@ export class DonutChartComponent implements OnInit {
   };
 
   chartColors: any[] = [{
-    backgroundColor:["#80af5e", "#a6a559", "#75DBCD"]
+    backgroundColor:["#80af5e", "#50978d", "#a6a559"]
   }];
 
   get userId():number {

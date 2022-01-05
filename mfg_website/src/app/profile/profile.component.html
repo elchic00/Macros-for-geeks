@@ -1,29 +1,29 @@
 <div class="container" *ngIf="userData">
-  <h3 style="text-decoration: underline; text-align:center">Update Profile</h3><br>
+  <h3 style="text-decoration: underline; text-align:center">Update Profile</h3>
   <label>Enter Name: </label>
   <input class="form-control" type="text" [(ngModel)]="userData.name" style="width: 240px;">
-  <label>Enter email:</label>
+  <label>Enter Email:</label>
   <input class="form-control" type="email" [(ngModel)]="userData.email" style="width: 240px;">
-  <label>Enter picture path: </label>
+  <label>Enter Picture Path: </label>
   <input class="form-control" type="text"  [(ngModel)]="userData.picture" style="width: 240px;">
-  <label>Enter Height (inches):</label>
-  <div class="height">
-    <input class="form-control" type="number" [placeholder]="'feet'" [(ngModel)]="userData.feet" style="width: 100px;float:left;">
-    <input class="form-control" type="number" [placeholder]="'inches'" [(ngModel)]="userData.inches" style="width: 100px;float:left">
+  <label>Enter Height (feet, inches):</label>
+  <div class="heightInput">
+    <input class="form-control" type="number" min="0" max="8" [placeholder]="'feet'" [(ngModel)]="userData.feet" style="width: 100px;float:left;">
+    <input class="form-control" type="number" min="0" max="11" [placeholder]="'inches'" [(ngModel)]="userData.inches" style="width: 100px;float:left">
   </div>
-  <label>Enter weight:</label>
-  <input class="form-control" type="number" [(ngModel)]="userData.weight" style="width: 100px;">
-  <label>Enter age:</label>
-  <input class="form-control" type="number" [(ngModel)]="userData.age" style="width: 100px;">
-  <label>Enter protein goal: </label>
-  <input class="form-control" type="number"  [(ngModel)]="userData.proteinGoal" style="width: 100px;">
-  <label>Enter fat goal: </label>
-  <input class="form-control" type="number" [(ngModel)]="userData.fatGoal" style="width: 100px;">
-  <label>Enter carb goal: </label>
-  <input class="form-control"  (keydown.enter)="updateUser()" type="number" [(ngModel)]="userData.carbohydrateGoal" style="width:100px;"><br>
-    <br/>
+  <label>Enter Weight:</label>
+  <input class="form-control" type="number" min="0" [(ngModel)]="userData.weight" style="width: 100px;">
+  <label>Enter Age:</label>
+  <input class="form-control" type="number" min="0" [(ngModel)]="userData.age" style="width: 100px;">
+  <label>Enter Protein Goal: </label>
+  <input class="form-control" type="number" min="0" [(ngModel)]="userData.proteinGoal" style="width: 100px;">
+  <label>Enter Fat Goal: </label>
+  <input class="form-control" type="number" min="0" [(ngModel)]="userData.fatGoal" style="width: 100px;">
+  <label>Enter Carb Goal: </label>
+  <input class="form-control"  (keydown.enter)="updateUser()" type="number" min="0"z [(ngModel)]="userData.carbohydrateGoal" style="width:100px;"><br>
+
   <div class="buttons">
-    <button  routerLink="/Login" type="submit" (click)="deleteUser()" mdbBtn color="secondary" id='button1'>Delete Profile</button>
-    <button  routerLink="/Home" type="submit" (click)="updateUser()" mdbBtn color="secondary" id='button2'>Update Profile</button>
+    <button type="submit" (click)="deleteUser()" mdbBtn color="secondary" id='button1'>Delete Profile</button>
+    <button  type="submit" (click)="updateUser()" mdbBtn color="secondary" id='button2'>Update Profile</button>
   </div>
   </div>

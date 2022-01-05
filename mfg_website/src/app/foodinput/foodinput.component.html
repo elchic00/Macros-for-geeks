@@ -27,7 +27,7 @@
 
   <!-- Enter meal type-->
   <div class="dropbox-container">
-  <label for="dropbox"><h3>Choose meal type: </h3>
+  <label for="dropbox"><h3>When was your meal? </h3>
   <select (keydown.enter)="PostFoods()"  id = "dropbox" class="dropbox" (change)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal'>
         {{meal.meal}}

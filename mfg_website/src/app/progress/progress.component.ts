@@ -18,52 +18,51 @@ export class ProgressComponent implements OnInit {
   private fats : number[] = [0,0,0,0,0,0,0]
   private carbs: number[] = [0,0,0,0,0,0,0]
   loaded = false;
-  barchart:any;
   carbGoal = [0,0,0,0,0,0,0]
-  protienGoal = [0,0,0,0,0,0,0]
+  proteinGoal = [0,0,0,0,0,0,0]
   fatGoal = [0,0,0,0,0,0,0]
-
-  //@ViewChild(BaseChartDirective) chart: BaseChartDirective;
-
-  public barChartOptions: ChartOptions = {
-    responsive: true,
-    spanGaps:true
-  };
-
-public barChartLabels: any = this.pastWeek;
-public barChartType: ChartType = 'bar';
-
+  // Chart info
+  @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
+  public barChartLabels: any = this.pastWeek;
+  public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
-
   public barChartData: any[] = [
-    { data: this.proteins, label: 'Proteins(g)' , backgroundColor:"#80af5e"},
-    { data: this.fats, label: 'Fats(g)',backgroundColor:"#a6a559"},
-    { data: this.carbs, label: 'Carbohydrates(g)',backgroundColor:"#75DBCD"},
-    { "data": this.protienGoal , "label": "Protein goal(g)", "type": "line", 'fill':'false',backgroundColor:["#80af5e"], borderColor: ['#80af5e'] },
-    { "data": this.carbGoal, "label": "Fat goal(g)", "type": "line", 'fill':'false',backgroundColor:['#a6a559'],borderColor: ['#a6a559'] },
-    { "data": this.fatGoal, "label": "Carb goal(g)", "type": "line", 'fill':'false', backgroundColor:['#75DBCD'],borderColor: ['#75DBCD'] },
+    { data: this.proteins, label: 'Proteins(g)'},
+    { data: this.fats, label: 'Fats(g)'},
+    { data: this.carbs, label: 'Carbohydrates(g)'},
+    { "data": this.proteinGoal , "label": "Protein goal(g)", "type": "line", 'radius':'0', 'fill':'false',backgroundColor:["#80af5e"], borderColor: ['#80af5e'] },
+    { "data": this.carbGoal, "label": "Fat goal(g)", "type": "line", 'radius':'0', 'fill':'false',backgroundColor:['#50978d'],borderColor: ['#50978d'] },
+    { "data": this.fatGoal, "label": "Carb goal(g)", "type": "line", 'radius':'0', 'fill':'false', backgroundColor:['#a6a559'],borderColor: ['#a6a559'] },
   ];
+  chartColors: Colors[] = [
+    {backgroundColor:["#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e"]},
+    {backgroundColor:["#50978d","#50978d","#50978d","#50978d","#50978d","#50978d","#50978d"]},
+    {backgroundColor:["#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559"]}
 
+  ];
+/*  public barChartOptions: ChartOptions = {
+    responsive: true,
+    spanGaps:true
+  };*/
 
-/*  chartColors: Colors[] = [
-   /!* {backgroundColor:["#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e","#80af5e"]},*!/
-/!*    {backgroundColor:["#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD","#75DBCD"]},
-    {backgroundColor:["#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559"]}*!/
-  ];*/
-
-  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) { }
+  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) {
+  }
 
   ngOnInit(){
-    this.getDates()
     this.getMacros()
+    this.getDates()
     this.getGoals()
+    // used to load chart data from the api so that the chart will refresh with the new data
+    setTimeout(() => {
+      this.chart.chart.update() // This re-renders the canvas element.
+    }, 350);
   }
 
   getGoals(){
     this.sharedService.getUser(this.userId).subscribe(user => {
       for(let i = 0; i < 7; i++) {
-        this.protienGoal[i] = user.proteinGoal
+        this.proteinGoal[i] = user.proteinGoal
       }
       for(let i = 0; i < 7; i++) {
         this.carbGoal[i] = user.carbohydrateGoal
@@ -106,7 +105,8 @@ public barChartType: ChartType = 'bar';
     threedays.setDate(threedays.getDate() - 3);
     var twodays=new Date(myCurrentDate);
     twodays.setDate(twodays.getDate() - 2);
-    //Put Macros for each date over the last 7 days into their own array.
+    /* Put Macros for each date over the last 7 days into their own array with for loops.
+       Can make much simpler once API can get past week of entries. */
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
         this.proteins[0] += entries[i].protein}})

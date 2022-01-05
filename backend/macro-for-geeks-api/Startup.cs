@@ -75,8 +75,7 @@ namespace macro_for_geeks_api
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
-            
-            
+             
             //Swagger configuration
             /*HttpConfiguration config = new HttpConfiguration();
             SwaggerConfig.Register(config);
