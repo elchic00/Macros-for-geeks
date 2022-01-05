@@ -32,7 +32,7 @@ namespace macro_for_geeks_api
             services.AddScoped<IMealRepo, MealRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
             services.AddControllers();
-            //services.AddSwaggerGen();
+            services.AddSwaggerGen();
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "../../mfg_website/dist";
@@ -63,7 +63,7 @@ namespace macro_for_geeks_api
             {
                 endpoints.MapControllers();
             });
-             app.UseSpa(spa =>
+             /*app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
@@ -74,14 +74,14 @@ namespace macro_for_geeks_api
                 {
                     spa.UseAngularCliServer(npmScript: "start");
                 }
-            });
+            });*/
              
             //Swagger configuration
-            /*HttpConfiguration config = new HttpConfiguration();
+            HttpConfiguration config = new HttpConfiguration();
             SwaggerConfig.Register(config);
             app.UseSwagger();  
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "macro-for-geeks API");  
-            });  */
+            });  
             
         }
     }
