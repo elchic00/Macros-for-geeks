@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
+import { CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-macros',
@@ -8,11 +9,11 @@ import { SharedService } from '../services/shared.service';
 })
 export class MacrosComponent implements OnInit {
   foods: any = [];
-  userID: number = this.userId;
+  userID: number = Number(this.cookieService.get('id'))
   date : Date = new Date();
   loaded : boolean = false;
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, private cookieService: CookieService) { }
   ngOnInit(): void {
     this.loadMacs()
   }
@@ -26,9 +27,6 @@ export class MacrosComponent implements OnInit {
     }
   }
 
-  get userId():number {
-    return this.sharedService.userId
-  }
 
 
 }

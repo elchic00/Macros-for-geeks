@@ -2,6 +2,7 @@ import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
 import { User } from '../user/user';
+import { CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   users : User[] = []
   loaded : boolean = false
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, private cookieService: CookieService) { }
 
   ngOnInit(): void {
       this.getUsers();
@@ -23,8 +24,12 @@ export class LoginComponent implements OnInit {
       this.users = user
       this.loaded = true;
       })
-    console.log((this.users))
   }
+
+  setCookie(userId : any){
+    this.cookieService.set('id',userId)
+    console.log(this.cookieService.get('id'))
+}
 
   get userId():number {
     return this.sharedService.userId

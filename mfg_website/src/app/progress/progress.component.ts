@@ -4,6 +4,7 @@ import {ChartType, ChartOptions} from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
 import {BaseChartDirective, Colors} from "ng2-charts";
+import { CookieService} from 'ngx-cookie-service';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class ProgressComponent implements OnInit {
     spanGaps:true,
   };
 
-  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) {}
+  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService, private cookieService: CookieService) {}
 
   ngOnInit(){
     this.getMacros()
@@ -177,7 +178,7 @@ export class ProgressComponent implements OnInit {
   }
 
   get userId():number {
-    return this.sharedService.userId
+    return Number(this.cookieService.get('id'))
   }
 
 }

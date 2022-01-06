@@ -3,6 +3,7 @@ import {User} from "../user/user";
 import {SharedService} from "../services/shared.service";
 import Swal from "sweetalert2";
 import { Router } from '@angular/router';
+import { CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ export class ProfileComponent implements OnInit {
   userData: User = new User()
 
 
-  constructor(private router: Router, private sharedService: SharedService) { }
+  constructor(private router: Router, private sharedService: SharedService, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.sharedService.getUser(this.userId).subscribe(user => {
@@ -54,7 +55,7 @@ export class ProfileComponent implements OnInit {
   }
 
   get userId(){
-    return this.sharedService.userId
+    return Number(this.cookieService.get('id'))
   }
 
 

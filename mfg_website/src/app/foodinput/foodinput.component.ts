@@ -5,6 +5,7 @@ import { SearchfoodsService } from '../services/searchfoods.service';
 import { SharedService } from '../services/shared.service';
 import { DatePipe } from '@angular/common';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-foodinput',
@@ -28,7 +29,7 @@ export class FoodinputComponent implements OnInit {
     this.selected = e.target.value
   }
 
-  constructor(private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
+  constructor(private cookieService: CookieService, private SearchfoodsService: SearchfoodsService, private sharedService: SharedService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.sharedService.getMeal().subscribe(meals => { this.mealTime = meals;})
@@ -66,7 +67,7 @@ export class FoodinputComponent implements OnInit {
     this.food.fats = Number((this.NutrientDis[1].value * this.serving).toFixed(2));
     this.food.protein = Number((this.NutrientDis[0].value * this.serving).toFixed(2));
     this.food.date = new Date().toDateString(); //currentDateTime
-    this.food.userId = this.userId
+    this.food.userId = Number(this.cookieService.get('id'))
     this.food.mealTime = this.selected
     this.sharedService.addEntry(this.food).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
@@ -74,8 +75,5 @@ export class FoodinputComponent implements OnInit {
     )
   }
 
-  get userId():number {
-    return this.sharedService.userId
-  }
 
 }

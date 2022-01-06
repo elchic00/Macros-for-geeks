@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ChartOptions, ChartType} from 'chart.js';
 import {MultiDataSet, Label, SingleOrMultiDataSet} from 'ng2-charts';
 import {SharedService} from "../services/shared.service";
+import { CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'doughnut',
@@ -22,11 +23,11 @@ export class DonutChartComponent implements OnInit {
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService,private cookieService: CookieService) {
   }
 
   ngOnInit():void {
-      this.sharedService.getDiaryByDate(this.userId, this.date).subscribe(entries => {
+      this.sharedService.getDiaryByDate(Number(this.cookieService.get('id')), this.date).subscribe(entries => {
         for (var i = 0; i < entries.length; i++) {
           this.macros[0] += Number(entries[i].protein.toFixed(2))
           this.macros[1] += Number(entries[i].fats.toFixed(2))
@@ -38,7 +39,6 @@ export class DonutChartComponent implements OnInit {
         this.loaded = true
       })
 
-    console.log((this.userId))
   }
 
   ChartOptions: ChartOptions = {
@@ -49,8 +49,5 @@ export class DonutChartComponent implements OnInit {
     backgroundColor:["#80af5e", "#50978d", "#a6a559"]
   }];
 
-  get userId():number {
-    return this.sharedService.userId
-  }
 
 }
