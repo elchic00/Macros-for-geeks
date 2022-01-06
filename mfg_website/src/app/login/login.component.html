@@ -25,7 +25,7 @@
                         src={{user.picture}}
                         title={{user.name}}
                         routerLink="/Home"
-                        (click)="this.userID(user.id)"
+                        (click)="this.userID(user.id); this.setCookie(user.id)"
                         />
                         <figcaption>{{user.name}}</figcaption>
                     </div>

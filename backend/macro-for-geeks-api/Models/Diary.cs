@@ -8,7 +8,8 @@ namespace macro_for_geeks_api.Models
         public long UserId { get; set; }
         public long Entryid { get; set; }
         public string Food { get; set; }
-        public long? Servings { get; set; }
+        // Must be a double to be able to read floating numbers in SQLite
+        public double? Servings { get; set; }
         public double? Calories { get; set; }
         public double? Carbohydrates { get; set; }
         public double? Fats { get; set; }

@@ -262,3 +262,4 @@
 /Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.NodeServices.dll
 /Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.SpaServices.dll
 /Users/Nancy/Documents/Projects /Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll
+/home/andrewa/Projects/Macros-for-geeks/backend/macro-for-geeks-api/bin/Debug/net6.0/published/appsettings.json

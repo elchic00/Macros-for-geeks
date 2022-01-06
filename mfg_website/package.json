@@ -28,6 +28,7 @@
     "chartjs": "^0.3.24",
     "i": "^0.3.7",
     "ng2-charts": "^2.4.3",
+    "ngx-cookie-service": "^13.1.2",
     "primeicons": "^5.0.0",
     "primeng": "^13.0.2",
     "rxjs": "~6.6.0",

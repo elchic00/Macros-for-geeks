@@ -4,6 +4,7 @@ import {ChartType, ChartOptions} from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
 import {BaseChartDirective, Colors} from "ng2-charts";
+import { CookieService} from 'ngx-cookie-service';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class ProgressComponent implements OnInit {
     spanGaps:true,
   };
 
-  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) {}
+  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService, private cookieService: CookieService) {}
 
   ngOnInit(){
     this.getMacros()
@@ -63,25 +64,11 @@ export class ProgressComponent implements OnInit {
     this.sharedService.getUser(this.userId).subscribe(user => {
       for(let i = 0; i < 7; i++) {
         this.proteinGoal[i] = user.proteinGoal
-      }
-      for(let i = 0; i < 7; i++) {
         this.carbGoal[i] = user.carbohydrateGoal
-      }
-      for(let i = 0; i < 7; i++) {
         this.fatGoal[i] = user.fatGoal
       }
     })
-    this.fixPrecision()
-    this.loaded = true
   }
-
-  fixPrecision(){
-    for(let i = 0; i < 7; i++){
-      this.proteins[i] = Number(this.proteins[i].toFixed(2))
-      this.fats[i] = Number(this.fats[i].toFixed(2))
-      this.carbs[i] = Number(this.carbs[i].toFixed(2))
-    }
-}
 
   getDates(){
     for(let i = 0; i < 7; i++){
@@ -111,73 +98,75 @@ export class ProgressComponent implements OnInit {
        Can make much simpler once API can get past week of entries. */
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[0] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[0] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,sixdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[1] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[1] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,fivedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[2] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[2] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,fourdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[3] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[3] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,threedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[4] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[4] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,twodays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[5] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[5] += Number(entries[i].protein.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[6] += Number(entries[i].protein.toFixed(2))}})
+        this.proteins[6] += Number(entries[i].protein.toFixed(0))}})
 
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[0] += entries[i].fats}})
+        this.fats[0] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,sixdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[1] += entries[i].fats}})
+        this.fats[1] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,fivedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[2] += entries[i].fats}})
+        this.fats[2] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,fourdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[3] += entries[i].fats}})
+        this.fats[3] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,threedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[4] += entries[i].fats}})
+        this.fats[4] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,twodays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[5] += entries[i].fats}})
+        this.fats[5] += Math.round(entries[i].fats)}})
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.fats[6] += entries[i].fats}})
+        this.fats[6] += Math.round(entries[i].fats)}})
 
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[0] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[0] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,sixdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[1] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[1] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,fivedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[2] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[2] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,fourdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[3] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[3] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,threedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[4] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[4] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,twodays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[5] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[5] += Number(entries[i].carbohydrates.toFixed(0))}})
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.carbs[6] += Number(entries[i].carbohydrates.toFixed(2))}})
+        this.carbs[6] += Math.round(entries[i].carbohydrates)
+      }})
+    this.loaded = true
   }
 
   get userId():number {
-    return this.sharedService.userId
+    return Number(this.cookieService.get('id'))
   }
 
 }
