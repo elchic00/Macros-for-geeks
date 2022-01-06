@@ -1,4 +1,4 @@
-import { NutrientDisplay } from './../interfaces/nutrientDisplay';
+import { NutrientInfo } from '../interfaces/nutrientInfo';
 import { Food } from '../interfaces/food';
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { SearchfoodsService } from '../services/searchfoods.service';
@@ -15,7 +15,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 export class FoodinputComponent implements OnInit {
   InputFood: string = "";
   data: any = []
-  NutrientDis: NutrientDisplay[] = [];
+  NutrientDis: NutrientInfo[] = [];
   description: string = "";
   FoodCategory: string = "";
   food =  new Food();
@@ -47,7 +47,7 @@ export class FoodinputComponent implements OnInit {
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
       })}
     else {
-      Swal.fire('Oops...','Please enter a food item to search!', 'error')
+      Swal.fire('No Bueno','Please enter a food item to search!', 'error')
     }
     this.loaded = true
   }
@@ -67,7 +67,6 @@ export class FoodinputComponent implements OnInit {
     this.food.protein = Number((this.NutrientDis[0].value * this.serving).toFixed(2));
     this.food.date = new Date().toDateString(); //currentDateTime
     this.food.userId = this.userId
-    console.log(this.selected)
     this.food.mealTime = this.selected
     this.sharedService.addEntry(this.food).subscribe(
       response => Swal.fire("Good job!", "You posted your food info!", "success"),

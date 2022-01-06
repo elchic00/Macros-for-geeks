@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import {Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import {ChartType, ChartDataSets, ChartOptions} from 'chart.js';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChartType, ChartOptions} from 'chart.js';
 import { DatePipe } from '@angular/common';
 import {SharedService} from "../services/shared.service";
-import {BaseChartDirective, Colors, MultiDataSet, SingleDataSet, SingleOrMultiDataSet} from "ng2-charts";
+import {BaseChartDirective, Colors} from "ng2-charts";
 
 
 @Component({
@@ -21,6 +21,7 @@ export class ProgressComponent implements OnInit {
   carbGoal = [0,0,0,0,0,0,0]
   proteinGoal = [0,0,0,0,0,0,0]
   fatGoal = [0,0,0,0,0,0,0]
+
   // Chart info
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
   public barChartLabels: any = this.pastWeek;
@@ -41,13 +42,12 @@ export class ProgressComponent implements OnInit {
     {backgroundColor:["#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559","#a6a559"]}
 
   ];
-/*  public barChartOptions: ChartOptions = {
+  public barChartOptions: ChartOptions = {
     responsive: true,
-    spanGaps:true
-  };*/
+    spanGaps:true,
+  };
 
-  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) {
-  }
+  constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService) {}
 
   ngOnInit(){
     this.getMacros()
@@ -71,6 +71,8 @@ export class ProgressComponent implements OnInit {
         this.fatGoal[i] = user.fatGoal
       }
     })
+    this.fixPrecision()
+    this.loaded = true
   }
 
   fixPrecision(){
@@ -109,25 +111,25 @@ export class ProgressComponent implements OnInit {
        Can make much simpler once API can get past week of entries. */
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[0] += entries[i].protein}})
+        this.proteins[0] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,sixdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[1] += entries[i].protein}})
+        this.proteins[1] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,fivedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[2] += entries[i].protein}})
+        this.proteins[2] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,fourdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[3] += entries[i].protein}})
+        this.proteins[3] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,threedays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[4] += entries[i].protein}})
+        this.proteins[4] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,twodays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[5] += entries[i].protein}})
+        this.proteins[5] += Number(entries[i].protein.toFixed(2))}})
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
-        this.proteins[6] += entries[i].protein}})
+        this.proteins[6] += Number(entries[i].protein.toFixed(2))}})
 
     this.sharedService.getDiaryByDate(this.userId,sevdays).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
@@ -172,8 +174,6 @@ export class ProgressComponent implements OnInit {
     this.sharedService.getDiaryByDate(this.userId,this.date).subscribe(entries => {
       for (var i = 0; i < entries.length ;i++){
         this.carbs[6] += Number(entries[i].carbohydrates.toFixed(2))}})
-    this.fixPrecision()
-    this.loaded = true
   }
 
   get userId():number {

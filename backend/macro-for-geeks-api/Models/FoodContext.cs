@@ -37,8 +37,7 @@ namespace macro_for_geeks_api.Models
 
                 entity.ToTable("Diary");
 
-                entity.HasIndex(e => e.Entryid, "IX_Diary_entryid")
-                    .IsUnique();
+                entity.HasIndex(e => e.Entryid, "entry&user");
 
                 entity.Property(e => e.Entryid).HasColumnName("entryid");
 

@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
   updateUser(){
   this.sharedService.updateUser(this.userData).subscribe(
       response => Swal.fire("Good job!", "You updated your profile!", "success"),
-      error => Swal.fire('Oops..','Your did not update your profile!', 'error')
+      error => Swal.fire('No Bueno','Your did not update your profile!', 'error')
     )}
 
   deleteUser() {

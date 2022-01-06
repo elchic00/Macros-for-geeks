@@ -1,4 +1,4 @@
-export interface NutrientDisplay {
+export interface NutrientInfo {
   nutrientName: string;
   value: number;
 }

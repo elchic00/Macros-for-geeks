@@ -25,19 +25,6 @@ namespace macro_for_geeks_api.Repositories
         {
             {
                 return _db.Users!.FirstOrDefault(u => u.Id == id);
-                /*var result = (_db.Users ?? throw new InvalidOperationException()).Where(u => u.Id == id);
-                foreach (var r in result)
-                {
-                    UserViewModel user = new UserViewModel
-                    {
-                        Id = r.Id,
-                        Name = r.Name,
-                        Email = r.Email
-                    };
-                    users.Add(user);
-                }
-
-                return users;*/
             }
         }
 
