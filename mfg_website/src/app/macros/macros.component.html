@@ -8,7 +8,6 @@
     <table class="table table-striped">
       <thead>
           <tr>
-            <!-- <th>UserId</th> -->
             <th>Food</th>
             <th>Servings</th>
             <th>Calories</th>
@@ -30,6 +29,7 @@
           <td>{{ food.protein | number : '1.2-2'}}</td>
           <td>{{ food.date }}</td>
           <td>{{ food.mealTime }}</td>
+          <td><button type="submit"  (click)="deleteEntry(food.entryid)" mdbBtn color="secondary" id='button1'>Delete entry</button></td>
         </tr>
       </tbody>
     </table>

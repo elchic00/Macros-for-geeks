@@ -54,5 +54,12 @@ namespace macro_for_geeks_api.Controllers
             _diaryRepo.PostEntry(diary);
         }
         
+        [HttpDelete]
+        [Route("{entryId}")] 
+        public bool DeleteUser(int entryId)
+        {
+            return _diaryRepo.DeleteDiary(entryId);
+        }
+        
     }
 }

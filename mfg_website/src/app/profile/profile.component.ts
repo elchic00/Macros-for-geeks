@@ -43,7 +43,6 @@ export class ProfileComponent implements OnInit {
             Swal.fire('Deleted!', '', 'success')
             this.router.navigateByUrl('/Login')
           },
-
         error => Swal.fire('Changes were not made', '', 'error')
         )
       } else if (result.isDenied) {

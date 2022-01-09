@@ -13,6 +13,8 @@ namespace macro_for_geeks_api.Repositories
 
         void PostEntry(Diary diary);
 
+        bool DeleteDiary(int entryId);
+
 
 
 

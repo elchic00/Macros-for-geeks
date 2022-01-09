@@ -55,6 +55,18 @@ namespace macro_for_geeks_api.Repositories
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.Accepted, "Successful post to database");*/
         }
 
+        public bool DeleteDiary(int entryId)
+        {
+            Debug.Assert(_db.Diaries != null, "_db.Diaries != null");
+            var diaryDelete = _db.Diaries.FirstOrDefault(d => d.Entryid == entryId);
+            
+            if (diaryDelete == null) return false;
+            
+            _db.Diaries.Remove(diaryDelete);
+            _db.SaveChanges();
+            return true;
+        }
+
         public List<Diary> GetEntriesByUser(short id)
         {
             throw new NotImplementedException();
