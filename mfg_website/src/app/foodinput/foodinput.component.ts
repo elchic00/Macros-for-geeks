@@ -24,6 +24,11 @@ export class FoodinputComponent implements OnInit {
   serving: number = 1
   selected = "Breakfast"
   loaded : boolean = false
+  results: any = []
+
+  res(e:any){
+    console.log(e.target.value)
+  }
 
   update(e : any){
     this.selected = e.target.value
@@ -42,8 +47,9 @@ export class FoodinputComponent implements OnInit {
         this.description = this.data['foods'][0].description
         this.FoodCategory = this.data['foods'][0].foodCategory
         for (var i = 0; i < this.data['foods'].length ;i++){
-          console.log(this.data['foods'][i].description)
+          this.results.push( this.data['foods'][i].description)
         }
+        console.log(this.results)
         this.NutrientDis = this.data['foods'][0]['foodNutrients'] ;
         this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
       })}

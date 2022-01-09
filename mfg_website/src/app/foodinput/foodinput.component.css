@@ -18,3 +18,11 @@ input[type="text"] {
 .dropbox {
   height: 100%
 }
+
+select{
+  width:500px
+}
+
+.dropbox-container{
+  width:300px
+}
