@@ -54,7 +54,7 @@ export class ProgressComponent implements OnInit {
     this.getMacros()
     this.getDates()
     this.getGoals()
-    // used to load chart data from the api so that the chart will refresh with the new data
+    // used to refresh with the chart with the new data from the api
     setTimeout(() => {
       this.chart.chart.update() // This re-renders the canvas element.
     }, 350);

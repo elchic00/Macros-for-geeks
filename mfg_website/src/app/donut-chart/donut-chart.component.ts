@@ -43,6 +43,13 @@ export class DonutChartComponent implements OnInit {
 
   ChartOptions: ChartOptions = {
     responsive: true,
+/*    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          return data['datasets'][0]['data'][tooltipItem['index']] + '%';
+        }
+      },
+    }*/
   };
 
   chartColors: any[] = [{

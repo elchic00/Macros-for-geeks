@@ -1,13 +1,13 @@
 .container{
-  width: 40%;
+  width: 600px;
   text-align:left
 }
 .homeButton {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
-  height: 50px;
+  width: 400px;
+  height: 60px;
   border-radius: 25px;
   background-color: #75DBCD;
   font-family: "Lucida Console", "Courier New", monospace;

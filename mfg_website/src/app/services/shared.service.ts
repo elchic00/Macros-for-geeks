@@ -48,6 +48,10 @@ export class SharedService {
     return this.http.delete(this.APIurl + '/User/' + id.toString())
   }
 
+  deleteDiary(entryId:number){
+    return this.http.delete(this.APIurl + '/Diary/' + entryId.toString())
+  }
+
 }
 
 

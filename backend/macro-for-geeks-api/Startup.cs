@@ -32,6 +32,7 @@ namespace macro_for_geeks_api
             services.AddScoped<IMealRepo, MealRepo>();
             services.AddScoped<IDiaryRepo, DiaryRepo>();
             services.AddControllers();
+            // Used for swagger, uncomment to use swagger ui 
             //services.AddSwaggerGen();
             services.AddSpaStaticFiles(configuration =>
             {
@@ -63,6 +64,7 @@ namespace macro_for_geeks_api
             {
                 endpoints.MapControllers();
             });
+            // Used to connect the front end (start it automatically when starting .net). Comment out to use swagger
              app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -77,11 +79,13 @@ namespace macro_for_geeks_api
             });
              
             //Swagger configuration
-            /*HttpConfiguration config = new HttpConfiguration();
+            /*
+            HttpConfiguration config = new HttpConfiguration();
             SwaggerConfig.Register(config);
             app.UseSwagger();  
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "macro-for-geeks API");  
-            });  */
+            });  
+            */
             
         }
     }
