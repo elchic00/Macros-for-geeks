@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using macro_for_geeks_api.Models;
@@ -66,14 +67,12 @@ namespace macro_for_geeks_api.Repositories
 
         public bool deleteUser(int id)
         {
+            if (_db.Users == null) return false;
             var userDelete = _db.Users.FirstOrDefault(u => u.Id == id);
-            if (userDelete != null)
-            {
-                _db.Users.Remove(userDelete);
-                _db.SaveChanges();
-                return true;
-            }
-            return false;
+            _db.Users.Remove(userDelete ?? throw new InvalidOperationException());
+            _db.SaveChanges();
+            return true;
+
         }
     }
 

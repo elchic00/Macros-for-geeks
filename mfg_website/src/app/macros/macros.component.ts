@@ -31,7 +31,7 @@ export class MacrosComponent implements OnInit {
     if(this.foods && this.userID){
       this.sharedService.getDiaryByDate(this.userID, this.date).subscribe(data => {
         this.foods = data;
-        console.log(this.foods)
+
         //get percentages
         for(var i = 0; i < this.foods.length; i++){
           this.total += this.foods[i].protein + this.foods[i].fats + this.foods[i].carbohydrates

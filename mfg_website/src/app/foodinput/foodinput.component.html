@@ -1,6 +1,18 @@
 <input type="text" [placeholder]="'Enter food item to search'"  (keydown.enter)="searchFood()" [(ngModel)]="InputFood" style="width: 97%; margin-left: 7px;"> <br><br>
-<button type="button" (click)="searchFood()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button> <br><br>
 
+
+<div *ngIf = description>
+
+  <div style="text-align: center;" class="input">
+  <select (onClick)="searchFood()" (keydown.enter)="searchFood()"  size="5" id="meals" [(ngModel)]="this.InputFood" >
+    <option *ngFor="let res of results" [ngValue]='res | titlecase'  (search)="searchFood()">
+      {{res | titlecase}}
+    </option>
+  </select>
+
+
+<button style="margin-bottom: 50px" type="button" (click)="searchFood()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Search</button>
+  </div>
 
 <div *ngIf="!description" class="d-flex justify-content-center">
   <div  *ngIf="this.loaded" class="spinner-border" role="status">
@@ -8,18 +20,17 @@
   </div>
 </div>
 
-<div *ngIf = description>
 <h3 style="font-weight: bold">Results for {{this.description | titlecase}}:</h3>
 
-<h3><span style="text-decoration: underline;">Category:</span>  {{this.FoodCategory}} </h3>
+<h4><span style="text-decoration: underline;">Category:</span>  {{this.FoodCategory}} </h4>
 <br/>
 <div *ngFor= "let list of NutrientDis">
-  <h3><span style="text-decoration: underline;">{{list.nutrientName | titlecase}}:</span> {{list.value * this.serving | number : '1.2-2' }}</h3>
+  <h4><span style="text-decoration: underline;">{{list.nutrientName | titlecase}}:</span> {{list.value * this.serving | number : '1.0-2' }}</h4>
 </div>
 <br/>
 
   <!-- Enter serving size -->
-    <h3><label>Enter serving:  </label></h3>
+    <h4><label>Enter serving:  </label></h4>
   <div class = 'serv'>
     <input class = 'serv' type="text" [(ngModel)]="serving">
   </div>
@@ -27,7 +38,7 @@
 
   <!-- Enter meal type-->
   <div class="dropbox-container">
-  <label for="dropbox"><h3>When was your meal? </h3>
+  <label for="dropbox"><h4>When was your meal? </h4>
   <select (keydown.enter)="PostFoods()"  id="dropbox" (change-mealTime)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal' >
         {{meal.meal}}

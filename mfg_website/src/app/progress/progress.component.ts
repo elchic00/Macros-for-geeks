@@ -46,6 +46,16 @@ export class ProgressComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
     spanGaps:true,
+    scales: {
+      xAxes: [{
+        /* For changing color of x-axis coordinates */
+        ticks: {
+          fontSize: 18,
+          padding: 0,
+          fontColor: '#000'
+        }
+      }]
+    }
   };
 
   constructor(private http: HttpClient,private datePipe: DatePipe,private sharedService: SharedService, private cookieService: CookieService) {}
