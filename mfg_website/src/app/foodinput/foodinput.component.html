@@ -39,7 +39,7 @@
   <!-- Enter meal type-->
   <div class="dropbox-container">
   <label for="dropbox"><h4>When was your meal? </h4>
-  <select (keydown.enter)="PostFoods()"  id="dropbox" (change-mealTime)="update($event)" >
+  <select (keydown.enter)="PostFoods()"   id="dropbox" (change-mealTime)="update($event)" >
     <option *ngFor="let meal of mealTime" [value]='meal.meal' >
         {{meal.meal}}
     </option>

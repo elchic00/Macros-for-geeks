@@ -18,7 +18,8 @@ export class MacrosComponent implements OnInit {
   protPerc : number = 0
   fatPerc : number = 0
   carbPerc : number= 0
-  total : number = 0
+  totalMacros : number = 0
+  calories : number = 0
   //headDate : any =  this.datepipe.transform(this.date, 'dd-mm-yyyy');
 
 
@@ -34,16 +35,17 @@ export class MacrosComponent implements OnInit {
 
         //get percentages
         for(var i = 0; i < this.foods.length; i++){
-          this.total += this.foods[i].protein + this.foods[i].fats + this.foods[i].carbohydrates
+          this.calories += this.foods[i].calories
+          this.totalMacros += this.foods[i].protein + this.foods[i].fats + this.foods[i].carbohydrates
         }
         for(var i = 0; i < this.foods.length; i++){
           this.protPerc += this.foods[i].protein
           this.fatPerc += this.foods[i].fats
           this.carbPerc += this.foods[i].carbohydrates
         }
-        this.protPerc = this.protPerc / this.total * 100
-        this.fatPerc = this.fatPerc / this.total * 100
-        this.carbPerc = this.carbPerc / this.total * 100
+        this.protPerc = this.protPerc / this.totalMacros * 100
+        this.fatPerc = this.fatPerc / this.totalMacros * 100
+        this.carbPerc = this.carbPerc / this.totalMacros * 100
       })
       this.loaded = true;
     }

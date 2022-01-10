@@ -50,7 +50,8 @@ export class FoodinputComponent implements OnInit {
           this.results.push( this.data['foods'][i].description)
         }
         this.NutrientDis = this.data['foods'][0]['foodNutrients'] ;
-        this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' || x.nutrientName == 'Carbohydrate, by difference' || x.nutrientName == 'Protein' || x.nutrientName == 'Energy')
+        this.NutrientDis = this.NutrientDis.filter(x => x.nutrientName == 'Total lipid (fat)' && x.unitName == 'G' || x.nutrientName == 'Carbohydrate, by difference' && x.unitName == 'G' || x.nutrientName == 'Protein' && x.unitName == 'G' || x.nutrientName == 'Energy'  && x.unitName == 'KCAL')
+        this.NutrientDis.sort((a, b) => a.nutrientName.toLowerCase().localeCompare(b.nutrientName.toLowerCase()))
       })}
     else {
       Swal.fire('No Bueno','Please enter a food item to search!', 'error')
@@ -68,10 +69,10 @@ export class FoodinputComponent implements OnInit {
     if(this.InputFood)
       this.food.food = this.description[0].toUpperCase() + this.description.substr(1).toLowerCase();
     this.food.servings = this.serving
-    this.food.calories = (this.NutrientDis[3].value * this.serving); //this.DisplayFoods.filter(x => nutri)
-    this.food.carbohydrates = Number((this.NutrientDis[2].value * this.serving).toFixed(2));
-    this.food.fats = Number((this.NutrientDis[1].value * this.serving).toFixed(2));
-    this.food.protein = Number((this.NutrientDis[0].value * this.serving).toFixed(2));
+    this.food.calories = (this.NutrientDis[1].value * this.serving); //this.DisplayFoods.filter(x => nutri)
+    this.food.carbohydrates = Number((this.NutrientDis[0].value * this.serving).toFixed(2));
+    this.food.fats = Number((this.NutrientDis[3].value * this.serving).toFixed(2));
+    this.food.protein = Number((this.NutrientDis[2].value * this.serving).toFixed(2));
     this.food.date = new Date().toDateString(); //currentDateTime
     this.food.userId = Number(this.cookieService.get('id'))
     this.food.mealTime = this.selected
@@ -79,6 +80,7 @@ export class FoodinputComponent implements OnInit {
       response => Swal.fire("Good job!", "You posted your food info!", "success"),
       error => Swal.fire('Oops...','Your food did not post!', 'error')
     )
+    this.serving = 1
   }
 
 
