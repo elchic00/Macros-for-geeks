@@ -1,6 +1,4 @@
-.search input {
-  margin: 1rem 0;
-}
+
 /*
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -19,4 +17,12 @@ input[type="text"] {
 
 .dropbox {
   height: 100%
+}
+
+select{
+  width:500px;
+}
+
+.dropbox-container{
+  width:300px
 }

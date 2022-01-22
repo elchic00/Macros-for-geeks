@@ -1,4 +1,8 @@
 # Macros-for-geeks
 
-This is a fullstack Macro-Counter application using Angular, SQLite, and .Net. User's can make use of a third-party API to look up nutrition information of food, and then post this data using our own API into our SQLite database.
+This is a nutrition diary to help you keep track of your macronutrients and weight goals. User's can make use of a API from the USDA(https://fdc.nal.usda.gov/) to save nutrition information of food, and then post the data into our SQLite database via our .Net API we created. We used Angular for the interface to make it easier for CRUD operations (to create, read, update, and delete data).
+
 ![](macros.gif)
+
+![](swagger.png)
+

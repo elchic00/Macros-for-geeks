@@ -16,15 +16,15 @@ namespace macro_for_geeks_api.Models
         {
         }
 
-        public virtual DbSet<Diary> Diaries { get; set; }
-        public virtual DbSet<Mealtime> Mealtimes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Diary>? Diaries { get; set; }
+        public virtual DbSet<Mealtime>? Mealtimes { get; set; }
+        public virtual DbSet<User>? Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlite("Data source=./Food.db");
             }
         }
@@ -37,8 +37,7 @@ namespace macro_for_geeks_api.Models
 
                 entity.ToTable("Diary");
 
-                entity.HasIndex(e => e.Entryid, "IX_Diary_entryid")
-                    .IsUnique();
+                entity.HasIndex(e => e.Entryid, "entry&user");
 
                 entity.Property(e => e.Entryid).HasColumnName("entryid");
 
@@ -77,8 +76,10 @@ namespace macro_for_geeks_api.Models
 
                 entity.Property(e => e.FatGoal).HasColumnName("fat goal");
 
-                entity.Property(e => e.Height).HasColumnName("height");
-
+                entity.Property(e => e.Feet).HasColumnName("feet");
+                
+                entity.Property(e => e.Inches).HasColumnName("inches");
+                
                 entity.Property(e => e.Name).IsRequired();
 
                 entity.Property(e => e.Picture).HasColumnName("picture");

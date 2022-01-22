@@ -1,26 +1,29 @@
-<br><img src="assets/Macros-For-Geeks-Logo.gif" class="logo" routerLink="/Login">
+<br><button TYPE='SUBMIT' class="homeButton" routerLink="/Login">Home</button>
 <div class="container" >
-  <h3 style="text-decoration: underline; text-align:center">Add User</h3><br>
-  <label>Enter name: </label>
-  <input type="text" [placeholder]="'First Last'" [(ngModel)]="user.name" style="width: 240px;"><br><br>
-  <label>Enter email:</label>
-  <input type="text" [placeholder]="'example@email.com'" [(ngModel)]="user.email" style="width: 240px;"><br><br>
-  <label>Enter picture path: </label>
-  <input type="text" [placeholder]="'example.com%jpg'" [(ngModel)]="user.picture" style="width: 240px;"><br><br>
-  <label>Enter height:</label>
-  <input type="text" [placeholder]="heightFiller" [(ngModel)]="user.height" style="width: 100px;"><br><br>
-  <label>Enter weight:</label>
-  <input type="text" [placeholder]="'145'" [(ngModel)]="user.weight" style="width: 100px;"><br><br>
-  <label>Enter age:</label>
-  <input type="text" [placeholder]="'25'" [(ngModel)]="user.age" style="width: 100px;"><br><br>
-  <label>Enter protein goal: </label>
-  <input type="text" [placeholder]="'220g'"  [(ngModel)]="user['protein goal']" style="width: 100px;"><br><br>
-  <label>Enter fat goal: </label>
-  <input type="text" [placeholder]="'320g'" [(ngModel)]="user['fat goal']" style="width: 100px;"><br><br>
-  <label>Enter carb goal: </label>
-  <input  (keydown.enter)="postUser()" [placeholder]="'50g'" type="text" [(ngModel)]="user['carb goal']" style="width:100px;"><br>
+  <h3 style="text-decoration: underline; text-align:center;">Add User</h3>
 
-  <div style="text-decoration: underline; text-align:right"> Go back to the homescreen to login to your new account.
-  <button  routerLink="/Login" type="button" (click)="postUser()" mdbBtn color="primary" mdbWavesEffect class='search-button'>Add User</button> <br><br>
+  <label>Enter Name: </label>
+  <input class="form-control"  type="text" [placeholder]="'First Last'" [(ngModel)]="user.name" style="width: 240px;">
+  <label>Enter Email:</label>
+  <input class="form-control"  type="email" [placeholder]="'example@email.com'" [(ngModel)]="user.email" style="width: 240px;">
+  <label>Enter Picture path: </label>
+  <input class="form-control" type="text" [placeholder]="'https://imgur.com/pic.png'" [(ngModel)]="user.picture" style="width: 240px;">
+  <label>Enter Height:</label>
+  <div id="height">
+  <input class="form-control" type="number" min="0" max="8" [placeholder]="'feet'" [(ngModel)]="user.feet" style="width: 100px;float:left;">
+  <input class="form-control" type="number" min="0" max="11" [placeholder]="'inches'" [(ngModel)]="user.inches" style="width: 100px;float:left">
+  </div>
+  <label>Enter Weight:</label>
+  <input class="form-control" type="number" min="0" [placeholder]="'145 lbs'" [(ngModel)]="user.weight" style="width: 100px;">
+  <label>Enter Age:</label>
+  <input class="form-control" type="number" min="0" [placeholder]="'25'" [(ngModel)]="user.age" style="width: 100px;">
+  <label>Enter Protein goal: </label>
+  <input class="form-control" type="number" min="0" [placeholder]="'220g'"  [(ngModel)]="user.proteinGoal" style="width: 100px;">
+  <label>Enter Fat goal: </label>
+  <input class="form-control" type="number" min="0" [placeholder]="'320g'" [(ngModel)]="user.fatGoal" style="width: 100px;">
+  <label>Enter Carb goal: </label>
+  <input class="form-control" (keydown.enter)="postUser()" [placeholder]="'50g'" type="number" min="0" [(ngModel)]="user.carbohydrateGoal" style="width:100px;">
+  <div style="text-decoration: underline; text-align:right">
+  <button type="submit" (click)="postUser()" mdbBtn color="secondary" >Add User</button>
   </div>
 </div>

@@ -51,7 +51,14 @@ namespace macro_for_geeks_api.Controllers
         [HttpPost]
         public /*HttpResponseMessage*/ void PostEntry(Diary diary)
         {
-           /*return*/ _diaryRepo.PostEntry(diary)/*.EnsureSuccessStatusCode()*/;
+            _diaryRepo.PostEntry(diary);
+        }
+        
+        [HttpDelete]
+        [Route("{entryId}")] 
+        public bool DeleteUser(int entryId)
+        {
+            return _diaryRepo.DeleteDiary(entryId);
         }
         
     }

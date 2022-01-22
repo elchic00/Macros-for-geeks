@@ -5,12 +5,22 @@
   width: 25%;
   border-radius: 25px;
 }
+.reg-button button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 115px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #66c943;
+  /*color:white;*/
+  font-family: "Lucida Console", "Courier New", monospace;
+}
 
 .welcome { /* welcome msg */
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   font-style: oblique;
   font-size: large;
 }
@@ -33,6 +43,7 @@
 
 .profile-pic:hover{
   opacity: 0.3;
+  cursor: pointer;
 }
 /*
 #loading{

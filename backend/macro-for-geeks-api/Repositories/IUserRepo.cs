@@ -6,12 +6,15 @@ namespace macro_for_geeks_api.Repositories
     public interface IUserRepo
     {
         IEnumerable<User> GetUsers();
+        
         User? GetUserById(short id);
 
-        void postUser(User user);
+        bool PostUser(User user);
 
         bool Put(User user);
 
+        bool deleteUser(int id);
+        
 
     }
 }

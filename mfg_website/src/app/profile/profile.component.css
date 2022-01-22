@@ -1,0 +1,26 @@
+.container{
+  width: 600px;
+  text-align:left
+}
+/*#button1,#button1{
+  width: 200px;
+  height: 40px;
+}*/
+.buttons{
+  margin: 0 auto;
+  display: block;
+  text-align:center;
+}
+label {
+  display: inline-block;
+}
+
+input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+.heightInput{
+  overflow: hidden;
+  display: block;
+}

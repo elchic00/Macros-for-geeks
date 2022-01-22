@@ -1,35 +1,46 @@
-
-
-<div class ="table">
-<div class="container mt-5">
+<!--<div *ngIf="!this.loaded" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only" id="loading"></span>
+  </div>
+</div>-->
+<br>
+<h3 style="text-align: center; text-decoration: underline;">{{date.toDateString()}} </h3>
+<div style="" class="container mt-5">
     <table class="table table-striped">
       <thead>
           <tr>
-            <!-- <th>UserId</th> -->
             <th>Food</th>
             <th>Servings</th>
             <th>Calories</th>
             <th>Carbohydrates(g)</th>
             <th>Fats(g)</th>
             <th>Protein(g)</th>
-            <th>Date</th>
+            <!--<th>Date</th>-->
             <th>Meal-time</th>
           </tr>
       </thead>
+
       <tbody>
         <tr *ngFor="let food of foods">
           <td>{{ food.food }}</td>
           <td>{{food.servings}}</td>
-          <td>{{ food.calories }}</td>
-          <td>{{ food.carbohydrates | number : '1.2-2'}}</td>
-          <td>{{ food.fats | number : '1.2-2'}}</td>
-          <td>{{ food.protein | number : '1.2-2'}}</td>
-          <td>{{ food.date }}</td>
+          <td>{{ food.calories | number : '1.0-2' }}</td>
+          <td>{{ food.carbohydrates | number : '1.0-2'}}</td>
+          <td>{{ food.fats | number : '1.0-2'}}</td>
+          <td>{{ food.protein | number : '1.0-2'}}</td>
+          <!--<td>{{ food.date }}</td>-->
           <td>{{ food.mealTime }}</td>
+          <td><button  type="submit"  (click)="deleteEntry(food.entryid)" mdbBtn color="secondary" id='button1'>Delete</button></td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
 
-<doughnut></doughnut>
+<doughnut></doughnut><br>
+
+<div  style="text-align: center;">
+  <h4><span style="text-decoration: underline;">Calories:</span>  {{calories | number : '1.0'}}(Kcal)  </h4>
+  <h4 ><span style="text-decoration: underline;">Proteins:</span> {{protPerc | number : '1.0-2'}}%  </h4>
+<h4><span style="text-decoration: underline;">Fats:</span> {{fatPerc | number : '1.0-2'}}%  </h4>
+<h4><span style="text-decoration: underline;">Carbs:</span> {{carbPerc | number : '1.0-2'}}%  </h4>
+</div>
